@@ -1,0 +1,13 @@
+D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\FSSupport\bin\Release\FSSupport.exe
+D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\FSSupport\bin\Release\CommonLib.dll
+D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\FSSupport\bin\Release\FSSupport.pdb
+D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\FSSupport\bin\Release\CommonLib.pdb
+D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\FSSupport\obj\Release\FSSupport.csprojResolveAssemblyReference.cache
+D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\FSSupport\obj\Release\FSSupport.FrmGenItems.resources
+D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\FSSupport\obj\Release\FSSupport.frmTree.resources
+D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\FSSupport\obj\Release\FSSupport.Properties.Resources.resources
+D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\FSSupport\obj\Release\FSSupport.csproj.GenerateResource.Cache
+D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\FSSupport\obj\Release\FSSupport.exe
+D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\FSSupport\obj\Release\FSSupport.pdb
+D:\GitHub\MyStore\FSSupport\FSSupport\obj\Release\FSSupport.exe
+D:\GitHub\MyStore\FSSupport\FSSupport\obj\Release\FSSupport.pdb

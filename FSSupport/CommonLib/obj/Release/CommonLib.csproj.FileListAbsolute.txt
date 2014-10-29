@@ -1,0 +1,5 @@
+D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\CommonLib\bin\Release\CommonLib.dll
+D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\CommonLib\bin\Release\CommonLib.pdb
+D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\CommonLib\obj\Release\CommonLib.csprojResolveAssemblyReference.cache
+D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\CommonLib\obj\Release\CommonLib.dll
+D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\CommonLib\obj\Release\CommonLib.pdb

@@ -1,0 +1,8 @@
+D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\FSSupport\bin\Debug\FSSupport.exe
+D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\FSSupport\bin\Debug\FSSupport.pdb
+D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\FSSupport\obj\Debug\FSSupport.csprojResolveAssemblyReference.cache
+D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\FSSupport\obj\Debug\FSSupport.Form1.resources
+D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\FSSupport\obj\Debug\FSSupport.Properties.Resources.resources
+D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\FSSupport\obj\Debug\FSSupport.csproj.GenerateResource.Cache
+D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\FSSupport\obj\Debug\FSSupport.exe
+D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\FSSupport\obj\Debug\FSSupport.pdb
