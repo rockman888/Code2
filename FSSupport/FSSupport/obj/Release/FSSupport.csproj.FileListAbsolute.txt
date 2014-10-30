@@ -11,3 +11,5 @@ D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\FSSupport\obj\Release\FSSup
 D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\FSSupport\obj\Release\FSSupport.pdb
 D:\GitHub\MyStore\FSSupport\FSSupport\obj\Release\FSSupport.exe
 D:\GitHub\MyStore\FSSupport\FSSupport\obj\Release\FSSupport.pdb
+D:\GitHub\Code2\FSSupport\FSSupport\obj\Release\FSSupport.exe
+D:\GitHub\Code2\FSSupport\FSSupport\obj\Release\FSSupport.pdb
