@@ -5,8 +5,6 @@ using System.Data.OleDb;
 using System.IO;
 using System.Text;
 
-// vilh
-
 namespace CommonLib
 {
     static public class clsMain

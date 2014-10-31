@@ -312,7 +312,7 @@
             this.txtCount.ForeColor = System.Drawing.Color.Blue;
             this.txtCount.Location = new System.Drawing.Point(570, 135);
             this.txtCount.Name = "txtCount";
-            this.txtCount.Size = new System.Drawing.Size(161, 23);
+            this.txtCount.Size = new System.Drawing.Size(233, 23);
             this.txtCount.TabIndex = 13;
             // 
             // txtRate
@@ -321,7 +321,7 @@
             this.txtRate.ForeColor = System.Drawing.Color.Blue;
             this.txtRate.Location = new System.Drawing.Point(570, 78);
             this.txtRate.Name = "txtRate";
-            this.txtRate.Size = new System.Drawing.Size(161, 23);
+            this.txtRate.Size = new System.Drawing.Size(233, 23);
             this.txtRate.TabIndex = 11;
             // 
             // lvTable
@@ -351,7 +351,7 @@
             // 
             this.txtType.Location = new System.Drawing.Point(570, 106);
             this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(161, 23);
+            this.txtType.Size = new System.Drawing.Size(233, 23);
             this.txtType.TabIndex = 12;
             // 
             // label5
@@ -392,11 +392,11 @@
             // 
             // txtItemIDLog
             // 
-            this.txtItemIDLog.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtItemIDLog.Font = new System.Drawing.Font("Verdana", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtItemIDLog.ForeColor = System.Drawing.Color.Red;
             this.txtItemIDLog.Location = new System.Drawing.Point(570, 163);
             this.txtItemIDLog.Name = "txtItemIDLog";
-            this.txtItemIDLog.Size = new System.Drawing.Size(161, 23);
+            this.txtItemIDLog.Size = new System.Drawing.Size(233, 23);
             this.txtItemIDLog.TabIndex = 14;
             // 
             // cmbColor
@@ -624,7 +624,7 @@
             // 
             // imgItem
             // 
-            this.imgItem.Location = new System.Drawing.Point(769, 105);
+            this.imgItem.Location = new System.Drawing.Point(828, 105);
             this.imgItem.Name = "imgItem";
             this.imgItem.Size = new System.Drawing.Size(75, 74);
             this.imgItem.TabIndex = 34;
@@ -676,7 +676,7 @@
             this.MinimumSize = new System.Drawing.Size(993, 727);
             this.Name = "FrmGenItems";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FS - Table Support - By ViLH - v1.3";
+            this.Text = "FS - Table Support - By ViLH - v1.5";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmGenItems_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);

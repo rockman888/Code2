@@ -234,7 +234,7 @@ namespace FSSupport
         {
             txtCount.Text = "1";
             txtItemID.Text = "3,1280,0,0,0,0";
-            txtItemIDLog.Text = "VNG_128";
+            txtItemIDLog.Text = "Get Item From GIM Tool";
             txtItemName.Text = "Túi Tân Thủ";
             txtRate.Text = "0.12";
             txtType.Text = "1";
@@ -577,6 +577,10 @@ namespace FSSupport
         // chọn items trong comboBox
         private void cbItemName_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // hint for Item ID Log
+            txtItemIDLog.Clear();
+            txtItemIDLog.ForeColor = Color.Red;            
+
             btnInsert.Enabled = true;
 
             string strID1 = "0";
@@ -1594,6 +1598,12 @@ namespace FSSupport
         {
             try
             {
+                // show hint in Item ID Log TextBox for first time login
+                txtItemIDLog.ForeColor = Color.Gray;
+                txtItemIDLog.Text = "Get ItemID Log from GIM Tool!";                
+                txtItemIDLog.Select(txtItemIDLog.TextLength, 0);
+
+
                 List<string> lst = CommonLib.clsMain.ReadTextFile(Application.StartupPath + "\\settings.txt");
                 if (lst == null)
                 {

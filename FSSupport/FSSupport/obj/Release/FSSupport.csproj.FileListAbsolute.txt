@@ -11,10 +11,14 @@ D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\FSSupport\obj\Release\FSSup
 D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\FSSupport\obj\Release\FSSupport.pdb
 D:\GitHub\MyStore\FSSupport\FSSupport\obj\Release\FSSupport.exe
 D:\GitHub\MyStore\FSSupport\FSSupport\obj\Release\FSSupport.pdb
-<<<<<<< HEAD
-D:\GitHub\Code2\FSSupport\FSSupport\obj\Release\FSSupport.exe
-D:\GitHub\Code2\FSSupport\FSSupport\obj\Release\FSSupport.pdb
-=======
-E:\githuh\Code2\FSSupport\FSSupport\obj\Release\FSSupport.exe
-E:\githuh\Code2\FSSupport\FSSupport\obj\Release\FSSupport.pdb
->>>>>>> origin/master
+D:\GitHub\MyStore\FSSupport\FSSupport\bin\Release\FSSupport.exe
+D:\GitHub\MyStore\FSSupport\FSSupport\bin\Release\FSSupport.pdb
+D:\GitHub\MyStore\FSSupport\FSSupport\bin\Release\CommonLib.dll
+D:\GitHub\MyStore\FSSupport\FSSupport\bin\Release\CommonLib.pdb
+D:\GitHub\MyStore\FSSupport\FSSupport\obj\Release\FSSupport.csprojResolveAssemblyReference.cache
+D:\GitHub\MyStore\FSSupport\FSSupport\obj\Release\FSSupport.FrmGenItems.resources
+D:\GitHub\MyStore\FSSupport\FSSupport\obj\Release\FSSupport.frmTree.resources
+D:\GitHub\MyStore\FSSupport\FSSupport\obj\Release\FSSupport.Properties.Resources.resources
+D:\GitHub\MyStore\FSSupport\FSSupport\obj\Release\FSSupport.csproj.GenerateResource.Cache
+D:\GitHub\Code\FSSupport\FSSupport\obj\Release\FSSupport.exe
+D:\GitHub\Code\FSSupport\FSSupport\obj\Release\FSSupport.pdb
