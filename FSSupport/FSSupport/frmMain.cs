@@ -82,6 +82,8 @@ using System.Diagnostics;
 using System.Threading;
 using System.IO;
 using System.Net;
+using System.Web.Helpers;
+
 
 namespace FSSupport
 {
@@ -92,7 +94,8 @@ namespace FSSupport
         private static DataTable _dtLogFormat;
         
         private static Dictionary<string, int> _dicData;
-                
+
+        private static string _szItemLogLink;   // webservice chứa thông tin log id -> Json type
         private static string _szFileLogFormat; // đường dẫn chứa file Log
         private static string _szFileItems;     // đường dẫn chứa file item
         private static string _szFileImage;     // đường dẫn chứa file image
@@ -112,10 +115,63 @@ namespace FSSupport
         {
             InitializeComponent();            
             _dicData = new Dictionary<string, int>();
-            _lstColor = new List<int>();            
+            _lstColor = new List<int>();
+            _szItemLogLink = "";    /////////// cập nhật link vào đây
         }        
 
         #region "Common"
+
+
+
+            /*
+            {
+               "1": {
+                   "result":
+                    {  
+                        "ITEM_ID":"CNSK",
+                        "NAME":"C\u1ea9m nang s\u1ef1 ki\u1ec7n",
+                        "PRODUCT_CODE":"FS",
+                        "ID_INGAME":"6,1,5572",
+                        "TYPE":"1",
+                        "START_TIME":null,
+                        "END_TIME":null}
+                    },
+                "0":1
+            }
+             * 
+             -> json["1"].result.ITEM_ID = "CNSK" ;
+             -> json["1"].result.NAME = "Cẩm nang sự kiện";
+             -> json["1"].START_TIME = "";
+             */
+        private clsItem GetItem()
+        {            
+            dynamic json = GetJSonFromServer(_szItemLogLink);
+            clsItem item = new clsItem();
+
+            if (json["0"] = 0)
+                return item;
+                        
+            item.SzItemID = json["1"].result.ITEM_ID;
+            item.szName = json["1"].result.NAME;
+            item.szIdIngame = json["1"].result.ID_INGAME;   // 
+            item.szType = json["1"].result.TYPE;
+            item.szStartTime = json["1"].result.START_TIME;
+            item.szEndTime = json["1"].result.END_TIME;
+            item.szProductCode = json["1"].result.PRODUCT_CODE;
+
+            return item;
+        }
+
+        private dynamic GetJSonFromServer(string strUrl)
+        {
+            WebClient wb = new WebClient();
+            var data = wb.DownloadString(strUrl);
+            dynamic json = System.Web.Helpers.Json.Decode(data);
+            return json;
+        }
+
+     
+
         private void DeleteRows()
         {
             try
@@ -234,7 +290,7 @@ namespace FSSupport
         {
             txtCount.Text = "1";
             txtItemID.Text = "3,1280,0,0,0,0";
-            txtItemIDLog.Text = "VNG_128";
+            txtItemIDLog.Text = "Get Item From GIM Tool";
             txtItemName.Text = "Túi Tân Thủ";
             txtRate.Text = "0.12";
             txtType.Text = "1";
@@ -577,6 +633,10 @@ namespace FSSupport
         // chọn items trong comboBox
         private void cbItemName_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // hint for Item ID Log
+            txtItemIDLog.Clear();
+            txtItemIDLog.ForeColor = Color.Red;
+
             btnInsert.Enabled = true;
 
             string strID1 = "0";
@@ -1461,9 +1521,13 @@ namespace FSSupport
 
         private void btnPath_Click(object sender, EventArgs e)
         {
-            frmTree frm = new frmTree();
-            frm.ShowDialog();
-            //JSONDemo();
+            List<int> lst = clsMain.SplitIDItem("6, 1, 256");
+            for (int i = 0; i < lst.Count; i++)
+                MessageBox.Show(lst[i].ToString());
+            
+            //frmTree frm = new frmTree();
+            //frm.ShowDialog();
+            
         }
 
         private void btnOutput_Click(object sender, EventArgs e)
@@ -1594,6 +1658,12 @@ namespace FSSupport
         {
             try
             {
+                // show hint in Item ID Log TextBox for first time login
+                txtItemIDLog.ForeColor = Color.Gray;
+                txtItemIDLog.Text = "Get ItemID Log from GIM Tool!";                
+                txtItemIDLog.Select(txtItemIDLog.TextLength, 0);
+
+
                 List<string> lst = CommonLib.clsMain.ReadTextFile(Application.StartupPath + "\\settings.txt");
                 if (lst == null)
                 {

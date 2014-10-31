@@ -3,3 +3,8 @@ D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\CommonLib\bin\Release\Commo
 D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\CommonLib\obj\Release\CommonLib.csprojResolveAssemblyReference.cache
 D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\CommonLib\obj\Release\CommonLib.dll
 D:\Script - FS - PHONG THAN\Tools Gen Code\FSSupport\CommonLib\obj\Release\CommonLib.pdb
+D:\GitHub\Code\FSSupport\CommonLib\bin\Release\CommonLib.dll
+D:\GitHub\Code\FSSupport\CommonLib\bin\Release\CommonLib.pdb
+D:\GitHub\Code\FSSupport\CommonLib\obj\Release\CommonLib.csprojResolveAssemblyReference.cache
+D:\GitHub\Code\FSSupport\CommonLib\obj\Release\CommonLib.dll
+D:\GitHub\Code\FSSupport\CommonLib\obj\Release\CommonLib.pdb

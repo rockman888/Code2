@@ -5,12 +5,20 @@ using System.Data.OleDb;
 using System.IO;
 using System.Text;
 
-// vilh
-
 namespace CommonLib
 {
     static public class clsMain
     {
+        public static List<int> SplitIDItem(string strUrl)
+        {            
+            string[] arr = strUrl.Split(',');
+
+            List<int> lstInt = new List<int>();
+            for (int i=0; i< arr.Length; i++)
+                lstInt.Add(Convert.ToInt16(arr[i]));
+
+            return lstInt;
+        }
 
         public static List<string> ReadTextFile(string szPath)
         {
