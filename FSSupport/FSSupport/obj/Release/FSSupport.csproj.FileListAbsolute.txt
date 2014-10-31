@@ -20,5 +20,15 @@ D:\GitHub\MyStore\FSSupport\FSSupport\obj\Release\FSSupport.FrmGenItems.resource
 D:\GitHub\MyStore\FSSupport\FSSupport\obj\Release\FSSupport.frmTree.resources
 D:\GitHub\MyStore\FSSupport\FSSupport\obj\Release\FSSupport.Properties.Resources.resources
 D:\GitHub\MyStore\FSSupport\FSSupport\obj\Release\FSSupport.csproj.GenerateResource.Cache
+D:\GitHub\Code\FSSupport\FSSupport\bin\Release\FSSupport.exe.config
+D:\GitHub\Code\FSSupport\FSSupport\bin\Release\FSSupport.exe
+D:\GitHub\Code\FSSupport\FSSupport\bin\Release\FSSupport.pdb
+D:\GitHub\Code\FSSupport\FSSupport\bin\Release\CommonLib.dll
+D:\GitHub\Code\FSSupport\FSSupport\bin\Release\CommonLib.pdb
+D:\GitHub\Code\FSSupport\FSSupport\obj\Release\FSSupport.csprojResolveAssemblyReference.cache
+D:\GitHub\Code\FSSupport\FSSupport\obj\Release\FSSupport.FrmGenItems.resources
+D:\GitHub\Code\FSSupport\FSSupport\obj\Release\FSSupport.frmTree.resources
+D:\GitHub\Code\FSSupport\FSSupport\obj\Release\FSSupport.Properties.Resources.resources
+D:\GitHub\Code\FSSupport\FSSupport\obj\Release\FSSupport.csproj.GenerateResource.Cache
 D:\GitHub\Code\FSSupport\FSSupport\obj\Release\FSSupport.exe
 D:\GitHub\Code\FSSupport\FSSupport\obj\Release\FSSupport.pdb
