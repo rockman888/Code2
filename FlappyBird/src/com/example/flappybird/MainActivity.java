@@ -1,5 +1,5 @@
-// http://www.appsrox.com/android/tutorials/flappychick/6/
-// 19 HUB
+// http://www.appsrox.com/android/tutorials/flappychick/8/
+// 23 Physics World
 
 package com.example.flappybird;
 
@@ -22,101 +22,26 @@ import org.andengine.ui.activity.BaseGameActivity;
 import org.andengine.ui.activity.SimpleBaseGameActivity;
 import org.andengine.util.color.Color;
 
+import android.content.Context;
+
 import com.example.flappybird.SceneManager.SceneType;
 
-/*public class MainActivity extends BaseGameActivity{
-
-	public static final int CAMERA_WIDTH = 400;	//320
-	public static final int CAMERA_HEIGHT = 800;	//480
-
-	private org.andengine.engine.camera.Camera mCamera;
-	private ResourceManager mResourceManager;
-	private SceneManager mSceneManager;
-	
-	@Override
-	public EngineOptions onCreateEngineOptions() {
-		// TODO Auto-generated method stub
-		mCamera = new org.andengine.engine.camera.Camera(0, 0, CAMERA_WIDTH,
-				CAMERA_HEIGHT);
-		
-		final EngineOptions engineOptions = new EngineOptions(true,
-				ScreenOrientation.PORTRAIT_FIXED, new RatioResolutionPolicy(CAMERA_WIDTH, CAMERA_HEIGHT), mCamera);
-	
-				
-		engineOptions.getAudioOptions().setNeedsSound(true).setNeedsMusic(true);
-		return engineOptions;
-	}
-
-	@Override
-	public void onCreateResources(
-			OnCreateResourcesCallback pOnCreateResourcesCallback)
-			throws Exception {
-		// TODO Auto-generated method stub
-		
-		mResourceManager = ResourceManager.getInstance();	// thieu biloi
-		mResourceManager.prepare(this);	// thieu bi loi
-		mResourceManager.loadSplashResources();		
-		mSceneManager = SceneManager.getInstance();
-		
-		
-		pOnCreateResourcesCallback.onCreateResourcesFinished();
-		
-	}
-
-	@Override
-	public void onCreateScene(OnCreateSceneCallback pOnCreateSceneCallback)
-			throws Exception {
-		// TODO Auto-generated method stub
-		Scene pScene = mSceneManager.createSplashScene();
-		
-		pOnCreateSceneCallback.onCreateSceneFinished(pScene);
-	}
-
-	@Override
-	public void onPopulateScene(Scene pScene,
-			OnPopulateSceneCallback pOnPopulateSceneCallback) throws Exception {
-		// TODO Auto-generated method stub
-		
-		mEngine.registerUpdateHandler(new TimerHandler(2f, new ITimerCallback() {
-			
-			@Override
-			public void onTimePassed(TimerHandler pTimerHandler) {
-				// TODO Auto-generated method stub
-				
-				mEngine.unregisterUpdateHandler(pTimerHandler);
-				mResourceManager.loadGameResources();
-				mSceneManager.setScene(SceneType.SCENE_MENU);
-				mResourceManager.unloadSplashResources();
-				
-			}
-		}));
-		
-		pOnPopulateSceneCallback.onPopulateSceneFinished();
-		
-	}
-
-	@Override
-	public void onBackPressed() {
-		// TODO Auto-generated method stub
-		
-		if (mSceneManager.getCurrentScene() != null)
-		{
-			mSceneManager.getCurrentScene().onBackKeyPressed();
-			return;
-		}		
-		super.onBackPressed();
-	}
-
-	@Override
-	protected void onDestroy() {
-		// TODO Auto-generated method stub
-		super.onDestroy();
-		System.exit(0);
-	}	
-}
-*/
+// BaseGameActivity == SimpleBaseGameActivity
+// cả hai phải load resource + load scene mới lên được!
 
 public class MainActivity extends SimpleBaseGameActivity {
+	
+	
+	public int getMaxScore()
+	{
+		return getPreferences(Context.MODE_PRIVATE).getInt("maxscore", 0);
+	}
+	
+	public void setMaxScore()
+	{
+		getPreferences(Context.MODE_PRIVATE).edit().putInt("maxscore", maxScore).commit();
+	}
+	
 	@Override
 	protected void onPause() {
 		// TODO Auto-generated method stub
@@ -187,8 +112,8 @@ public class MainActivity extends SimpleBaseGameActivity {
 		
 		
 		return mSceneManager.createSplashScene();	
-		// lỗi ko load full resource là do đây vì chỉ load resource ko có scene thì sẽ bị lỗi ~.~
-		// phải làm cho cái scene hiểu thì mới load ko bị sai -> vào SceneManager -> fix lại
+		// load All resource ->load resource only -> phai loadscene moi hien thi dung
+		// 
 	}
 
 	/*
