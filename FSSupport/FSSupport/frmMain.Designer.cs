@@ -398,6 +398,7 @@
             this.txtItemIDLog.Name = "txtItemIDLog";
             this.txtItemIDLog.Size = new System.Drawing.Size(233, 23);
             this.txtItemIDLog.TabIndex = 14;
+            this.txtItemIDLog.TextChanged += new System.EventHandler(this.txtItemIDLog_TextChanged);
             // 
             // cmbColor
             // 
@@ -676,7 +677,7 @@
             this.MinimumSize = new System.Drawing.Size(993, 727);
             this.Name = "FrmGenItems";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FS - Table Support - By ViLH - v1.5";
+            this.Text = "FS - Table Support - By ViLH - v1.6";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmGenItems_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);

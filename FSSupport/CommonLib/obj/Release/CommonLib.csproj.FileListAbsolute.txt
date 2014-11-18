@@ -8,3 +8,7 @@ D:\GitHub\Code\FSSupport\CommonLib\bin\Release\CommonLib.pdb
 D:\GitHub\Code\FSSupport\CommonLib\obj\Release\CommonLib.csprojResolveAssemblyReference.cache
 D:\GitHub\Code\FSSupport\CommonLib\obj\Release\CommonLib.dll
 D:\GitHub\Code\FSSupport\CommonLib\obj\Release\CommonLib.pdb
+D:\GitHub\Code2\FSSupport\CommonLib\bin\Release\CommonLib.dll
+D:\GitHub\Code2\FSSupport\CommonLib\bin\Release\CommonLib.pdb
+D:\GitHub\Code2\FSSupport\CommonLib\obj\Release\CommonLib.dll
+D:\GitHub\Code2\FSSupport\CommonLib\obj\Release\CommonLib.pdb

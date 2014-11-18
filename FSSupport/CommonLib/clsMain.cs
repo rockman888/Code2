@@ -3,12 +3,35 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
 using System.IO;
+using System.Net;
 using System.Text;
 
 namespace CommonLib
 {
     static public class clsMain
     {
+     
+
+        public static string ConvertToProperName(string input)
+        {
+            if (input == "")
+                return "";
+
+            string stringProper = "";
+            string[] words = input.Split(' ');
+            foreach (string word in words)
+            {
+                char[] letters = word.ToCharArray();
+                string tmpStr = letters[0].ToString().ToUpper();
+
+                for (int i = 1; i < letters.Length; i++)
+                    tmpStr += letters[i].ToString().ToLower();
+
+                stringProper = stringProper + tmpStr + " ";
+            }
+            return stringProper.Trim();
+        }
+
         public static List<int> SplitIDItem(string strUrl)
         {            
             string[] arr = strUrl.Split(',');

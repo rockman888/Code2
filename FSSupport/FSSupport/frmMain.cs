@@ -95,7 +95,7 @@ namespace FSSupport
         
         private static Dictionary<string, int> _dicData;
 
-        private static string _szItemLogLink;   // webservice chứa thông tin log id -> Json type
+        // private static string _szItemLogLink;   // webservice chứa thông tin log id -> Json type
         private static string _szFileLogFormat; // đường dẫn chứa file Log
         private static string _szFileItems;     // đường dẫn chứa file item
         private static string _szFileImage;     // đường dẫn chứa file image
@@ -115,15 +115,12 @@ namespace FSSupport
         {
             InitializeComponent();            
             _dicData = new Dictionary<string, int>();
-            _lstColor = new List<int>();
-            _szItemLogLink = "";    /////////// cập nhật link vào đây
+            _lstColor = new List<int>();            
         }        
 
         #region "Common"
 
-
-
-            /*
+        /*
             {
                "1": {
                    "result":
@@ -142,18 +139,37 @@ namespace FSSupport
              -> json["1"].result.ITEM_ID = "CNSK" ;
              -> json["1"].result.NAME = "Cẩm nang sự kiện";
              -> json["1"].START_TIME = "";
+             * 
+             * 
+             * http://gim.tool.vng.vn/mda/api/get_itemsIDbyName?NAME=C%E1%BA%A9m%20nang%20s%E1%BB%B1%20ki%E1%BB%87nc
              */
-        private clsItem GetItem()
-        {            
-            dynamic json = GetJSonFromServer(_szItemLogLink);
+
+
+        private clsItem GetInfoItemByName(string name)
+        {
+            name = clsMain.ConvertToProperName(name);
+
             clsItem item = new clsItem();
 
-            if (json["0"] = 0)
-                return item;
+            if (name.ToString() == "")
+                return null;
+
+           // dynamic json = GetJSonFromServer("http://gim.tool.vng.vn/mda/api/get_itemsIDbyName?NAME=" + name + "&PRODUCT_CODE=FS");
+
+            
+            //string strURL = "http://gim.tool.vng.vn/mda/api/get_itemsIDbyIDIngame?ID_INGAME=6,1,5572&PRODUCT_CODE=FS";
+            string strURL = "http://gim.tool.vng.vn/mda/api/get_itemsIDbyName?NAME=" + name + "&PRODUCT_CODE=FS";
+            dynamic json = GetJSonFromServer(strURL);
+
+            if (json == null)
+                return null;
+
+            if (json["0"] == 0)
+                return null;
                         
-            item.SzItemID = json["1"].result.ITEM_ID;
+            item.szItemID = json["1"].result.ITEM_ID;
             item.szName = json["1"].result.NAME;
-            item.szIdIngame = json["1"].result.ID_INGAME;   // 
+            item.szIdIngame = json["1"].result.ID_INGAME;   
             item.szType = json["1"].result.TYPE;
             item.szStartTime = json["1"].result.START_TIME;
             item.szEndTime = json["1"].result.END_TIME;
@@ -162,12 +178,42 @@ namespace FSSupport
             return item;
         }
 
+        private String GetWebServices(string url)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+
+            try
+            {
+                WebResponse response = request.GetResponse();
+                using (Stream responseStream = response.GetResponseStream())
+                {
+                    StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
+                    return reader.ReadToEnd();
+                }
+            }
+            catch (WebException ex)
+            {
+                WebResponse errorResponse = ex.Response;
+                using (Stream responStream = errorResponse.GetResponseStream())
+                {
+                    StreamReader sr = new StreamReader(responStream, Encoding.GetEncoding("utf-8"));
+                    String errorText = sr.ReadToEnd();
+                    // log errorText;
+                }
+                throw;
+            }
+        }       
+
         private dynamic GetJSonFromServer(string strUrl)
         {
             WebClient wb = new WebClient();
             var data = wb.DownloadString(strUrl);
-            dynamic json = System.Web.Helpers.Json.Decode(data);
-            return json;
+
+            return System.Web.Helpers.Json.Decode(data);
+            
+
+            // return json;
+            
         }
 
      
@@ -845,7 +891,9 @@ namespace FSSupport
             txtImage.Text = strImage;
 
             ShowItemID(strID1, strID2, strID3, strID4, strID5, strID6);
-            ShowLogItemName();
+
+            ShowLogItemID();
+            // ShowLogItemName();
 
             // hiển thị hình ảnh
             DisplayImage(txtItemID1.Text, txtItemID2.Text, txtItemID3.Text, txtItemID4.Text, txtItemID5.Text, txtItemID6.Text);
@@ -1094,6 +1142,18 @@ namespace FSSupport
             txtItemID4.Text = strID4;
             txtItemID5.Text = strID5;
             txtItemID6.Text = strID6;
+        }
+
+
+        private void ShowLogItemID()
+        {
+            clsItem item = new clsItem();
+            item = GetInfoItemByName(txtItemName.Text);
+
+            if (item == null)
+                return;
+            
+            txtItemIDLog.Text = item.szItemID;
         }
 
         private void ShowLogItemName()
@@ -1512,10 +1572,7 @@ namespace FSSupport
         //private void JSONDemo()
         //{
         //    WebClient webClient = new WebClient();
-        //    dynamic result = JsonValue.Parse(webClient.DownloadString("https://api.foursquare.com/v2/users/self?oauth_token=XXXXXXX"));            
-
-            
-
+        //    dynamic result = JsonValue.Parse(webClient.DownloadString("https://api.foursquare.com/v2/users/self?oauth_token=XXXXXXX")); 
         //}
 
 
@@ -1918,6 +1975,11 @@ namespace FSSupport
             }
 
             toolStripStatusLabel.Text = "Row = " + (_iCurrentIndex+1).ToString();
+        }
+
+        private void txtItemIDLog_TextChanged(object sender, EventArgs e)
+        {
+
         }  
     }
 }

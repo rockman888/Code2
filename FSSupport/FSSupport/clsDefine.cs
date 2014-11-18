@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FSSupport
 {
-    public static class clsCommon
+    public static class clsDefine
     {
         //public enum ITEM_KIND
         //{

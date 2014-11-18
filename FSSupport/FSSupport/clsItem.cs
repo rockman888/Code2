@@ -52,7 +52,7 @@ namespace FSSupport
             set { _szName = value; }
         }
        
-        public string SzItemID
+        public string szItemID
         {
             get { return _szItemID; }
             set { _szItemID = value; }
