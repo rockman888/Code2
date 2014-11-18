@@ -1,0 +1,70 @@
+﻿get_itemsIDbyName: Lấy 1 item tương ứng với item name và product code truyền vào
+
+Input:
+URL : http://gim.tool.vng.vn/mda/api/get_itemsIDbyName
+Params (required)
+	id_ingame:
+	name
+	
+Output: (json type)
+	True
+	array(
+		0	=>	1,
+		1	=>	array(
+			'result' =>	array(
+				'ITEM_ID'	=>	'CNSK',
+				'NAME'		=>	'Cẩm nang sự kiện',
+				'PRODUCT_CODE'	=>	'FS',
+				'ID_INGAME'		=>	'6,1,5572',
+				'TYPE'			=>	1,
+				'START_TIME'	=>	null,
+				'END_TIME'		=> null
+			)
+		)
+	)
+	
+	False:
+	array(
+		0	=>	0,
+		1	=>	array(
+			'error' =>	'Reason'
+			)
+		)
+	)
+Sample : http://gim.tool.vng.vn/mda/api/get_itemsIDbyName?NAME=C%E1%BA%A9m%20nang%20s%E1%BB%B1%20ki%E1%BB%87n&PRODUCT_CODE=FS
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+get_itemsIDbyIDIngame: Lấy 1 item tương ứng với id item ingame và product code truyền vào
+
+Input:
+URL : http://gim.tool.vng.vn/mda/api/get_itemsIDbyIDIngame
+Params (required)
+	id_ingame:
+	name
+	
+Output: (json type)
+	True
+	array(
+		0	=>	1,
+		1	=>	array(
+			'result' =>	array(
+				'ITEM_ID'	=>	'CNSK',
+				'NAME'		=>	'Cẩm nang sự kiện',
+				'PRODUCT_CODE'	=>	'FS',
+				'ID_INGAME'		=>	'6,1,5572',
+				'TYPE'			=>	1,
+				'START_TIME'	=>	null,
+				'END_TIME'		=> null
+			)
+		)
+	)
+	
+	False:
+	array(
+		0	=>	0,
+		1	=>	array(
+			'error' =>	'Reason'
+			)
+		)
+	)
+Sample : http://gim.tool.vng.vn/mda/api/get_itemsIDbyIDIngame?ID_INGAME=6,1,5572&PRODUCT_CODE=FS
