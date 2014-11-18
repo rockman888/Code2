@@ -19,11 +19,17 @@
  *  + Add Custom Item into Custom.lua
  *  + Progressbar for Information loading
  *      - Optimize code: remove _arrIbitem , _arrArmor, _arrMagicscript,...
+ *  + Display log JSON with data from server
  * 
+ * *****************************************************************
+ * v1.6 
+ *  JSON get data from server
+ *  
  * *****************************************************************
  * v1.3
  *  + Display Image when click into comboBox choose item!  
- * 
+ *
+ * ****************************************************************** 
  * v1.2
  *  + Read file with Aysnc Technology (Many Sheet)
  *  + Gen Code Table -> Lua
@@ -32,6 +38,7 @@
  *  + AutoSave when completed insert 5 rows!
  *  + Add Custom Item into Custom.lua
  *  
+ * *****************************************************************
  * v1.1
  *  + Display Path of game structure
  *  + Insert, delete Rows on Table
@@ -154,28 +161,32 @@ namespace FSSupport
             if (name.ToString() == "")
                 return null;
 
-           // dynamic json = GetJSonFromServer("http://gim.tool.vng.vn/mda/api/get_itemsIDbyName?NAME=" + name + "&PRODUCT_CODE=FS");
-
-            
-            //string strURL = "http://gim.tool.vng.vn/mda/api/get_itemsIDbyIDIngame?ID_INGAME=6,1,5572&PRODUCT_CODE=FS";
             string strURL = "http://gim.tool.vng.vn/mda/api/get_itemsIDbyName?NAME=" + name + "&PRODUCT_CODE=FS";
             dynamic json = GetJSonFromServer(strURL);
 
             if (json == null)
                 return null;
 
-            if (json["0"] == 0)
-                return null;
-                        
-            item.szItemID = json["1"].result.ITEM_ID;
-            item.szName = json["1"].result.NAME;
-            item.szIdIngame = json["1"].result.ID_INGAME;   
-            item.szType = json["1"].result.TYPE;
-            item.szStartTime = json["1"].result.START_TIME;
-            item.szEndTime = json["1"].result.END_TIME;
-            item.szProductCode = json["1"].result.PRODUCT_CODE;
+            // phải có try catch vì khi trả dữ liệu về json[0]
+            
+            try
+            {
+                if (json["0"] == 0)
+                    return null;
 
-            return item;
+                item.szItemID = json["1"].result.ITEM_ID;
+                item.szName = json["1"].result.NAME;
+                item.szIdIngame = json["1"].result.ID_INGAME;
+                item.szType = json["1"].result.TYPE;
+                item.szStartTime = json["1"].result.START_TIME;
+                item.szEndTime = json["1"].result.END_TIME;
+                item.szProductCode = json["1"].result.PRODUCT_CODE;
+
+                return item;
+            } catch
+            {
+                return null;
+            }
         }
 
         private String GetWebServices(string url)
@@ -210,12 +221,7 @@ namespace FSSupport
             var data = wb.DownloadString(strUrl);
 
             return System.Web.Helpers.Json.Decode(data);
-            
-
-            // return json;
-            
         }
-
      
 
         private void DeleteRows()
