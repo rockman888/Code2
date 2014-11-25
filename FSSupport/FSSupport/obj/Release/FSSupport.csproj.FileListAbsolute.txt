@@ -44,3 +44,4 @@ D:\GitHub\Code2\FSSupport\FSSupport\obj\Release\FSSupport.Properties.Resources.r
 D:\GitHub\Code2\FSSupport\FSSupport\obj\Release\FSSupport.csproj.GenerateResource.Cache
 D:\GitHub\Code2\FSSupport\FSSupport\obj\Release\FSSupport.exe
 D:\GitHub\Code2\FSSupport\FSSupport\obj\Release\FSSupport.pdb
+D:\GitHub\Code2\FSSupport\FSSupport\obj\Release\FSSupport.frmOptions.resources

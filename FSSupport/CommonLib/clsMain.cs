@@ -10,7 +10,8 @@ namespace CommonLib
 {
     static public class clsMain
     {
-     
+
+        
 
         public static string ConvertToProperName(string input)
         {
@@ -33,11 +34,11 @@ namespace CommonLib
         }
 
         public static List<int> SplitIDItem(string strUrl)
-        {            
+        {
             string[] arr = strUrl.Split(',');
 
             List<int> lstInt = new List<int>();
-            for (int i=0; i< arr.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
                 lstInt.Add(Convert.ToInt16(arr[i]));
 
             return lstInt;
@@ -52,7 +53,7 @@ namespace CommonLib
 
             List<string> ls = new List<string>();
 
-            using (StreamReader sr = new StreamReader(fs, Encoding.ASCII ))
+            using (StreamReader sr = new StreamReader(fs, Encoding.ASCII))
             {
                 string str = sr.ReadLine();
                 while (str != null)
@@ -160,6 +161,52 @@ namespace CommonLib
             return bFlag;
         }
 
+        /// <summary>
+        /// Ghi Noi Dung strContent vao duong dan strPath
+        /// \nMode=1: CreateNew (co se ghi de, chua co tao moi) / 2:Append
+        /// </summary>
+        /// <param name="strPath">Duong Dan file</param>
+        /// <param name="strContent">Noi Dung file</param>
+        /// <param name="Mode">1: CreateNew (co se ghi de, chua co tao moi) / 2:Append</param>
+        /// <returns>true -> succeed</returns>
+        static public bool WriteFile(string szPath, string szContent, int iMode, Encoding en)
+        {
+            bool bFlag = false;
+            FileStream fs = null;
+
+            try
+            {
+                switch (iMode)
+                {
+                    case 1:
+                        fs = new FileStream(szPath, FileMode.Create);
+                        break;
+
+                    case 2:
+                        fs = new FileStream(szPath, FileMode.Append);
+                        break;
+
+                    default:
+                        fs = new FileStream(szPath, FileMode.Append);
+                        break;
+                }
+
+                using (StreamWriter sw = new StreamWriter(fs, en))
+                {
+                    sw.WriteLine(szContent);
+                    sw.Close();
+                }
+                fs.Close();
+
+                bFlag = true;
+            }
+            catch
+            {
+                return bFlag;
+            }
+            return bFlag;
+        }
+
 
         /// <summary>
         /// Ghi Noi Dung strContent vao duong dan strPath
@@ -203,10 +250,46 @@ namespace CommonLib
                 bFlag = true;
             }
             catch
-            {                
+            {
+                
                 return bFlag;
             }
             return bFlag;
+        }
+
+
+        public static void WriteLog(string strLogFolder, System.Exception ex)
+        {
+            try
+            {
+               // if (!Directory.Exists(strLogFolder))
+                //    Directory.CreateDirectory(strLogFolder);    // tạo mới folder nếu không tồn tại                
+
+                string strDate = "[" +
+                                        DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day + " " +
+                                        DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second +
+                                 "]: ";
+
+                string strLog = " * " + strDate + "Message = " + ex.Message.ToString() + "; TargetSite = " + ex.TargetSite + "; StackTrace = " + ex.StackTrace;
+
+                WriteFile(strLogFolder, strLog, 2, Encoding.UTF8);                
+            }
+            catch { }
+        }
+
+
+        public static void WriteLog(string strLogFolder, string strLog)
+        {
+            try
+            {                
+                string strDate = "[" +
+                                        DateTime.Today.Year + "-" + DateTime.Today.Month + "-" + DateTime.Today.Day + " " +
+                                        DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second +
+                                 "]: ";
+
+                WriteFile(strLogFolder, " * " + strDate + "\t" + strLog, 2, Encoding.UTF8);
+            }
+            catch { }
         }
     }
 }

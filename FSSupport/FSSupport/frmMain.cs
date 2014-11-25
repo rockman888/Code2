@@ -20,7 +20,23 @@
  *  + Progressbar for Information loading
  *      - Optimize code: remove _arrIbitem , _arrArmor, _arrMagicscript,...
  *  + Display log JSON with data from server
+ *  + Add Exception WriteLog
  * 
+ *
+ * 
+ * *****************************************************************
+ * v2.2
+ *  Fix Settings 
+ * 
+ * *****************************************************************
+ * v1.9; v2.0; v2.1
+ *  Bổ sung log -> tìm các máy bị thiếu lib (System.Web.Helpers)
+ * 
+ * *****************************************************************
+ * v1.7; v1.8
+ *  + Add Write Log clsMain (CommonLib)
+ *  + Add Write Log in try catch (Function frmMain)
+ *  
  * *****************************************************************
  * v1.6 
  *  JSON get data from server
@@ -98,14 +114,12 @@ namespace FSSupport
     {
         #region "Variables"
         private static DataTable _dtMaterial, _dtMagicScript, _dtibitem, _dtArmor, _dtRing, _dtAmulet, _dtBoot, _dtBelt, _dtHelm, _dtCuff, _dtPendant, _dtHorse;
-        private static DataTable _dtLogFormat;
-        
         private static Dictionary<string, int> _dicData;
 
-        // private static string _szItemLogLink;   // webservice chứa thông tin log id -> Json type
-        private static string _szFileLogFormat; // đường dẫn chứa file Log
         private static string _szFileItems;     // đường dẫn chứa file item
         private static string _szFileImage;     // đường dẫn chứa file image
+        private static string _szLogFile;       // đường dẫn chứa file Log Error
+        
 
         private List<int> _lstColor;            // trạng thái màu sắc: vàng, xanh lá cây
         private List<clsListTable> _lstCustom;  // Danh sách các item theo kiểu khác trong custom file! (custom.lua)
@@ -114,15 +128,16 @@ namespace FSSupport
         private string _szCustom;               // đường dẫn chứa file custom template;
         private Thread _thread = null;          // dùng để chạy Thread khi load dữ liệu 
         private int _iCurrentIndex;				// cho biết hiện người dùng đang chọn dòng nào!
-        
-        
+                
         #endregion     
 
         public FrmGenItems()
         {
             InitializeComponent();            
             _dicData = new Dictionary<string, int>();
-            _lstColor = new List<int>();            
+            _lstColor = new List<int>();
+             _szLogFile = Application.StartupPath + "\\info.log";
+             
         }        
 
         #region "Common"
@@ -154,23 +169,24 @@ namespace FSSupport
 
         private clsItem GetInfoItemByName(string name)
         {
-            name = clsMain.ConvertToProperName(name);
-
-            clsItem item = new clsItem();
-
-            if (name.ToString() == "")
-                return null;
-
-            string strURL = "http://gim.tool.vng.vn/mda/api/get_itemsIDbyName?NAME=" + name + "&PRODUCT_CODE=FS";
-            dynamic json = GetJSonFromServer(strURL);
-
-            if (json == null)
-                return null;
-
-            // phải có try catch vì khi trả dữ liệu về json[0]
-            
+            // phải có try catch vì khi trả dữ liệu về json[0]            
             try
             {
+                name = clsMain.ConvertToProperName(name);
+
+                clsItem item = new clsItem();
+
+                if (name.ToString() == "")
+                    return null;
+
+                string strURL = "http://gim.tool.vng.vn/mda/api/get_itemsIDbyName?NAME=" + name + "&PRODUCT_CODE=FS";
+                                
+                var json = GetJSonFromServer(strURL);                
+
+                if (json == null)
+                    return null;
+
+
                 if (json["0"] == 0)
                     return null;
 
@@ -183,8 +199,9 @@ namespace FSSupport
                 item.szProductCode = json["1"].result.PRODUCT_CODE;
 
                 return item;
-            } catch
-            {
+            } catch (Exception ex)
+            {             
+                clsMain.WriteLog(_szLogFile, ex);
                 return null;
             }
         }
@@ -209,7 +226,6 @@ namespace FSSupport
                 {
                     StreamReader sr = new StreamReader(responStream, Encoding.GetEncoding("utf-8"));
                     String errorText = sr.ReadToEnd();
-                    // log errorText;
                 }
                 throw;
             }
@@ -217,10 +233,21 @@ namespace FSSupport
 
         private dynamic GetJSonFromServer(string strUrl)
         {
-            WebClient wb = new WebClient();
-            var data = wb.DownloadString(strUrl);
+            try
+            {                
+                WebClient wb = new WebClient();             
+                var data = wb.DownloadString(strUrl);
 
-            return System.Web.Helpers.Json.Decode(data);
+                clsMain.WriteLog(_szLogFile, "data = " + data.ToString());
+                var json = System.Web.Helpers.Json.Decode(data);                                
+
+                return json;
+            }
+            catch (Exception ex)
+            {                               
+                clsMain.WriteLog(_szLogFile, ex);
+                return null;
+            }
         }
      
 
@@ -230,8 +257,9 @@ namespace FSSupport
             {
                 lvTable.SelectedItems[0].Remove();
             }
-            catch
+            catch (Exception ex)
             {
+                clsMain.WriteLog(_szLogFile, ex);
             }
         }
 
@@ -357,11 +385,11 @@ namespace FSSupport
         /* sử dụng kỹ thuật bất đồng bộ */
         // private delegate void AsyncGetItem (DataTable dt, string sheetName); // hàm xử lý bất đồng bộ kiểu void with parameters
         
-        private static void ReadFileLog()
-        {
+        //private static void ReadFileLog()
+        //{
             // Đọc file log format
-            _dtLogFormat = CommonLib.clsMain.ReadExcelFile(_szFileLogFormat, "Item");
-        }        
+            // _dtLogFormat = CommonLib.clsMain.ReadExcelFile(_szFileLogFormat, "Item");
+        //}        
 
         private static void ReadDataUseAsync()
         {
@@ -418,8 +446,8 @@ namespace FSSupport
             IAsyncResult resultCuff = getCuff.BeginInvoke(null, null);
 
             // load dữ liệu file log
-            AsyncGetString getL = new AsyncGetString(ReadFileLog);
-            IAsyncResult resultL = getL.BeginInvoke(null, null);
+            //AsyncGetString getL = new AsyncGetString(ReadFileLog);
+           // IAsyncResult resultL = getL.BeginInvoke(null, null);
             
             getM.EndInvoke(resultM);
             getMS.EndInvoke(resultMS);
@@ -436,7 +464,7 @@ namespace FSSupport
             getPendant.EndInvoke(resultPendant);
             getCuff.EndInvoke(resultCuff);
             
-            getL.EndInvoke(resultL);            
+           // getL.EndInvoke(resultL);            
         }
 
         #endregion
@@ -633,8 +661,9 @@ namespace FSSupport
                 {
                     lvTable.SelectedItems[0].Remove();
                 }
-                catch
+                catch(Exception ex)
                 {
+                    clsMain.WriteLog(_szLogFile, ex);
                 }
             }
         }
@@ -895,12 +924,9 @@ namespace FSSupport
             
             txtItemName.Text = cmbItemName.Text.ToString();
             txtImage.Text = strImage;
-
             ShowItemID(strID1, strID2, strID3, strID4, strID5, strID6);
-
             ShowLogItemID();
-            // ShowLogItemName();
-
+            
             // hiển thị hình ảnh
             DisplayImage(txtItemID1.Text, txtItemID2.Text, txtItemID3.Text, txtItemID4.Text, txtItemID5.Text, txtItemID6.Text);
         }
@@ -1162,18 +1188,18 @@ namespace FSSupport
             txtItemIDLog.Text = item.szItemID;
         }
 
-        private void ShowLogItemName()
-        {
-            txtItemIDLog.Text = "";
+        //private void ShowLogItemName()
+        //{
+        //    txtItemIDLog.Text = "";
 
-            // tìm ID theo item name
-            for (int i = 0; i < _dtLogFormat.Rows.Count; i++)
-            {
-                string szItemLogName = _dtLogFormat.Rows[i][1].ToString().ToLower();
-                if (txtItemName.Text.ToLower().Equals(szItemLogName))
-                    txtItemIDLog.Text = _dtLogFormat.Rows[i][0].ToString();
-            }
-        }
+        //    // tìm ID theo item name
+        //    for (int i = 0; i < _dtLogFormat.Rows.Count; i++)
+        //    {
+        //        string szItemLogName = _dtLogFormat.Rows[i][1].ToString().ToLower();
+        //        if (txtItemName.Text.ToLower().Equals(szItemLogName))
+        //            txtItemIDLog.Text = _dtLogFormat.Rows[i][0].ToString();
+        //    }
+        //}
         
         private void DisplayImage(string strID1, string strID2, string strID3, string strID4, string strID5, string strID6)
         {
@@ -1739,12 +1765,12 @@ namespace FSSupport
                 if (lst[0] != null)
                     _szFileItems = lst[0];
 
-                if (lst[1] != null)
-                    _szFileLogFormat = lst[1];
+                //if (lst[1] != null)
+                    //_szFileLogFormat = lst[1];
 
-                if (lst[2] != null)
+                if (lst[1] != null)
                 {
-                    _szFileImage = lst[2];
+                    _szFileImage = lst[1];
                     imgItem.ImageLocation = _szFileImage + "magicscript\\5680.png"; // default
                 }
 
@@ -1986,6 +2012,12 @@ namespace FSSupport
         private void txtItemIDLog_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnEquipOptions_Click(object sender, EventArgs e)
+        {
+            frmOptions frm = new frmOptions();
+            frm.ShowDialog();
         }  
     }
 }

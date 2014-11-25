@@ -74,6 +74,8 @@
             this.txtItemID4 = new System.Windows.Forms.TextBox();
             this.txtItemID5 = new System.Windows.Forms.TextBox();
             this.txtItemID6 = new System.Windows.Forms.TextBox();
+            this.btnEquipOptions = new System.Windows.Forms.Button();
+            this.imgItem = new System.Windows.Forms.PictureBox();
             this.btnAddCustom = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnPath = new System.Windows.Forms.Button();
@@ -81,7 +83,6 @@
             this.btnOutput = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
-            this.imgItem = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgItem)).BeginInit();
@@ -102,6 +103,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(9, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 16);
@@ -124,6 +126,7 @@
             this.groupBox1.Controls.Add(this.rbIBItem);
             this.groupBox1.Controls.Add(this.rbMagicScript);
             this.groupBox1.Controls.Add(this.rbMaterial);
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(12, 78);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(462, 188);
@@ -291,6 +294,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label2.Location = new System.Drawing.Point(508, 138);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 16);
@@ -300,6 +304,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label3.Location = new System.Drawing.Point(517, 81);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 16);
@@ -341,6 +346,7 @@
             // nType
             // 
             this.nType.AutoSize = true;
+            this.nType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.nType.Location = new System.Drawing.Point(514, 110);
             this.nType.Name = "nType";
             this.nType.Size = new System.Drawing.Size(55, 16);
@@ -357,7 +363,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label5.Location = new System.Drawing.Point(506, 26);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 16);
@@ -367,7 +373,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label6.Location = new System.Drawing.Point(474, 166);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(95, 16);
@@ -462,7 +468,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label4.Location = new System.Drawing.Point(501, 194);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 16);
@@ -532,11 +538,32 @@
             this.txtItemID6.Size = new System.Drawing.Size(66, 23);
             this.txtItemID6.TabIndex = 10;
             // 
+            // btnEquipOptions
+            // 
+            this.btnEquipOptions.Image = global::FSSupport.Properties.Resources.Tool2;
+            this.btnEquipOptions.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEquipOptions.Location = new System.Drawing.Point(546, 224);
+            this.btnEquipOptions.Name = "btnEquipOptions";
+            this.btnEquipOptions.Size = new System.Drawing.Size(82, 73);
+            this.btnEquipOptions.TabIndex = 35;
+            this.btnEquipOptions.Text = "Equip Options";
+            this.btnEquipOptions.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEquipOptions.UseVisualStyleBackColor = true;
+            this.btnEquipOptions.Click += new System.EventHandler(this.btnEquipOptions_Click);
+            // 
+            // imgItem
+            // 
+            this.imgItem.Location = new System.Drawing.Point(828, 105);
+            this.imgItem.Name = "imgItem";
+            this.imgItem.Size = new System.Drawing.Size(75, 74);
+            this.imgItem.TabIndex = 34;
+            this.imgItem.TabStop = false;
+            // 
             // btnAddCustom
             // 
             this.btnAddCustom.Image = global::FSSupport.Properties.Resources.add;
             this.btnAddCustom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddCustom.Location = new System.Drawing.Point(629, 224);
+            this.btnAddCustom.Location = new System.Drawing.Point(632, 224);
             this.btnAddCustom.Name = "btnAddCustom";
             this.btnAddCustom.Size = new System.Drawing.Size(83, 34);
             this.btnAddCustom.TabIndex = 33;
@@ -547,9 +574,10 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.ForeColor = System.Drawing.Color.Blue;
             this.btnUpdate.Image = global::FSSupport.Properties.Resources.edit;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(715, 263);
+            this.btnUpdate.Location = new System.Drawing.Point(718, 263);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(83, 34);
             this.btnUpdate.TabIndex = 32;
@@ -562,7 +590,7 @@
             // 
             this.btnPath.Image = global::FSSupport.Properties.Resources.images;
             this.btnPath.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPath.Location = new System.Drawing.Point(715, 224);
+            this.btnPath.Location = new System.Drawing.Point(718, 224);
             this.btnPath.Name = "btnPath";
             this.btnPath.Size = new System.Drawing.Size(83, 34);
             this.btnPath.TabIndex = 31;
@@ -575,9 +603,9 @@
             // 
             this.btnClose.Image = global::FSSupport.Properties.Resources.Close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(885, 224);
+            this.btnClose.Location = new System.Drawing.Point(890, 224);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(83, 73);
+            this.btnClose.Size = new System.Drawing.Size(78, 73);
             this.btnClose.TabIndex = 19;
             this.btnClose.Text = "Close";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -588,7 +616,7 @@
             // 
             this.btnOutput.Image = global::FSSupport.Properties.Resources.output;
             this.btnOutput.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOutput.Location = new System.Drawing.Point(801, 224);
+            this.btnOutput.Location = new System.Drawing.Point(804, 224);
             this.btnOutput.Name = "btnOutput";
             this.btnOutput.Size = new System.Drawing.Size(83, 34);
             this.btnOutput.TabIndex = 18;
@@ -599,9 +627,10 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.ForeColor = System.Drawing.Color.Blue;
             this.btnDelete.Image = global::FSSupport.Properties.Resources.delete;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(800, 263);
+            this.btnDelete.Location = new System.Drawing.Point(803, 263);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(83, 34);
             this.btnDelete.TabIndex = 17;
@@ -612,9 +641,10 @@
             // 
             // btnInsert
             // 
+            this.btnInsert.ForeColor = System.Drawing.Color.Blue;
             this.btnInsert.Image = global::FSSupport.Properties.Resources.insert;
             this.btnInsert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInsert.Location = new System.Drawing.Point(629, 263);
+            this.btnInsert.Location = new System.Drawing.Point(632, 263);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(83, 34);
             this.btnInsert.TabIndex = 16;
@@ -623,19 +653,12 @@
             this.btnInsert.UseVisualStyleBackColor = true;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
-            // imgItem
-            // 
-            this.imgItem.Location = new System.Drawing.Point(828, 105);
-            this.imgItem.Name = "imgItem";
-            this.imgItem.Size = new System.Drawing.Size(75, 74);
-            this.imgItem.TabIndex = 34;
-            this.imgItem.TabStop = false;
-            // 
             // FrmGenItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 689);
+            this.Controls.Add(this.btnEquipOptions);
             this.Controls.Add(this.imgItem);
             this.Controls.Add(this.btnAddCustom);
             this.Controls.Add(this.btnUpdate);
@@ -677,7 +700,7 @@
             this.MinimumSize = new System.Drawing.Size(993, 727);
             this.Name = "FrmGenItems";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FS - Table Support - By ViLH - v1.6";
+            this.Text = "FS - Table - huuvi168@gmail.com - v2.2 - Fix Settings";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmGenItems_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
@@ -744,6 +767,7 @@
         private System.Windows.Forms.Button btnAddCustom;
         private System.Windows.Forms.RadioButton rbCustom;
         private System.Windows.Forms.PictureBox imgItem;
+        private System.Windows.Forms.Button btnEquipOptions;
     }
 }
 
