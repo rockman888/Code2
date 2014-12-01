@@ -22,7 +22,8 @@
  *  + Display log JSON with data from server
  *  + Add Exception WriteLog
  * 
- *
+ * *****************************************************************
+ * v2.3 Fix don't need access GIM Tool get ID log for Special Item
  * 
  * *****************************************************************
  * v2.2
@@ -136,7 +137,7 @@ namespace FSSupport
             InitializeComponent();            
             _dicData = new Dictionary<string, int>();
             _lstColor = new List<int>();
-             _szLogFile = Application.StartupPath + "\\info.log";
+            _szLogFile = Application.StartupPath + "\\info.log";
              
         }        
 
@@ -925,13 +926,16 @@ namespace FSSupport
             txtItemName.Text = cmbItemName.Text.ToString();
             txtImage.Text = strImage;
             ShowItemID(strID1, strID2, strID3, strID4, strID5, strID6);
-            ShowLogItemID();
-            
+
             // hiển thị hình ảnh
             DisplayImage(txtItemID1.Text, txtItemID2.Text, txtItemID3.Text, txtItemID4.Text, txtItemID5.Text, txtItemID6.Text);
+
+            if (rbCustom.Checked == true)   // nếu rbCustom checked thì 
+                return;
+
+            ShowLogItemID();    // skip item in here           
+            
         }
-
-
 
         #endregion
 

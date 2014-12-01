@@ -129,7 +129,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(12, 78);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(462, 188);
+            this.groupBox1.Size = new System.Drawing.Size(462, 189);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Item";
@@ -700,7 +700,7 @@
             this.MinimumSize = new System.Drawing.Size(993, 727);
             this.Name = "FrmGenItems";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FS - Table - huuvi168@gmail.com - v2.2 - Fix Settings";
+            this.Text = "FS - Table - huuvi168@gmail.com - v2.3";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmGenItems_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
