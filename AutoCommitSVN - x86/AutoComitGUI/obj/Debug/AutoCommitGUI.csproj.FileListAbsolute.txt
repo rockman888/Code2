@@ -1,0 +1,15 @@
+E:\GitHub\Code2\AutoCommitSVN\AutoComitGUI\bin\Debug\AutoComitGUI.exe
+E:\GitHub\Code2\AutoCommitSVN\AutoComitGUI\bin\Debug\AutoComitGUI.pdb
+E:\GitHub\Code2\AutoCommitSVN\AutoComitGUI\bin\Debug\SharpSvn.dll
+E:\GitHub\Code2\AutoCommitSVN\AutoComitGUI\bin\Debug\SharpSvn.UI.dll
+E:\GitHub\Code2\AutoCommitSVN\AutoComitGUI\bin\Debug\SharpSvn.pdb
+E:\GitHub\Code2\AutoCommitSVN\AutoComitGUI\bin\Debug\SharpSvn.xml
+E:\GitHub\Code2\AutoCommitSVN\AutoComitGUI\bin\Debug\SharpSvn.UI.pdb
+E:\GitHub\Code2\AutoCommitSVN\AutoComitGUI\bin\Debug\SharpSvn.UI.xml
+E:\GitHub\Code2\AutoCommitSVN\AutoComitGUI\bin\Debug\SharpPlink-x64.svnExe
+E:\GitHub\Code2\AutoCommitSVN\AutoComitGUI\obj\Debug\AutoComitGUI.frmAutoCommit.resources
+E:\GitHub\Code2\AutoCommitSVN\AutoComitGUI\obj\Debug\AutoComitGUI.Properties.Resources.resources
+E:\GitHub\Code2\AutoCommitSVN\AutoComitGUI\obj\Debug\AutoCommitGUI.csproj.GenerateResource.Cache
+E:\GitHub\Code2\AutoCommitSVN\AutoComitGUI\obj\Debug\AutoComitGUI.exe
+E:\GitHub\Code2\AutoCommitSVN\AutoComitGUI\obj\Debug\AutoComitGUI.pdb
+E:\GitHub\Code2\AutoCommitSVN\AutoComitGUI\obj\Debug\AutoCommitGUI.csprojResolveAssemblyReference.cache
