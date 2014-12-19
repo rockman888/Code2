@@ -125,3 +125,108 @@
  * [2014-11-25 15:15:36]: 	json = System.Web.Helpers.DynamicJsonObject
  * [2014-11-25 15:17:35]: 	data = {"1":{"results":[{"ITEM_ID":"MHTT","NAME":"M\u1ea3nh H\u1ed3ng Th\u1ee7y Tinh","PRODUCT_CODE":"FS","ID_INGAME":"3,77,0","TYPE":"1","START_TIME":null,"END_TIME":null},{"ITEM_ID":"LTT","NAME":"Lam Th\u1ee7y Tinh","PRODUCT_CODE":"FS","ID_INGAME":"3,80,0","TYPE":"1","START_TIME":null,"END_TIME":null},{"ITEM_ID":"MLTT","NAME":"M\u1ea3nh Lam Th\u1ee7y Tinh","PRODUCT_CODE":"FS","ID_INGAME":"3,78,0","TYPE":"1","START_TIME":null,"END_TIME":null},{"ITEM_ID":"TTT","NAME":"T\u1eed Th\u1ee7y Tinh","PRODUCT_CODE":"FS","ID_INGAME":"3,1150,0","TYPE":"1","START_TIME":null,"END_TIME":null},{"ITEM_ID":"MTTT","NAME":"M\u00e3nh T\u1eed Th\u1ee7y Tinh","PRODUCT_CODE":"FS","ID_INGAME":"3,1149,0","TYPE":"1","START_TIME":null,"END_TIME":null}],"error":"Duplicate item"},"0":0}
  * [2014-11-25 15:17:38]: 	data = {"1":{"result":{"ITEM_ID":"TCK","NAME":"T\u00fai Ch\u00e2n kh\u00ed","PRODUCT_CODE":"FS","ID_INGAME":"3,1272,0","TYPE":"1","START_TIME":null,"END_TIME":null}},"0":1}
+ * [2014-12-19 15:13:56]: 	data = {"1":{"results":[{"ITEM_ID":"MHTT","NAME":"M\u1ea3nh H\u1ed3ng Th\u1ee7y Tinh","PRODUCT_CODE":"FS","ID_INGAME":"3,77,0","TYPE":"1","START_TIME":null,"END_TIME":null},{"ITEM_ID":"LTT","NAME":"Lam Th\u1ee7y Tinh","PRODUCT_CODE":"FS","ID_INGAME":"3,80,0","TYPE":"1","START_TIME":null,"END_TIME":null},{"ITEM_ID":"MLTT","NAME":"M\u1ea3nh Lam Th\u1ee7y Tinh","PRODUCT_CODE":"FS","ID_INGAME":"3,78,0","TYPE":"1","START_TIME":null,"END_TIME":null},{"ITEM_ID":"TTT","NAME":"T\u1eed Th\u1ee7y Tinh","PRODUCT_CODE":"FS","ID_INGAME":"3,1150,0","TYPE":"1","START_TIME":null,"END_TIME":null},{"ITEM_ID":"MTTT","NAME":"M\u00e3nh T\u1eed Th\u1ee7y Tinh","PRODUCT_CODE":"FS","ID_INGAME":"3,1149,0","TYPE":"1","START_TIME":null,"END_TIME":null}],"error":"Duplicate item"},"0":0}
+ * [2014-12-19 15:14:4]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:14:4]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
+   at CallSite.Target(Closure , CallSite , Object , String )
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191
+ * [2014-12-19 15:16:51]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:16:51]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191
+ * [2014-12-19 15:16:55]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:16:55]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191
+ * [2014-12-19 15:17:2]: 	data = {"1":{"result":{"ITEM_ID":"TT","NAME":"Thi\u00ean Th\u1ea1ch","PRODUCT_CODE":"FS","ID_INGAME":"3,1361,0","TYPE":"2","START_TIME":"2014-11-14 00:00:00","END_TIME":"2014-12-11 00:00:00"}},"0":1}
+ * [2014-12-19 15:17:7]: 	data = {"1":{"result":{"ITEM_ID":"GT","NAME":"G\u01b0\u01a1ng Th\u1ea7n","PRODUCT_CODE":"FS","ID_INGAME":"3,1362,0","TYPE":"2","START_TIME":"2014-11-14 11:00:00","END_TIME":"2014-12-11 00:00:00"}},"0":1}
+ * [2014-12-19 15:17:9]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:17:9]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
+   at CallSite.Target(Closure , CallSite , Object , String )
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191
+ * [2014-12-19 15:17:11]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:17:11]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191
+ * [2014-12-19 15:17:44]: 	data = {"1":{"result":{"ITEM_ID":"GT1","NAME":"G\u0103ng Tay 2014","PRODUCT_CODE":"FS","ID_INGAME":"3,1366,0","TYPE":"2","START_TIME":"2014-12-12 00:00:00","END_TIME":"2015-12-08 23:59:59"}},"0":1}
+ * [2014-12-19 15:17:47]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:17:47]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
+   at CallSite.Target(Closure , CallSite , Object , String )
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191
+ * [2014-12-19 15:18:18]: 	data = {"1":{"result":{"ITEM_ID":"BT","NAME":"B\u00f4ng Tuy\u1ebft 2014","PRODUCT_CODE":"FS","ID_INGAME":"3,1365,0","TYPE":"2","START_TIME":"2014-12-12 00:00:00","END_TIME":"2015-01-08 23:59:59"}},"0":1}
+ * [2014-12-19 15:18:21]: 	data = {"1":{"result":{"ITEM_ID":"HCV","NAME":"Hoa C\u00fac V\u00e0ng","PRODUCT_CODE":"FS","ID_INGAME":"3,1364,0","TYPE":"1","START_TIME":null,"END_TIME":null}},"0":1}
+ * [2014-12-19 15:18:24]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:18:24]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
+   at CallSite.Target(Closure , CallSite , Object , String )
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191
+ * [2014-12-19 15:18:27]: 	data = {"1":{"result":{"ITEM_ID":"GT1","NAME":"G\u0103ng Tay 2014","PRODUCT_CODE":"FS","ID_INGAME":"3,1366,0","TYPE":"2","START_TIME":"2014-12-12 00:00:00","END_TIME":"2015-12-08 23:59:59"}},"0":1}
+ * [2014-12-19 15:18:34]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:18:34]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
+   at CallSite.Target(Closure , CallSite , Object , String )
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191
+ * [2014-12-19 15:18:40]: 	data = {"1":{"result":{"ITEM_ID":"GQGSDB","NAME":"G\u00f3i Qu\u00e0 Gi\u00e1ng Sinh \u0110\u1eb7c Bi\u1ec7t","PRODUCT_CODE":"FS","ID_INGAME":"6,1,6218","TYPE":"2","START_TIME":"2014-12-16 00:00:00","END_TIME":"2015-12-08 23:59:59"}},"0":1}
+ * [2014-12-19 15:18:45]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:18:45]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
+   at CallSite.Target(Closure , CallSite , Object , String )
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191
+ * [2014-12-19 15:20:27]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:20:27]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191
+ * [2014-12-19 15:20:32]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:20:32]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191
+ * [2014-12-19 15:28:17]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:28:17]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191
+ * [2014-12-19 15:28:21]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:28:22]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191
+ * [2014-12-19 15:28:30]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:28:30]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191
+ * [2014-12-19 15:29:50]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:29:51]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191
+ * [2014-12-19 15:29:55]: 	data = {"1":{"result":{"ITEM_ID":"GQGSDB","NAME":"G\u00f3i Qu\u00e0 Gi\u00e1ng Sinh \u0110\u1eb7c Bi\u1ec7t","PRODUCT_CODE":"FS","ID_INGAME":"6,1,6218","TYPE":"2","START_TIME":"2014-12-16 00:00:00","END_TIME":"2015-12-08 23:59:59"}},"0":1}
+ * [2014-12-19 15:30:2]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:30:2]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
+   at CallSite.Target(Closure , CallSite , Object , String )
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191
+ * [2014-12-19 15:30:5]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:30:5]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191
+ * [2014-12-19 15:30:5]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:30:5]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191
+ * [2014-12-19 15:30:7]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:30:7]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191
+ * [2014-12-19 15:30:7]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:30:7]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191
+ * [2014-12-19 15:30:7]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:30:7]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191
+ * [2014-12-19 15:30:8]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:30:8]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191
+ * [2014-12-19 15:30:8]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:30:9]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191
+ * [2014-12-19 15:30:9]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:30:9]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191
+ * [2014-12-19 15:30:9]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:30:9]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191
+ * [2014-12-19 15:30:10]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:30:10]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191
+ * [2014-12-19 15:30:11]: 	data = [0,{"error":"Not item match params"}]
+ * [2014-12-19 15:30:11]: Message = The best overloaded method match for 'System.Web.Helpers.DynamicJsonArray.this[int]' has some invalid arguments; TargetSite = System.Object CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object, System.String); StackTrace =    at CallSite.Target(Closure , CallSite , Object , String )
+   at FSSupport.FrmGenItems.GetInfoItemByName(String name) in e:\Github_2\Code2\FSSupport\FSSupport\frmMain.cs:line 191

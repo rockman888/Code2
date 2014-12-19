@@ -83,6 +83,8 @@
             this.btnOutput = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
+            this.txtScript = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgItem)).BeginInit();
@@ -127,9 +129,9 @@
             this.groupBox1.Controls.Add(this.rbMagicScript);
             this.groupBox1.Controls.Add(this.rbMaterial);
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(12, 78);
+            this.groupBox1.Location = new System.Drawing.Point(12, 110);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(462, 189);
+            this.groupBox1.Size = new System.Drawing.Size(462, 186);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Item";
@@ -333,10 +335,10 @@
             // 
             this.lvTable.AutoArrange = false;
             this.lvTable.FullRowSelect = true;
-            this.lvTable.Location = new System.Drawing.Point(12, 303);
+            this.lvTable.Location = new System.Drawing.Point(12, 302);
             this.lvTable.MultiSelect = false;
             this.lvTable.Name = "lvTable";
-            this.lvTable.Size = new System.Drawing.Size(956, 356);
+            this.lvTable.Size = new System.Drawing.Size(956, 357);
             this.lvTable.TabIndex = 20;
             this.lvTable.UseCompatibleStateImageBehavior = false;
             this.lvTable.View = System.Windows.Forms.View.Details;
@@ -542,7 +544,7 @@
             // 
             this.btnEquipOptions.Image = global::FSSupport.Properties.Resources.Tool2;
             this.btnEquipOptions.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEquipOptions.Location = new System.Drawing.Point(546, 224);
+            this.btnEquipOptions.Location = new System.Drawing.Point(546, 219);
             this.btnEquipOptions.Name = "btnEquipOptions";
             this.btnEquipOptions.Size = new System.Drawing.Size(82, 73);
             this.btnEquipOptions.TabIndex = 35;
@@ -563,7 +565,7 @@
             // 
             this.btnAddCustom.Image = global::FSSupport.Properties.Resources.add;
             this.btnAddCustom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddCustom.Location = new System.Drawing.Point(632, 224);
+            this.btnAddCustom.Location = new System.Drawing.Point(632, 219);
             this.btnAddCustom.Name = "btnAddCustom";
             this.btnAddCustom.Size = new System.Drawing.Size(83, 34);
             this.btnAddCustom.TabIndex = 33;
@@ -577,7 +579,7 @@
             this.btnUpdate.ForeColor = System.Drawing.Color.Blue;
             this.btnUpdate.Image = global::FSSupport.Properties.Resources.edit;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(718, 263);
+            this.btnUpdate.Location = new System.Drawing.Point(718, 258);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(83, 34);
             this.btnUpdate.TabIndex = 32;
@@ -590,7 +592,7 @@
             // 
             this.btnPath.Image = global::FSSupport.Properties.Resources.images;
             this.btnPath.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPath.Location = new System.Drawing.Point(718, 224);
+            this.btnPath.Location = new System.Drawing.Point(718, 219);
             this.btnPath.Name = "btnPath";
             this.btnPath.Size = new System.Drawing.Size(83, 34);
             this.btnPath.TabIndex = 31;
@@ -603,7 +605,7 @@
             // 
             this.btnClose.Image = global::FSSupport.Properties.Resources.Close;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(890, 224);
+            this.btnClose.Location = new System.Drawing.Point(890, 219);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(78, 73);
             this.btnClose.TabIndex = 19;
@@ -616,7 +618,7 @@
             // 
             this.btnOutput.Image = global::FSSupport.Properties.Resources.output;
             this.btnOutput.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOutput.Location = new System.Drawing.Point(804, 224);
+            this.btnOutput.Location = new System.Drawing.Point(804, 219);
             this.btnOutput.Name = "btnOutput";
             this.btnOutput.Size = new System.Drawing.Size(83, 34);
             this.btnOutput.TabIndex = 18;
@@ -630,7 +632,7 @@
             this.btnDelete.ForeColor = System.Drawing.Color.Blue;
             this.btnDelete.Image = global::FSSupport.Properties.Resources.delete;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(803, 263);
+            this.btnDelete.Location = new System.Drawing.Point(803, 258);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(83, 34);
             this.btnDelete.TabIndex = 17;
@@ -644,7 +646,7 @@
             this.btnInsert.ForeColor = System.Drawing.Color.Blue;
             this.btnInsert.Image = global::FSSupport.Properties.Resources.insert;
             this.btnInsert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInsert.Location = new System.Drawing.Point(632, 263);
+            this.btnInsert.Location = new System.Drawing.Point(632, 258);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(83, 34);
             this.btnInsert.TabIndex = 16;
@@ -653,11 +655,30 @@
             this.btnInsert.UseVisualStyleBackColor = true;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
+            // txtScript
+            // 
+            this.txtScript.Location = new System.Drawing.Point(107, 77);
+            this.txtScript.Name = "txtScript";
+            this.txtScript.Size = new System.Drawing.Size(366, 23);
+            this.txtScript.TabIndex = 36;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.label7.Location = new System.Drawing.Point(38, 80);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 16);
+            this.label7.TabIndex = 37;
+            this.label7.Text = "szScript:";
+            // 
             // FrmGenItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 689);
+            this.Controls.Add(this.txtScript);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnEquipOptions);
             this.Controls.Add(this.imgItem);
             this.Controls.Add(this.btnAddCustom);
@@ -768,6 +789,8 @@
         private System.Windows.Forms.RadioButton rbCustom;
         private System.Windows.Forms.PictureBox imgItem;
         private System.Windows.Forms.Button btnEquipOptions;
+        private System.Windows.Forms.TextBox txtScript;
+        private System.Windows.Forms.Label label7;
     }
 }
 

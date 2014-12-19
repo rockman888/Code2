@@ -45,3 +45,16 @@ D:\GitHub\Code2\FSSupport\FSSupport\obj\Release\FSSupport.csproj.GenerateResourc
 D:\GitHub\Code2\FSSupport\FSSupport\obj\Release\FSSupport.exe
 D:\GitHub\Code2\FSSupport\FSSupport\obj\Release\FSSupport.pdb
 D:\GitHub\Code2\FSSupport\FSSupport\obj\Release\FSSupport.frmOptions.resources
+E:\Github_2\Code2\FSSupport\FSSupport\bin\Release\FSSupport.exe.config
+E:\Github_2\Code2\FSSupport\FSSupport\bin\Release\FSSupport.exe
+E:\Github_2\Code2\FSSupport\FSSupport\bin\Release\FSSupport.pdb
+E:\Github_2\Code2\FSSupport\FSSupport\bin\Release\CommonLib.dll
+E:\Github_2\Code2\FSSupport\FSSupport\bin\Release\CommonLib.pdb
+E:\Github_2\Code2\FSSupport\FSSupport\obj\Release\FSSupport.csprojResolveAssemblyReference.cache
+E:\Github_2\Code2\FSSupport\FSSupport\obj\Release\FSSupport.FrmGenItems.resources
+E:\Github_2\Code2\FSSupport\FSSupport\obj\Release\FSSupport.frmOptions.resources
+E:\Github_2\Code2\FSSupport\FSSupport\obj\Release\FSSupport.frmTree.resources
+E:\Github_2\Code2\FSSupport\FSSupport\obj\Release\FSSupport.Properties.Resources.resources
+E:\Github_2\Code2\FSSupport\FSSupport\obj\Release\FSSupport.csproj.GenerateResource.Cache
+E:\Github_2\Code2\FSSupport\FSSupport\obj\Release\FSSupport.exe
+E:\Github_2\Code2\FSSupport\FSSupport\obj\Release\FSSupport.pdb

@@ -783,6 +783,8 @@ namespace FSSupport
                 strID2 = _dtMaterial.Rows[iChoice + iPosStart][2].ToString();
 
                 strImage = _dtMaterial.Rows[iChoice + iPosStart][3].ToString(); // image cột số 4
+
+                
             }
 
             // ------------- KHI CHECK VÀO MAGIC SCRIPT --------------
@@ -794,6 +796,7 @@ namespace FSSupport
                 strID3 = _dtMagicScript.Rows[iChoice + iPosStart][3].ToString();
                 
                 strImage = _dtMagicScript.Rows[iChoice + iPosStart][4].ToString();
+                txtScript.Text = _dtMagicScript.Rows[iChoice + iPosStart][14].ToString();
             }
 
             // ------------- KHI CHECK VÀO IBITEM --------------
@@ -926,7 +929,7 @@ namespace FSSupport
             txtItemName.Text = cmbItemName.Text.ToString();
             txtImage.Text = strImage;
             ShowItemID(strID1, strID2, strID3, strID4, strID5, strID6);
-
+            
             // hiển thị hình ảnh
             DisplayImage(txtItemID1.Text, txtItemID2.Text, txtItemID3.Text, txtItemID4.Text, txtItemID5.Text, txtItemID6.Text);
 
@@ -1614,12 +1617,12 @@ namespace FSSupport
 
         private void btnPath_Click(object sender, EventArgs e)
         {
-            List<int> lst = clsMain.SplitIDItem("6, 1, 256");
-            for (int i = 0; i < lst.Count; i++)
-                MessageBox.Show(lst[i].ToString());
+            //List<int> lst = clsMain.SplitIDItem("6, 1, 256");
+            //for (int i = 0; i < lst.Count; i++)
+            //    MessageBox.Show(lst[i].ToString());
             
-            //frmTree frm = new frmTree();
-            //frm.ShowDialog();
+            frmTree frm = new frmTree();
+            frm.ShowDialog();
             
         }
 
@@ -1769,13 +1772,11 @@ namespace FSSupport
                 if (lst[0] != null)
                     _szFileItems = lst[0];
 
-                //if (lst[1] != null)
-                    //_szFileLogFormat = lst[1];
 
                 if (lst[1] != null)
                 {
                     _szFileImage = lst[1];
-                    imgItem.ImageLocation = _szFileImage + "magicscript\\5680.png"; // default
+                    imgItem.ImageLocation = _szFileImage + "magicscript\\2288.png"; // default
                 }
 
 
