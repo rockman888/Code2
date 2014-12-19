@@ -78,13 +78,13 @@
     <OutputPath>bin\x86\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SharpSvn, Version=1.8009.3299.43, Culture=neutral, PublicKeyToken=d729672594885a28, processorArchitecture=AMD64">
+    <Reference Include="SharpSvn, Version=1.8009.3299.43, Culture=neutral, PublicKeyToken=d729672594885a28, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\Admin\Downloads\SSvn-1.8009.3299.43\SharpSvn\SharpSvn.dll</HintPath>
+      <HintPath>C:\Users\Admin\Downloads\SSvn-1.5005.968\SharpSvn\SharpSvn.dll</HintPath>
     </Reference>
     <Reference Include="SharpSvn.UI, Version=1.8009.3299.43, Culture=neutral, PublicKeyToken=33789aa53ca44aa9, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\Admin\Downloads\SSvn-1.8009.3299.43\SharpSvn\SharpSvn.UI.dll</HintPath>
+      <HintPath>C:\Users\Admin\Downloads\SSvn-1.5005.968\SharpSvn\SharpSvn.UI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

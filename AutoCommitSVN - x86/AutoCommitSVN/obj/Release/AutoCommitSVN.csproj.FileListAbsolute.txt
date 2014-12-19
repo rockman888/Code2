@@ -1,0 +1,12 @@
+E:\GitHub\Code2\AutoCommitSVN\AutoCommitSVN\bin\Release\AutoCommitSVN.exe
+E:\GitHub\Code2\AutoCommitSVN\AutoCommitSVN\bin\Release\AutoCommitSVN.pdb
+E:\GitHub\Code2\AutoCommitSVN\AutoCommitSVN\bin\Release\SharpSvn.dll
+E:\GitHub\Code2\AutoCommitSVN\AutoCommitSVN\bin\Release\SharpSvn.UI.dll
+E:\GitHub\Code2\AutoCommitSVN\AutoCommitSVN\bin\Release\SharpSvn.pdb
+E:\GitHub\Code2\AutoCommitSVN\AutoCommitSVN\bin\Release\SharpSvn.xml
+E:\GitHub\Code2\AutoCommitSVN\AutoCommitSVN\bin\Release\SharpSvn.UI.pdb
+E:\GitHub\Code2\AutoCommitSVN\AutoCommitSVN\bin\Release\SharpSvn.UI.xml
+E:\GitHub\Code2\AutoCommitSVN\AutoCommitSVN\bin\Release\SharpPlink-x64.svnExe
+E:\GitHub\Code2\AutoCommitSVN\AutoCommitSVN\obj\Release\AutoCommitSVN.exe
+E:\GitHub\Code2\AutoCommitSVN\AutoCommitSVN\obj\Release\AutoCommitSVN.pdb
+E:\GitHub\Code2\AutoCommitSVN\AutoCommitSVN\obj\Release\AutoCommitSVN.csprojResolveAssemblyReference.cache

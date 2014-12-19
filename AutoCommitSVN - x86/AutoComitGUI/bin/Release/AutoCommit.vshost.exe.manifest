@@ -50,31 +50,31 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>8GQvWyBAUxdoTlnryTnrnoX3fb8=</dsig:DigestValue>
+        <dsig:DigestValue>8dKUPMDHHK6nC40bJjpWEewAEEU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SharpSvn.dll" size="4766720">
-      <assemblyIdentity name="SharpSvn" version="1.8009.3299.43" publicKeyToken="D729672594885A28" language="neutral" processorArchitecture="x86" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SharpSvn.dll" size="2560000">
+      <assemblyIdentity name="SharpSvn" version="1.5005.968.34986" publicKeyToken="D729672594885A28" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>0M1bfcMiOqcP9avFPnwns8relJQ=</dsig:DigestValue>
+        <dsig:DigestValue>uHs0Ds91r8B0dKTJf7I8UvZhLIs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SharpSvn.UI.dll" size="124416">
-      <assemblyIdentity name="SharpSvn.UI" version="1.8009.3299.43" publicKeyToken="33789AA53CA44AA9" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SharpSvn.UI.dll" size="135168">
+      <assemblyIdentity name="SharpSvn.UI" version="1.5005.968.34986" publicKeyToken="33789AA53CA44AA9" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>yp3e/CWooEZYfd3qVhfyhIFUz7w=</dsig:DigestValue>
+        <dsig:DigestValue>i+8RX1HNirXvJuvXafqyRCdUAW8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
