@@ -1,0 +1,104 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Chọn một trong các màu bên dưới" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView_Red"
+        android:layout_marginLeft="0dp"
+        android:layout_toRightOf="@+id/imageView_Red" >
+
+        <RadioButton
+            android:id="@+id/radio_Red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Red" />
+
+        <RadioButton
+            android:id="@+id/radio_Blue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Blue" />
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/imageView_Red"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"        
+        android:src="@drawable/red" />
+
+    <ImageView
+        android:id="@+id/imageView_Blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/radioGroupColor"
+        android:layout_toLeftOf="@+id/radioGroupColor"
+        android:src="@drawable/blue" />
+
+    <Button
+        android:id="@+id/button_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_below="@+id/seekBar_Style"
+        android:layout_marginTop="18dp"
+        android:onClick="onAgreeButtonClicked"
+        android:layout_centerHorizontal="true"
+        android:text="Đồng ý (同意)" />
+
+    <SeekBar
+        android:id="@+id/seekBar_Style"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioGroupColor"
+        android:layout_below="@+id/textView2"
+                
+        android:layout_centerVertical="true"         
+        android:max="90"
+        android:progress="30"
+        android:secondaryProgress="1" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radioGroupColor"
+        android:layout_marginTop="30dp"        
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="31dp"
+        android:text="Chọn nét vẽ" />
+
+    <EditText
+        android:id="@+id/editView_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/button_confirm"
+        android:ems="10"
+        android:inputType="number"
+        android:maxLength="1"
+        >
+
+        <requestFocus />
+    </EditText>
+
+   
+
+</RelativeLayout>
