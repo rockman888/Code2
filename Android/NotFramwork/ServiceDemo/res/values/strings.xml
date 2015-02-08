@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ServiceDemo</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <string name="local_service_binding"> local service binding </string>
+    <string name="bind_service"> bind </string>
+    <string name="unbind_service"> unbind </string>
+    <string name="play">play</string>
+    
+    <string name="local_service_connected">local service connected</string>
+    <string name="local_service_disconnected">local service disconnected</string>
+
+</resources>
