@@ -1,0 +1,82 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_centerHorizontal="true">
+        
+        
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_title_distance_margin"
+             
+            >          
+            
+                 
+	        <TextView
+	            android:text="Kết quả"
+	            android:gravity="center"
+	            android:textStyle="bold"
+	            android:textColor="#0000ff"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"	            
+	            android:layout_weight="1"	            
+	            />
+            
+        </TableRow>
+        
+        
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_control_distance_margin"
+             >          
+            
+                 
+	        <TextView
+	            android:text="Kết quả:"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" />
+	        
+	        <EditText
+	            
+	            android:id="@+id/et_result"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:hint="kết quả"
+	            android:enabled="false"
+	            
+	            >
+	            
+	         </EditText>
+            
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_control_distance_margin" >
+	        
+            
+            <Button
+                android:layout_weight="1"
+                android:layout_height="wrap_content" 
+                android:layout_width="wrap_content"
+                android:text="Trở lại"
+                android:onClick="backButtonClicked"
+                />
+        </TableRow>
+
+      
+    </TableLayout>
+    
+</RelativeLayout>

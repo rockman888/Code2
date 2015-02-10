@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"    
+    tools:context=".Title" >
+
+    <TextView
+        android:id="@+id/tvIntroduce"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"       
+        android:text="@string/introduce" 
+        android:gravity="center"
+         />
+    
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"        
+        android:textColor="@color/blue"
+        android:text="@string/start"
+        android:layout_marginTop="18dp"        
+        android:background="@drawable/custombutton" />
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/btnInputTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Input Test" />
+    
+</LinearLayout>

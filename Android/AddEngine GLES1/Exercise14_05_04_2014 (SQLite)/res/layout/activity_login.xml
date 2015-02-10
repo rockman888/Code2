@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+ 
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:gravity="center"
+        android:text="Hướng dẫn bởi Luck4m"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold" />
+ 
+    <EditText
+        android:id="@+id/etLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mời nhập tên đăng nhập"/>
+ 
+    <EditText
+        android:id="@+id/etPassword "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mời nhập mật khẩu"/>
+ 
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login" />
+ 
+    <Button
+        android:id="@+id/btnList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View List" />
+ 
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update" />
+ 
+    <TextView
+        android:id="@+id/tvList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+ 
+</LinearLayout> 

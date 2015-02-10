@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="25" height="15" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="LandObject" tilewidth="32" tileheight="32">
+  <image source="tmx/LandObject.png" width="512" height="128"/>
+ </tileset>
+ <tileset firstgid="65" name="Water01" tilewidth="32" tileheight="32">
+  <image source="tmx/Water01.png" width="32" height="32"/>
+  <tile id="0">
+   <properties>
+    <property name="vatcan" value="vatcan"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="66" name="HouseObject" tilewidth="32" tileheight="32">
+  <image source="tmx/HouseObject.png" width="320" height="736"/>
+ </tileset>
+ <layer name="Background" width="25" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NkYGBgHMWjeBSP4lE8rDAABIh4KdwFAAA=
+  </data>
+ </layer>
+ <layer name="Screen" width="25" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC71Uyw7CMAxrD9zhh6HAhefHMbQT8Av7BixtZlGoW9EDlqypSWpnS7shzBgm/oI1uAETuBU1XpNr7q15HsAjeALPmXxf0OBele8dLXbgPuOxjCGs4reW+n4ljwt4NXXEIo60+71PycvCaqm47y+FcZ7eg/GSR+09mFfzZLzFw+MGduA9n/7o8Nni8QCf4Gta+/m0eKjzQqSQn4/SqnnkzhPnoM6a8rD3w3rUerZx1qq7xrjXrPVsY6xVHr5O9dzy3/wH3mUYva7cBQAA
+  </data>
+ </layer>
+ <layer name="Objects" width="25" height="15" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC82UUQoAIQhEu5r3v1Q/C7sM6jy3n4QIM31TSbFei2dMLGRUezLf5VGGY9N4plO1djy3ThiOrfWIBrJXazq9J+eg9/iHQWt94zqfMjJ/ypj0bRenDPfWpH8og/wTlN3dfZVHGdl5Oh232QbGfcMi3AUAAA==
+  </data>
+ </layer>
+</map>

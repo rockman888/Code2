@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+   <item android:id="@+id/google" android:title="google"
+       android:icon="@drawable/google">       
+   </item>
+   
+   <item android:id="@+id/facebook" android:title="facebook" 
+       android:icon="@drawable/facebook">       
+   </item>
+   
+   <item android:id="@+id/androidvn" android:title="android.vn"
+       android:icon="@drawable/androidvn" >       
+   </item>
+   
+   <item android:id="@+id/youtube" android:title="youtube"
+       android:icon="@drawable/youtube" >       
+   </item>
+   
+   <item android:id="@+id/gmail" android:title="gmail"
+       android:icon="@drawable/gmail" >       
+   </item>
+   
+   <item android:id="@+id/about" android:title="about"
+       android:icon="@drawable/ic_launcher" >       
+   </item>
+</menu>
+
+

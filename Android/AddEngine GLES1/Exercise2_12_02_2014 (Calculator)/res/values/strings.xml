@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Calculator</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="ho_ten">Họ Tên:</string>
+    <string name="nam_sinh">Năm Sinh:</string>
+    <string name="gioi_tinh">Giới Tính:</string>
+    <string name="hint">Nhập vào họ tên</string>
+    <string name="nam">nam</string>
+    <string name="nu">nữ</string>
+    <string name="luu_tru">Lưu Trữ</string>
+    
+
+</resources>

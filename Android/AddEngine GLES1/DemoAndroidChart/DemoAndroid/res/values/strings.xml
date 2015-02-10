@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DemoAndroid</string>
+    <string name="parsed_data">http://android.vn\nHướng dẫn bởi thanhlong90.it</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="str_tv_title">Biểu đồ đánh giá</string>
+
+</resources>

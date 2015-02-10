@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Vẽ Tự Do</string>
+    <string name="action_settings">Settings</string>
+    <string name="clear">Xóa</string>     
+    <string name="about">Giới Thiệu</string>
+    <string name="settings">Cấu Hình</string>
+</resources>
+
+
