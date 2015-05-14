@@ -1,0 +1,8 @@
+E:\Github_2\Demo\CSharp\Hello\Hello\bin\Debug\Hello.exe
+E:\Github_2\Demo\CSharp\Hello\Hello\bin\Debug\Hello.pdb
+E:\Github_2\Demo\CSharp\Hello\Hello\obj\Debug\Hello.csprojResolveAssemblyReference.cache
+E:\Github_2\Demo\CSharp\Hello\Hello\obj\Debug\Hello.Form1.resources
+E:\Github_2\Demo\CSharp\Hello\Hello\obj\Debug\Hello.Properties.Resources.resources
+E:\Github_2\Demo\CSharp\Hello\Hello\obj\Debug\Hello.csproj.GenerateResource.Cache
+E:\Github_2\Demo\CSharp\Hello\Hello\obj\Debug\Hello.exe
+E:\Github_2\Demo\CSharp\Hello\Hello\obj\Debug\Hello.pdb

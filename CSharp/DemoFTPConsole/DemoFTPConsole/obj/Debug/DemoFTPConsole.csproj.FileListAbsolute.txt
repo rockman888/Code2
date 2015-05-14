@@ -1,0 +1,5 @@
+E:\Github_2\Demo\CSharp\DemoFTPConsole\DemoFTPConsole\bin\Debug\DemoFTPConsole.exe
+E:\Github_2\Demo\CSharp\DemoFTPConsole\DemoFTPConsole\bin\Debug\DemoFTPConsole.pdb
+E:\Github_2\Demo\CSharp\DemoFTPConsole\DemoFTPConsole\obj\Debug\DemoFTPConsole.csprojResolveAssemblyReference.cache
+E:\Github_2\Demo\CSharp\DemoFTPConsole\DemoFTPConsole\obj\Debug\DemoFTPConsole.exe
+E:\Github_2\Demo\CSharp\DemoFTPConsole\DemoFTPConsole\obj\Debug\DemoFTPConsole.pdb
