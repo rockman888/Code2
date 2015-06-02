@@ -1,0 +1,848 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<GameFunctions>
+	<!-- Conditions Begin -->
+	
+	<GameFunction Name="Xem đẳng cấp" Key="CheckLevel" Type="Condition" Description="Tham số 1:Yêu cầu đạt đến đẳng cấp
+  Tham số 2: Thông tin nhắc nhở
+  Ví dụ: CheckLevel:60,&quot;Yêu cầu đạt cấp 60 mới được&quot; (chưa đạt cấp 60 sẽ quay lại thông tin nhắc nhở)">
+		<Parameter Name="Cấp yêu cầu" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Chưa đạt cấp yêu cầu sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+
+	<GameFunction Name="Kiểm tra cấp thấp hơn" Key="CheckAboveLevel" Type="Condition" Description="Tham số 1: Yêu cầu cấp thấp hơn
+  Tham số 2: Thông tin nhắc nhở
+  Ví dụ: CheckAboveLevel:60,&quot;Cần thấp hơn cấp 60&quot; (Trên cấp 60 sẽ quay về thông tin nhắc nhở)">
+		<Parameter Name="Cấp yêu cầu" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Chưa đạt cấp yêu cầu sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+
+	
+	
+	<GameFunction Name="Xem Uy danh giang hồ" Key="CheckWeiWang" Type="Condition" Description="Tham số 1:Yêu cầu đạt đủ Uy danh giang hồ
+  Tham số 2:Thông tin nhắc nhở
+  Ví dụ: CheckWeiWang:100,&quot;Uy danh giang hồ cần đạt 100 điểm&quot; (phán đoán Uy danh giang hồ đã đạt đủ yêu cầu chưa)">
+		<Parameter Name="Điểm Uy danh giang hồ" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi chưa đạt điểm Uy danh giang hồ sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+
+	<GameFunction Name="Xem ô trống trong túi" Key="CheckFreeBag" Type="Condition" Description="Tham số 1: Cần ô trống trong túi
+  Tham số 2: Thông tin nhắc nhở
+  Ví dụ: CheckFreeBag:2,&quot;Yêu cầu 2 ô trống trong túi&quot; (phán đoán túi có đạt điều kiện yêu cầu không)">
+		<Parameter Name="Số ô trống trong túi" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi túi không đủ trống sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+
+	<GameFunction Name="Xem tích lũy nạp thẻ tháng này" Key="CheckMonthPay" Type="Condition" Description="Tham số 1:Yêu cầu tích lũy nạp thẻ tháng này đạt trị yêu cầu (đơn vị tiền)
+  Tham số 2:Thông tin nhắc nhở  
+  Ví dụ: CheckMonthPay:100,&quot;Tích lũy nạp thẻ tháng này cần đạt 100 đồng&quot; (phán đoán tích lũy nạp thẻ có đạt điều kiện yêu cầu không)">
+		<Parameter Name="Mức tích lũy nạp thẻ tháng này" Description="Đơn vị là đồng" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Nếu chưa đạt đủ tích lũy nạp thẻ tháng này sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+
+	<GameFunction Name="Xem tích lũy nạp thẻ tháng này" Key="CheckMonthPay_VN" Type="Condition" Description="Tham số 1: Yêu cầu mức thẻ nạp trong tháng (đơn vị VND)
+  Tham số 2: Thông tin nhắc nhở  
+  Ví dụ: CheckMonthPay:100, &quot;Tích lũy thẻ nạp trong tháng phải đạt 100 VND&quot; (Phán đoán tích lũy nạp thẻ có đạt yêu cầu không)">
+		<Parameter Name="Mức tích lũy nạp thẻ tháng này" Description="Đơn vị VND" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Nếu chưa đạt đủ tích lũy nạp thẻ tháng này sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+
+	<GameFunction Name="Xem có phải đã kích hoạt tư cách nạp thẻ" Key="CheckPayIsAction" Type="Condition" Description="Kích hoạt lần này sử dụng điểm mở rộng số 2, xin xác nhận trong game chưa sử dụng điểm mở rộng số 2 tiến hành kích hoạt.">
+		<Parameter Name="Bit kích hoạt" Description="1.Sử dụng hoạt động nạp thẻ; 2.Sử dụng nạp thẻ Online; 3.Mỗi ngày nhận kích hoạt Uy danh giang hồ" DefaultValue="2" Regex="^(1|2|3)$" ErrorMessage="Chỉ có thể nhập 1 trong 2 giá trị"/>
+	</GameFunction>
+
+	<GameFunction Name="Kiểm tra điểm vinh dự tài phú" Key="CheckMoneyHonor" Type="Condition" Description="Tham số 1: Điểm vinh dự tài phú
+  Tham số 2: Hiển thị chưa đạt đủ trị số
+  Ví dụ: CheckMoneyHonor:1000,&quot;Điểm tài phú cần đạt 1000 điểm&quot;">
+		<Parameter Name="Điểm tài phú" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi chưa đạt đủ điểm tài phú sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+
+	<GameFunction Name="Xem môn phái" Key="CheckFaction" Type="Condition" Description="Tham số 1: Môn phái (0-- Không; 1-Thiếu Lâm; 2-Thiên Vương; 3-Đường Môn; 4-Ngũ Độc; 5-Nga My; 6-Thúy Yên ;7-Cái Bang; 8-Thiên Nhẫn; 9-Võ Đang; 10-Côn Lôn; 11-Minh giáo; 12-Đại Lý Đoàn Thị; 13-Gia nhập môn phái; 14-Gia nhập môn phái chọn hướng luyện công)
+  Tham số 2: Thông tin nhắc nhở  
+Ví dụ: CheckFaction:1,&quot;Phải là Thiên Vương mới có thể tham gia&quot; (ID môn phái = 1 là Thiên Vương, kiểm tra nhân vật có phải là Thiên Vương không, nếu không sẽ hiển thị nhắc nhở)">
+		<Parameter Name="Môn phái" Description="0-Không; 1-Thiếu Lâm 2-Thiên Vương 3-Đường Môn 4-Ngũ Độc 5-Nga My 6-Thúy Yên 7-Cái Bang 8-Thiên Nhẫn 9-Võ Đang 10-Côn Lôn 11-Minh giáo 12-Đại Lý Đoàn Thị 13-Gia nhập môn phái 14-Gia nhập môn phái chọn hướng luyện công" Regex="^(0|1|2|3|4|5|6|7|8|9|10|11|12|13|14)$" ErrorMessage="Chỉ có thể nhập giá trị từ [0-14]"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi môn phái không phù hợp yêu cầu sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+
+	<GameFunction Name="Xem mở server bao nhiêu ngày" Key="CheckTimeDate" Type="Condition" Description="Tham số 1: số ngày
+  Tham số 2:Thông tin nhắc nhở  
+  Ví dụ: CheckTimeDate:8,&quot;Mở server 8 ngày mới có thể tham gia!&quot; (Hiện tại có phải đã mở Server 8 ngày, nếu chưa đủ sẽ hiển thị nhắc nhở)">
+		<Parameter Name="Số ngày" Description="Số ngày test" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi số ngày mở server không phù hợp sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+
+	<GameFunction Name="Xem hướng luyện môn phái" Key="CheckRoute" Type="Condition" Description="">
+		<Parameter Name="Hướng luyện yêu cầu" Regex="^(0|1|2)$" ErrorMessage="Yêu cầu nhập giá trị 0,1,2" DefaultValue="0" Description="Hướng luyện công tương ứng (
+0: Không hướng
+1: Đao Thiếu Lâm, Thương Thiên Vương, Bẫy Đường Môn, Đao Ngũ Độc, Chưởng Nga Mi, Kiếm Thúy Yên, Chưởng Cái Bang, Chiến Thiên Nhẫn, Khí Võ Đang, Đao Côn Lôn, Chùy Minh giáo, Chỉ Đoàn Thị
+2: Côn Thiếu Lâm, Chùy Thiên Vương, Tụ Tiễn Đường Môn, Chưởng Ngũ Độc, Phụ Trợ Nga Mi, Đao Thúy Yên, Côn Cái Bang, Ma Thiên Nhẫn, Kiếm Võ Đang, Kiếm Côn Lôn, Kiếm Minh giáo, Khí Đoàn Thị)"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Nếu không đạt hướng yêu cầu sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+
+	<GameFunction Name="Xem phe phái" Key="CheckCamp" Type="Condition" Description="Tham số 1: Phe phái(0: Tân thủ; 1: Chính phái; 2: Trung lập; 3: Tà phái)
+  Tham số 2: Thông tin nhắc nhở
+  Ví dụ: CheckCamp:1,&quot;Phải là Chính phái&quot;">
+		<Parameter Name="Phe phái" Description="0-Tân thủ 1-Chính phái 2-Trung lập 3-Tà phái" Regex="^(0|1|2|3)$" ErrorMessage="Chỉ có thể nhập giá trị từ [0-3]."/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi Phe phái không phù hợp yêu cầu sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+
+	<GameFunction Name="Có phải đang ở trong một Gia tộc" Key="CheckInKin" Type="Condition" Description="Phán đoán có phải đang ở trong một Gia tộc, tồn tại trong Gia tộc này thì thông qua, nếu không sẽ không thông qua; Nhiều gia tộc có thể dùng dấu &amp;
+    Cấp độ quyền hạn (0 trừ ra): Nếu điền là quyền hạn 3, tức 1 và 2 thỏa điều kiện):
+    0.Toàn bộ thành viên Gia tộc;
+    1.Tộc trưởng; 
+    2.Phó Tộc trưởng; 
+    3.Thành viên chính thức; 
+    4.Thành viên ký danh;
+    5.Thành viên danh dự;">
+		<Parameter Name="Tên Gia tộc" Description="Có thể nhiều, có thể dùng dấu &amp; để phân cách" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+		<Parameter Name="Cấp độ quyền hạn" Description="Cấp độ quyền hạn (0 trừ ra): Nếu điền là quyền hạn 3 , tức 1 và 2 thỏa điều kiện): 0.Toàn bộ thành viên Gia tộc; 1.Tộc trưởng; 2.Phó Tộc trưởng; 3.Thành viên chính thức; 4.Thành viên ký danh; 5.Thành viên danh dự;" Regex="^(0|1|2|3|4|5)$" ErrorMessage="Chỉ có thể nhập giá trị từ [0-5]"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Hiển thị không không ở trong gia tộc" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+
+	<GameFunction Name="Có phải đang trong Bang hội" Key="CheckInTong" Type="Condition" Description="Phán đoán có phải đang ở trong Bang hội, nếu có tồn tại trong Bang hội này thì thông qua, nếu không sẽ không thông qua, nhiều bang hội có thể sử dụng dấu &amp;
+    Cấp độ quyền hạn (0 trừ ra): Nếu điền là quyền hạn 3 , tức 1 và 2 thỏa điều kiện):
+    0. Toàn bộ thành viên Bang hội;
+    1.Tộc trưởng; 
+    2.Phó Tộc trưởng; 
+    3.Thành viên chính thức; 
+    4.Thành viên ký danh;
+    5.Thành viên danh dự;">
+		<Parameter Name="Tên Bang hội" Description="Có thể nhiều, có thể dùng dấu &amp; để phân cách" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+		<Parameter Name="Cấp độ quyền hạn" Description="Cấp độ quyền hạn (0 trừ ra): Nếu điền là quyền hạn 3 , tức 1 và 2 thỏa điều kiện) :0.Toàn bộ thành viên Bang hội; 1.Tộc trưởng; 2.Phó Tộc trưởng; 3.Thành viên chính thức; 4.Thành viên ký danh; 5.Thành viên danh dự;" Regex="^(0|1|2|3|4|5)$" ErrorMessage="Chỉ có thể nhập giá trị từ [0-5]"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Hiển thị khi không ở trong Bang hội chỉ định" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+
+	<GameFunction Name="Có phải có Gia tộc" Key="CheckHaveKin" Type="Condition" Description="Cấp độ quyền hạn (0 trừ ra): Nếu điền là quyền hạn 3, tức 1 và 2 thỏa điều kiện):
+    0.Toàn bộ thành viên gia tộc;
+    1.Tộc trưởng; 
+    2.Phó Tộc trưởng; 
+    3.Thành viên chính thức; 
+    4.Thành viên ký danh;
+    5.Thành viên danh dự;">
+		<Parameter Name="Cấp độ quyền hạn" Description="Cấp độ quyền hạn (0 trừ ra): Nếu điền là quyền hạn 3 , tức 1 và 2 thỏa điều kiện): 0.Toàn bộ thành viên Gia tộc; 1.Tộc trưởng; 2.Phó Tộc trưởng; 3.Thành viên chính thức; 4.Thành viên ký danh; 5.Thành viên danh dự;" Regex="^(0|1|2|3|4|5)$" ErrorMessage="Chỉ có thể nhập giá trị từ [0-5]"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi không có gia tộc hoặc không đủ quyền hạn sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Có phải có Bang hội" Key="CheckHaveTong" Type="Condition" Description="Cấp độ quyền hạn (0 trừ ra): Nếu điền là quyền hạn 3 , tức 1 và 2 thỏa điều kiện):
+    0.Toàn bộ thành viên bang hội;
+    1.Tộc trưởng; 
+    2.Phó Tộc trưởng; 
+    3.Thành viên chính thức; 
+    4.Thành viên ký danh;
+    5.Thành viên danh dự;">
+		<Parameter Name="Cấp độ quyền hạn" Description="Cấp độ quyền hạn (0 trừ ra): Nếu điền là quyền hạn 3 , tức 1 và 2 thỏa điều kiện) :0.Toàn bộ thành viên Bang hội; 1.Tộc trưởng; 2.Phó Tộc trưởng; 3.Thành viên chính thức; 4.Thành viên ký danh; 5.Thành viên danh dự;" Regex="^(0|1|2|3|4|5)$" ErrorMessage="Chỉ có thể nhập giá trị từ [0-5]"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi không có bang hội hoặc không đủ quyền hạn sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Xem giãn cách thời gian so với lần đăng nhập trước" Key="CheckLoginTimeSpace" Type="Condition" Description="Tham số 1: Số giờ giãn cách;
+Tham số 2: Hiển thị khi không đủ yêu cầu
+  Ví dụ: CheckLoginTimeSpace:10,&quot;Giãn cách thời gian đăng nhập không đủ 10 giờ&quot;">
+		<Parameter Name="Khoảng cách thời gian đăng nhập" Description="Đơn vị là giờ" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi số giờ giãn cách đăng nhập không đủ sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Xem có phải đã kích hoạt nhận Uy danh giang hồ" Key="CheckISCanGetRepute" Type="Condition" Description="Tham số 1:Nhắc nhở khi chưa kích hoạt
+  Ví dụ: &quot;Còn chưa kích hoạt&quot;">
+		<Parameter Name="Thông tin nhắc nhở" Description="Nhắc nhở khi chưa kích hoạt" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra xem ở trong khoảng thời gian nào (giờ)" Key="CheckDisDayTime" Type="Condition" Description="Tham số 1: Thời gian bắt đầu; Tham số 2: Thời gian kết thúc; Ví dụ: CheckDisDayTime:&quot;0930&quot;,&quot;2359&quot;">
+		<Parameter Name="Thời gian bắt đầu" Description="Ví dụ: 0930 biểu thị 9 giờ 30 phút." Regex="^[0-9]{4,4}$" ErrorMessage="Cần nhập 4 số nguyên."/>
+		<Parameter Name="Thời gian kết thúc" Description="Ví dụ: 2359 biểu thị 23 giờ 59 phút." Regex="^[0-9]{4,4}$" ErrorMessage="Cần nhập 4 số nguyên."/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra xem ở trong khoảng thời gian nào (ngày)" Key="CheckDisDayTimeEx" Type="Condition" Description="Tham số 1: Thời gian bắt đầu, tham số 2 là thời gian kết thúc; ví dụ: CheckDisDayTime:&quot;08110930&quot;,&quot;09112359&quot;">
+		<Parameter Name="Thời gian bắt đầu" Description="Ví dụ: 08110930 biểu thị 9:30 ngày 11 tháng 8." Regex="^[0-9]{8,8}$" ErrorMessage="Phải nhập 8 số nguyên."/>
+		<Parameter Name="Thời gian kết thúc" Description="Ví dụ: 09112359 biểu thị 23:59 ngày 11 tháng 9." Regex="^[0-9]{8,8}$" ErrorMessage="Phải nhập 8 số nguyên."/>
+	</GameFunction>
+	
+	<GameFunction Name="Xem giới tính" Key="CheckSex" Type="Condition" Description="Tham số 1: Giới tính yêu cầu (0-Nam, 1-Nữ)
+  Tham số 2:Thông tin nhắc nhở
+  Ví dụ: CheckSex:0,&quot;Phải là hiệp khách (nhân vật Nam) mới có thể nhận&quot; (Nếu là nữ sẽ hiển thị nhắc nhở)">
+		<Parameter Name="Yêu cầu giới tính" Regex="^(0|1)$" ErrorMessage="Phải nhập số nguyên" Description="Giới tính yêu cầu (0-Nam, 1-Nữ)"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Giới tính không phù hợp sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Xem thời gian đăng nhập lần trước" Key="CheckLastLoginDate" Type="Condition" Description="Tham số 1: Thời gian bắt đầu; Tham số 2: Thời gian kết thúc; Tham số 3: Có phải trong khoảng thời gian(0:yêu cầu trong khoảng thời gian, 0:yêu cầu không trong khoảng thời gian) Ví dụ: CheckDisDayTime:&quot;201006080000&quot;,&quot;201006091200&quot;,0,&quot;Đăng nhập lần trước trong khoảng thời gian từ 8/6 đến 12h ngày 09/06 mới có thể tham gia.&quot;">
+		<Parameter Name="Thời gian bắt đầu" Description="Ví dụ: 201006080000 biểu thị 0h 0 phút ngày 06/08/2010" Regex="^[0-9]{12,12}$" ErrorMessage="Cần nhập 12 số nguyên."/>
+		<Parameter Name="Thời gian kết thúc" Description="Ví dụ: 201006080000 biểu thị 0h 0 phút ngày 06/08/2010" Regex="^[0-9]{12,12}$" ErrorMessage="Cần nhập 12 số nguyên."/>
+		<Parameter Name="Có phải trong khoảng thời gian" Description="(0:yêu cầu trong khoảng thời gian, 0:yêu cầu không trong khoảng thời gian)" Regex="^(0|1)$" ErrorMessage="Cần nhập 0 hoặc 1."/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi không đạt yêu cầu sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+
+	<GameFunction Name="Xem số lần nhiệm vụ nghĩa quân (Bao Vạn Đồng)" Key="CheckLinkTaskCount" Type="Condition" Description="Tham số 1: Số lần đạt yêu cầu (Bằng hoặc lớn hơn đều đạt yêu cầu)
+  Tham số 2: Thông tin nhắc nhở
+  Ví dụ: CheckLinkTaskCount:50,&quot;Mỗi ngày cần phải hoàn thành 50 lần nhiệm vụ nghĩa quân mới có thể nhận thưởng&quot;)">
+		<Parameter Name="Số lần đạt yêu cầu" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Chưa đủ số yêu cầu lần này" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+
+	<GameFunction Name="Xem cấp vinh dự" Key="CheckHonorGrade" Type="Condition" Description="Tham số 1: Cấp vinh dự  
+  Tham số 2: Loại so sánh
+  Tham số 3: Nhắc nhở khi chưa đạt số chỉ định
+  Ví dụ:CheckHonorGrade:1,1,&quot;Cấp vinh dự phải đạt cấp 1&quot;">
+		<Parameter Name="Cấp vinh dự" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Loại so sánh" Regex="^(1|2|3)$" Description="1 là lớn hơn hoặc bằng, 2 là bằng, 3 là nhỏ hơn hoặc bằng" ErrorMessage="Cần nhập 1-3 số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi chưa đạt cấp vinh dự sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+
+	<GameFunction Name="Xem cấp Phi phong" Key="CheckMantleLevel" Type="Condition" Description="Tham số 1: Cấp phi phong
+  Tham số 2: Loại so sánh
+  Tham số 3: Nhắc nhở khi chưa đạt số chỉ định
+  Ví dụ:CheckMantleLevel:1,1,&quot;Cấp phi phong phải đạt cấp 1&quot;">
+		<Parameter Name="Cấp Phi phong" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Loại so sánh" Regex="^(1|2|3)$" Description="1 là lớn hơn hoặc bằng, 2 là bằng, 3 là nhỏ hơn hoặc bằng" ErrorMessage="Cần nhập 1-3 số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi cấp phi phong không đủ sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+
+	<GameFunction Name="Kiểm tra cấp quan ấn" Key="CheckChopLevel" Type="Condition" Description="Tham số 1: Trị cấp quan ấn
+  Tham số 2: Nhắc nhở khi chưa đạt đến trị
+  Ví dụ: CheckChopLevel:1, &quot;Cấp quan ấn cần đạt đến cấp Trí Sự&quot;">
+		<Parameter Name="Cấp quan ấn" Regex="^(1|2|3|4|5|6|7|8)$" Description="1: Trí Sự, 2: Tư Mã, 3: Thái Thú, 4: Thiếu Khanh, 5: Thượng Khanh, 6: Quốc Công, 7: Thừa Tướng, 8: Hoàng Đế" ErrorMessage="Phải nhập số nguyên dương từ 1-8"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Hiển thị thông tin này khi chưa đạt đến cấp quan ấn yêu cầu" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+
+	<GameFunction Name="Kiểm tra mặt nạ" Key="CheckMaskType" Type="Condition" Description="Tham số 1: GDPL của mặt nạ
+  Tham số 2: Nhắc nhở khi chưa đạt số chỉ định
+  Ví dụ:CheckChopLevel:&quot;1,13,1,1&quot;,&quot;Bạn không có đeo mặt nạ bé trai vui vẻ&quot;">
+		<Parameter Name="ID vật phẩm" Description="Định dạng g,d,p,l (gdpl đều là số)" Regex="^\d+,\d+,\d+,\d+$" ErrorMessage="Phải đúng định dạng g,d,p,l(gdpl đều là số)" DefaultValue="0,0,0,0"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi chưa đạt đến mặt nạ yêu cầu sẽ hiển thị thông tin này" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+
+	<GameFunction Name="Xem các danh hiệu tự định nghĩa" Key="CheckSpeTitle" Type="Condition" Description="">
+		<Parameter Name="Xưng hiệu" Description="1-16 ký tự" Regex="^.{1,16}$" ErrorMessage="Chỉ có thể nhập từ 1-16 ký tự"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi danh hiệu tự định nghĩa chưa đạt yêu cầu sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+
+	<GameFunction Name="Xem chức vị của nhân vật trong gia tộc" Key="CheckKinLead" Type="Condition" Description="Tham số1: Mã số chức vị
+  Tham số2: Không phải thông tin của chức vị này
+  Ví dụ: CheckKinLead:1,&quot;Bạn không phải Tộc trưởng.&quot;">
+		<Parameter Name="Mã số chức vị" Description="1 Tộc trưởng,2 Phó Tộc trưởng,3 Thành viên chính thức,4 Thành viên ký danh,5 Thành viên vinh dự" Regex="^(|1|2|3|4|5)$" ErrorMessage="Phải nhập 1-5 số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi thành viên gia tộc không phải của chức vị này sẽ hiển thị thông tin này" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+
+	<GameFunction Name="Kiểm tra cơ số thành viên của gia tộc" Key="CheckKinMember" Type="Condition" Description="Tham số1: Số thành viên
+  Tham số2: Thông tin hiển thị số thành viên không đạt
+  Ví dụ:CheckKinMember:20,&quot;Gia tộc của bạn không có nhiều người.&quot;">
+		<Parameter Name="Số thành viên" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi số thành viên gia tộc không đạt yêu cầu sẽ hiện thông tin này" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+
+	<GameFunction Name="Kiểm tra thời gian tích lũy online của nhân vật trong ngày" Key="CheckOnlineTime" Type="Condition" Description="Tham số1: Số giây
+  Tham số2: Thông tin hiển thi khi thời gian không đạt yêu cầu
+  Ví dụ:CheckOnlineTime:300,&quot;Thời gian online hôm nay của bạn không đạt 5 phút.&quot;">
+		<Parameter Name="Số giây online" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi thời gian online tích lũy không đạt sẽ hiển thị thông tin" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+
+	<GameFunction Name="Kiểm tra hôm nay đã tham gia ải gia tộc chưa" Key="CheckTodayJoinKinGame" Type="Condition" Description="Tham số: Thông tin nhắc nhở
+  Ví dụ: CheckTodayJoinKinGame:&quot;Hôm nay không tham gia ải gia tộc&quot; (Phản hồi thông tin nhắc nhở khi chưa tham gia ải gia tộc hôm nay)">
+		<Parameter Name="Thông tin nhắc nhở" Description="Chưa tham gia ải gia tộc hôm nay sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+
+	<GameFunction Name="Kiểm tra thời gian tạo nhân vật" Key="CheckRoleCreateDate" Type="Condition" Description="Tham số1: Thời gian kiểm tra
+  Tham số2: Loại hình kiểm tra
+  Tham số3: Thông tin hiển thị khi không trong thời gian đã chọn
+  Ví dụ:CheckRoleCreateDate:20100901,1,&quot;Nhân vật của bạn không được tạo sau 20100901.&quot;">
+		<Parameter Name="Kiểm tra thời gian" Description="Ngày tháng, định dạng: 20100901" Regex="^[0-9]{8,8}$" ErrorMessage="Phải nhập 8 số nguyên."/>
+		<Parameter Name="Loại hình kiểm tra" Description="1 Sau ngày này,2 Ngày này,3 Trước ngày này" Regex="^(|1|2|3)$" ErrorMessage="Cần nhập 1-3 số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi nhân vật được tạo không đủ thời gian kiểm tra sẽ hiển thị thông tin này" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	
+	<GameFunction Name="Kiểm tra máy có cài phần mềm csm hay không (dùng cho Việt Nam)" Key="CheckExtPoint" Type="Condition" Description="">
+		<Parameter Name="Thông tin nhắc nhở" Description="Hiển thị thông tin này khi chưa cài đặt phần mềm csm" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra xem người chơi có đủ điểm nạp thẻ không" Key="CheckPayCardValue" Type="Condition" Description="Tham số 1: Cần phải đạt điểm nạp thẻ đúng yêu cầu
+  Tham số 2: Nhắc nhở không đạt yêu cầu
+  Ví dụ: CheckPayCardValue:10,&quot;Điểm nạp thẻ còn lại của bạn chưa đủ 10&quot; (Khi điểm nạp thẻ được lưu lại của người chơi hiện tại không đủ 10 điểm)">
+		<Parameter Name="Điểm nạp thẻ theo yêu cầu" Description="1: Đã đạt đến điểm nạp thẻ này chưa" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi chưa thỏa điều kiện sẽ hiển thị thông tin này" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Phán đoán khoảng cách ngày" Key="CheckWeekEx" Type="Condition" Description="">
+		<Parameter Name="Bắt đầu số ngày" Description="1 đến 7 tương ứng thứ hai đến chủ nhật" Regex="^(0|1|2|3|4|5|6|7)$" ErrorMessage="Chỉ được nhập số nguyên dương từ 1 - 7!"/>
+		<Parameter Name="Kết thúc số ngày" Description="1 đến 7 tương ứng thứ hai đến chủ nhật" Regex="^(0|1|2|3|4|5|6|7)$" ErrorMessage="Chỉ được nhập số nguyên dương từ 1 - 7!"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Hiển thị thông tin này khi thời gian hiện tại không nằm trong khoảng thời gian này" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra số lần tham gia hoặc hoàn thành hoạt động của người chơi trong ngày" Key="CheckEventTimes" Type="Condition" Description="">
+		<Parameter Name="Loại hoạt động" Description="
+1:Tham gia Mông Cổ Tây Hạ
+                                     2:Tham gia bạch hổ đường
+                                     3:Vượt qua bạch hổ đường
+                                     4:Hoàn thành nhiệm vụ truy nã
+                                     5:Tham gia quân doanh
+                                     6:Thành công vượt qua quân doanh
+                                     7:Tham gia Tiêu Dao Cốc
+                                     8:Tham gia Du Long Các
+                                     9:Tiêu diệt boss đạo tặc
+                                     10:Tiêu diệt boss thế giới
+                                     11:Tiêu diệt boss Tần Lăng" Regex="^(1|2|3|4|5|6|7|8|9|10|11)$" ErrorMessage="Phải nhập số nguyên dương từ 1-11!"/>
+		<Parameter Name="Số lần yêu cầu" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Loại so sánh" Description="1: Nhỏ hơn hoặc bằng 2: Bằng 3: Lớn hơn hoặc bằng" Regex="^(1|2|3)$" ErrorMessage="Please input the digit between 1~3!"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi chưa thỏa điều kiện sẽ hiển thị thông tin này" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra số lần tham gia hoặc hoàn thành hoạt động của người chơi trong ngày" Key="CheckJoinEvent" Type="Condition" Description="">
+		<Parameter Name="Loại hoạt động" Description="1: Vượt ải gia tộc chưa" Regex="^(1)$" ErrorMessage="Chỉ được nhập 1!"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi chưa thỏa điều kiện sẽ hiển thị thông tin này" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra người chơi đã tham gia đủ số trận Mông Cổ Tây Hạ chỉ định chưa" Key="CheckSongJinBattleCount" Type="Condition" Description="Tham số 1: Yêu cầu số trận Mông Cổ Tây Hạ tối thiểu
+  Tham số 2: Nhắc nhở khi không đạt yêu cầu
+  Ví dụ: CheckSongJinBattleCount:1,&quot;Số lần tham gia không đạt yêu cầu&quot; (Phản hồi thông tin nhắc nhở khi số lần tham gia của người chơi không đạt yêu cầu)">
+		<Parameter Name="Yêu cầu số trận tối thiểu" Description="Số trận Mông Cổ Tây Hạ tối thiểu được nhận thưởng" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi số trận không đạt yêu cầu sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra vật phẩm trong túi người chơi" Key="CheckItemInBag" Type="Condition" Description="Tham số 1: ID vật phẩm
+  Tham số 2: Số lượng
+  Tham số 3: So sánh loại hình (0 là nhỏ hơn, 1 là lớn hơn hoặc bằng)
+  Tham số 4: Nhắc nhở khi không đạt yêu cầu
+  Ví dụ: CheckItemInBag:&quot;18,1,1,1&quot;, 5, 1,&quot;Túi của bạn không có 5 Huyền tinh cấp 1&quot;">
+		<Parameter Name="ID vật phẩm" Description="Định dạng g,d,p,l (gdpl đều là số)" Regex="^\d+,\d+,\d+,\d+$" ErrorMessage="Phải đúng định dạng g,d,p,l(gdpl đều là số)" DefaultValue="0,0,0,0"/>
+		<Parameter Name="Số lượng" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Loại so sánh" Description=" 0 biểu thị lớn hơn hoặc bằng, 1 biểu thị nhỏ hơn" Regex="^0|1*$" ErrorMessage="Chỉ có thể nhập 0 or 1"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Hiển thị thông tin này khi người chơi không phù hợp điều kiện" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra vật phẩm trong túi và trong kho của người chơi" Key="CheckItemInAll" Type="Condition" Description="Tham số 1: ID vật phẩm
+  Tham số 2: Số lượng
+  Tham số 3: So sánh loại hình (0 là nhỏ hơn, 1 là lớn hơn hoặc bằng)
+  Tham số 4: Nhắc nhở khi không đạt yêu cầu
+  Ví dụ: CheckItemInAll:&quot;18,1,1,1&quot;, 5, 1,&quot;Túi của bạn không có 5 Huyền tinh cấp 1&quot;">
+		<Parameter Name="ID vật phẩm" Description="Định dạng g,d,p,l (gdpl đều là số)" Regex="^\d+,\d+,\d+,\d+$" ErrorMessage="Phải đúng định dạng g,d,p,l(gdpl đều là số)" DefaultValue="0,0,0,0"/>
+		<Parameter Name="Số lượng" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Loại so sánh" Description=" 0 biểu thị lớn hơn hoặc bằng, 1 biểu thị nhỏ hơn" Regex="^0|1*$" ErrorMessage="Chỉ có thể nhập 0 or 1"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Hiển thị thông tin này khi người chơi không phù hợp điều kiện" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra xung quanh có npc chỉ định hay không" Key="CheckNpcAtNear" Type="Condition" Description="Tham số 1: NpcID
+  Tham số 2: Có kiểm tra thuộc về bản thân hay không (0 không kiểm tra, 1 kiểm tra)
+  Tham số 3: Nhắc nhở khi không đạt yêu cầu
+  Ví dụ: CheckNpcAtNear:&quot;2411&quot;, 1&quot;Xung quanh không có npc của bạn&quot;">
+		<Parameter Name="NpcID" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Có kiểm tra thuộc về bản thân hay không" Description=" 0 biểu thị không kiểm tra, 1 biểu thị kiểm tra" Regex="^0|1*$" ErrorMessage="Chỉ có thể nhập 0 or 1"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Hiển thị thông tin này khi người chơi không phù hợp điều kiện" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra npc đối thoại có thuộc về bản thân không" Key="CheckNpcIsBeLongMe" Type="Condition" Description="Tham số 1: Nhắc nhở khi không đạt yêu cầu
+  Ví dụ: CheckNpcIsBeLongMe:&quot;Npc này không thuộc về bạn&quot;">
+		<Parameter Name="Thông tin nhắc nhở" Description="Hiển thị thông tin này khi người chơi không phù hợp điều kiện" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra người chơi server con" Key="CheckIsSubPlayer" Type="Condition" Description="Tham số 1: Loại phán đoán (0, không phải người chơi server con; 1, phải là người chơi server con mới phù hợp điều kiện)
+  Tham số 2: Khi không đủ điều kiện sẽ được nhắc nhở
+  Định nghĩa người chơi server con: Vì gộp server, người chơi qua từ những server khác đều thuộc người chơi server con, biểu tượng người chơi server con được bắt đầu tính từ khi gộp server, chỉ có thời hạn trong 10 ngày.">
+		<Parameter Name="Loại phán đoán" Description="0 không cần người chơi server con, 1 phải là người chơi server con" Regex="^0|1*$" ErrorMessage="Chỉ có thể nhập 0 or 1"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Hiển thị thông tin này khi người chơi không phù hợp điều kiện" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra xếp hạng Tiêu Dao Cốc" Key="CheckXoYoGameGrade" Type="Condition" Description="Tham số 1: Độ khó
+  Tham số 2: Cấp so sánh
+  Tham số 3: Loại so sánh (1 là nhỏ hơn hoặc bằng, 2 là bằng)
+  Tham số 4: Nhắc nhở khi chưa thỏa điều kiện
+  Ví dụ:CheckXoYoGameGrade:1, 2, 1,&quot;Bạn không thuộc top 2 Tiêu Dao Cốc.&quot;">
+		<Parameter Name="Độ khó" Description="1. Bình thường; 2. Độ khó 2; 3. Khó; 4. Độ khó 4; 5. Truyền thuyết" Regex="^(1|2|3|4|5)$" ErrorMessage="Chỉ có thể nhập vào số nguyên dương 1-5"/>
+		<Parameter Name="Cấp so sánh" Regex="^(1|2|3|4|5|6|7|8|9|10)$" ErrorMessage="Phải nhập vào số nguyên dương 1-10"/>
+		<Parameter Name="Loại so sánh" Description="1 là nhỏ hơn hoặc bằng, 2 là bằng" Regex="^(1|2)$" ErrorMessage="Chỉ có thể nhập vào 1 or 2"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Hiển thị thông tin này khi người chơi không phù hợp điều kiện" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra xem người chơi có tham gia hoạt động Đoán Hoa Đăng trong ngày hay không (phiên bản Đài Loan)" Key="CheckDailyJoinGuessGame" Type="Condition" Description="Tham số 1: Nhắc nhở không phù hợp yêu cầu
+  Thuyết minh: Chỉ cần Đoán Hoa Đăng và nhận phần thưởng thì xem như có tham gia
+  Ví dụ: CheckDailyJoinGuessGame:&quot;Hôm nay bạn chưa tham gia hoạt động Đoán Hoa Đăng&quot; (Người chơi không tham gia Đoán Hoa Đăng)">
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi người chơi không tham gia hoạt động Đoán Hoa Đăng thì sẽ hiển thị thông tin này" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra xem số lần người chơi tham gia Bạch Hổ Đường trong ngày (phiên bản Đài Loan)" Key="CheckDailyJoinBaiHuTangCount" Type="Condition" Description="Tham số 1: Số lần tham gia Bạch Hổ Đường đạt yêu cầu
+  Tham số 2: Nhắc nhở không phù hợp yêu cầu
+  Thuyết minh: Chỉ cần đạt yêu cầu tầng 2 thì xem như có tham gia Bạch Hổ Đường 1 lần 
+  Ví dụ: CheckDailyJoinBaiHuTangCount:1,&quot;Số lần tham gia của bạn không phù hợp&quot; (Số lần tham gia của người chơi không phù hợp yêu cầu sẽ quay lại tin nhắc nhở)">
+		<Parameter Name="Yêu cầu số trận tối thiểu" Description="Số lần tối thiểu nhận Phần thưởng Bạch Hổ Đường" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi số lần tham gia của người chơi không phù hợp yêu cầu sẽ hiển thị thông tin này." Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra xem người chơi có tham gia Thi đấu môn phái không (phiên bản Đài Loan)" Key="CheckDailyJoinMenPaiJingJi" Type="Condition" Description="Tham số 1: Nhắc nhở không phù hợp yêu cầu
+  Thuyết minh: Chỉ cần vào được vòng đầu tiên hỗn chiến thì xem như có tham gia Thi đấu môn phái
+  Ví dụ: CheckDailyJoinMenPaiJingJi:&quot;Bạn không có tham gia Thi đấu môn phái trong ngày&quot; (Người chơi không tham gia Thi đấu môn phái sẽ quay lại tin nhắc nhở)">
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi người chơi không tham gia Thi đấu môn phái sẽ hiển thị thông tin này" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra xem người chơi tham gia mấy lần Nhiệm vụ quân doanh trong ngày (phiên bản Đài Loan)" Key="CheckDailyJoinArmyCampCount" Type="Condition" Description="Tham số 1: Yêu cầu số lần tham gia Nhiệm vụ quân doanh tối thiểu
+  Tham số 2: Nhắc nhở không phù hợp yêu cầu
+  Thuyết minh: Chỉ cần hoàn thành Nhiệm vụ quân doanh thì xem như có tham gia 1 lần
+  Ví dụ: CheckDailyJoinArmyCampCount:1,&quot;Số lần tham gia của bạn không đạt yêu cầu&quot; (Số lần tham gia của người chơi không đạt yêu cầu quay lại tin nhắc nhở)">
+		<Parameter Name="Yêu cầu số lần tối thiểu" Description="Số lần tối thiểu nhận được phần thưởng Nhiệm vụ quân doanh" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi số lần tham gia của người chơi không phù hợp yêu cầu sẽ hiển thị thông tin này." Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra xem người chơi trong ngày có tham gia Tiêu Dao Cốc hay không (phiên bản Đài Loan)" Key="CheckDailyJoinXoyoGame" Type="Condition" Description="Tham số 1: Nhắc nhở không phù hợp yêu cầu
+  Thuyết minh: Phải thông qua ải 3 mới được tính hoàn thành
+  Ví dụ: CheckDailyJoinXoyoGame:&quot;Bạn không có tham gia Tiêu Dao Cốc&quot; (Người chơi không đạt yêu cầu quay lại tin nhắc nhở)">
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi người chơi không thỏa điều kiện sẽ hiển thị thông tin này" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra xem người chơi có tham gia Lãnh thổ chiến trong ngày hay không (phiên bản Đài Loan)" Key="CheckDailyJoinLingTuBattle" Type="Condition" Description="Tham số 1: Nhắc nhở không phù hợp yêu cầu
+  Thuyết minh: Chỉ khi điểm tích lũy đạt 800 điểm mới xem là có tham gia Lãnh thổ chiến 
+  Ví dụ: CheckDailyJoinLingTuBattle:&quot;Bạn không tham gia Lãnh thổ chiến trong ngày&quot; (Người chơi không đạt yêu cầu quay lại tin nhắc nhở)">
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi người chơi không thỏa điều kiện sẽ hiển thị thông tin này" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra số lần tham gia Võ lâm liên đấu của người chơi (phiên bản Đài Loan)" Key="CheckDailyJoinWllsCount" Type="Condition" Description="Tham số 1: Yêu cầu số lần tham gia Võ lâm liên đấu tối thiểu
+  Tham số 2: Nhắc nhở không phù hợp yêu cầu
+  Thuyết minh: Chỉ cần vào trận đấu thì xem như có tham gia Liên đấu 1 lần
+  Ví dụ: CheckDailyJoinWllsCount:1,&quot;Số lần tham gia của bạn không đạt yêu cầu&quot; (Số lần tham gia của người chơi không thỏa điều kiện quay lại tin nhắc nhở)">
+		<Parameter Name="Yêu cầu số trận tối thiểu" Description="Số lần tối thiểu nhận phần thưởng Võ lâm liên đấu" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi số trận không đạt yêu cầu sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra xem số lần người chơi tham gia Võ lâm liên đấu trong tháng (phiên bản Đài Loan)" Key="CheckMonthJoinWllsCount" Type="Condition" Description="Tham số 1: Yêu cầu số lần tối thiểu tham gia Võ lâm liên đấu
+  Tham số 2: Nhắc nhở không phù hợp yêu cầu
+  Thuyết minh: Chỉ cần vào trận đấu thì xem như có tham gia Liên đấu 1 lần
+  Ví dụ: CheckMonthJoinWllsCount:1,&quot;Số trận đấu của bạn không phù hợp yêu cầu&quot; (Số trận đấu người chơi tham gia không thỏa điều kiện quay lại tin nhắc nhở)">
+		<Parameter Name="Yêu cầu số trận tối thiểu" Description="Số trận Mông Cổ Tây Hạ tối thiểu được nhận thưởng" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi số trận không đạt yêu cầu sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra điểm tích lũy mà người chơi nhận được trong tháng khi tham gia Võ lâm liên đấu (phiên bản Đài Loan)" Key="CheckMonthJoinWllsPoint" Type="Condition" Description="Tham số 1: Điểm tích lũy Võ lâm liên đấu trong tháng
+  Tham số 2: Nhắc nhở không phù hợp yêu cầu
+  Thuyết minh: Điểm tích lũy này là điểm tích lũy chiến đội trong tháng
+  Ví dụ: CheckMonthJoinWllsPoint:1,&quot;Điểm tích lũy liên đấu của bạn không đủ&quot; (Số trận thi đấu hiện tại của người chơi không thỏa điều kiện quay lại tin nhắc nhở)">
+		<Parameter Name="Yêu cầu điểm tích lũy tối thiểu" Description="Tích lũy tối thiểu để nhận phần thưởng Liên đấu trong tháng" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi điểm tích lũy của người chơi không thỏa điều kiện sẽ hiển thị thông tin này" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra xem số lần Thi đấu gia tộc của người chơi trong ngày (phiên bản Đài Loan)" Key="CheckDailyJoinJiaZuJIngjiCount" Type="Condition" Description="Tham số 1: Yêu cầu số lần tối thiểu tham gia Thi đấu gia tộc trong ngày
+  Tham số 2: Nhắc nhở không phù hợp yêu cầu
+  Thuyết minh: Vào trận thi đấu thì xem như có tham gia Thi đấu gia tộc 1 lần
+  Ví dụ: CheckDailyJoinJiaZuJIngjiCount:1,&quot;Số trận đấu của bạn không thỏa yêu cầu&quot; (Số trận đấu hiện tại của người chơi không thỏa điều kiện quay lại tin nhắc nhở)">
+		<Parameter Name="Yêu cầu số trận tối thiểu" Description="Số trận đấu tối thiểu để nhận phần thưởng Thi đấu gia tộc" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi số trận không đạt yêu cầu sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra xem số lần người chơi tham gia Thi đấu gia tộc trong tháng (phiên bản Đài Loan)" Key="CheckMonthJoinJiaZuJIngjiCount" Type="Condition" Description="Tham số 1: Yêu cầu số lần tối thiểu Thi đấu gia tộc trong tháng
+  Tham số 2: Nhắc nhở không phù hợp yêu cầu
+  Thuyết minh: Vào trận thi đấu thì xem như có tham gia Thi đấu gia tộc 1 lần
+  Ví dụ: CheckMonthJoinJiaZuJIngjiCount:1,&quot;Số trận đấu của bạn không đạt yêu cầu&quot; (Số trận đấu hiện tại của người chơi không thỏa điều kiện quay lại tin nhắc nhở)">
+		<Parameter Name="Yêu cầu số trận tối thiểu" Description="Số trận đấu tối thiểu để nhận phần thưởng Thi đấu gia tộc trong tháng" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi số trận không đạt yêu cầu sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra điểm tích lũy Thi đấu gia tộc của người chơi trong tháng (phiên bản Đài Loan)" Key="CheckMonthJoinJiaZuJingjiPoint" Type="Condition" Description="Tham số 1: Điểm tích lũy tham gia Thi đấu gia tộc trong tháng
+  Tham số 2: Nhắc nhở không phù hợp yêu cầu
+  Thuyết minh: Chủ yếu là điểm tích lũy của trận cá nhân
+  Ví dụ: CheckMonthJoinJiaZuJingjiPoint:1,&quot;Điểm tích lũy của bạn không đạt yêu cầu&quot; (Số trận đấu hiện tại của người chơi không thỏa điều kiện quay lại tin nhắc nhở)">
+		<Parameter Name="Yêu cầu điểm tích lũy tối thiểu" Description="Điểm tích lũy tối thiểu để nhận phần thưởng Thi đấu gia tộc" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi điểm tích lũy của người chơi không thỏa điều kiện sẽ hiển thị thông tin này" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra xem người chơi tuần này đã hoàn thành nhiệm vụ thương hội chưa" Key="CheckWeeklyMerchant" Type="Condition" Description="Tham số 1: Nhắc nhở không phù hợp yêu cầu
+  Thuyết minh: Trong tuần chỉ cần hoàn thành nhiệm vụ 1 lần, không cần biết là nhận khi nào
+  Ví dụ: CheckWeeklyMerchant:&quot;Tuần này vẫn chưa hoàn thành nhiệm vụ thương hội.&quot;">
+		<Parameter Name="Thông tin nhắc nhở" Description="Hiển thị thông tin này khi người chơi không phù hợp điều kiện" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra điểm tích lũy tính năng Mông Cổ Tây Hạ cao nhất trong ngày của người chơi" Key="CheckDailySongJinScores" Type="Condition" Description="Tham số 1: Điểm tích lũy yêu cầu
+  Tham số 2: Nhắc nhở không đạt yêu cầu
+  Thuyết minh: Điểm tích lũy nhận được trong một trận thi đấu
+  Ví dụ: CheckDailyJoinWllsCount:1,&quot;Điểm tích lũy không đạt yêu cầu&quot; (Khi điểm tích lũy của người chơi không thỏa điều kiện sẽ trở về tin nhắc nhở)">
+		<Parameter Name="Yêu cầu điểm tích lũy tối thiểu" Description="Tích lũy tính năng Mông Cổ Tây Hạ cao nhất trong ngày" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi điểm tích lũy của người chơi không thỏa điều kiện sẽ hiển thị thông tin này" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Xem bảng xếp hạng (Cổ điển)" Key="CheckLadderRank" Type="Condition" Description="Tham số 1: Loại lớn, Loại nhỏ, Phân loại (Dấu phẩy dùng cách ra tương ứng setting\player\ladderid.txt dòng HUGE_ID, MID_ID, SMALL_ID. Loại lớn được xếp theo thứ tự tăng dần từ trái sang phải)
+  Tham số 2: Hạng so sánh
+  Tham số 3: Loại so sánh (1: Nhỏ hơn hoặc bằng, 2: Bằng, 3: Lớn hơn hoặc bằng)
+  Tham số 4: Thông tin nhắc nhở
+  Ví dụ: Xem bảng xếp hạng (Cổ điển): 6,1,0 2 1 &quot;Bạn không nằm trong 2 thứ hạng đầu của Bảng xếp hạng Tài Phú.&quot;">
+		<Parameter Name="Loại lớn, Loại nhỏ, Phân loại" Description="(Dấu phẩy dùng cách ra tương ứng setting\player\ladderid.txt dòng HUGE_ID, MID_ID, SMALL_ID. Loại lớn được xếp theo thứ tự tăng dần từ trái sang phải)" Regex="^\d+,\d+,\d+$" ErrorMessage="Phải đúng định dạng Loại lớn, Loại nhỏ, Phân loại (Đều là số)" DefaultValue="0,0,0"/>
+		<Parameter Name="Hạng so sánh" Description="" Regex="^(1|2|3|4|5|6|7|8|9|10)$" ErrorMessage="Phải nhập vào số nguyên dương 1-10"/>
+		<Parameter Name="Loại so sánh" Description="(1: Nhỏ hơn hoặc bằng, 2: Bằng, 3: Lớn hơn hoặc bằng)" Regex="^(1|2|3)$" ErrorMessage="Chỉ có thể nhập 1 hoặc 2 hoặc 3"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Hiển thị thông tin này khi người chơi không phù hợp điều kiện" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Xem bảng xếp hạng (Liệt kê)" Key="CheckHonorRank" Type="Condition" Description="Tham số 1: Loại lớn, Loại nhỏ, Phân loại (Dấu phẩy dùng cách ra tương ứng setting\player\ladderid.txt dòng HUGE_ID, MID_ID, SMALL_ID. Loại lớn được xếp theo thứ tự tăng dần từ trái sang phải)
+  Tham số 2: Hạng so sánh
+  Tham số 3: Loại so sánh (1: Nhỏ hơn hoặc bằng, 2: Bằng, 3: Lớn hơn hoặc bằng)
+  Tham số 4: Thông tin nhắc nhở
+  Ví dụ: Xem bảng xếp hạng (Liệt kê): 6,1,0 2 1 &quot;Bạn không nằm trong 2 thứ hạng đầu của Bảng xếp hạng Tài Phú.&quot;">
+		<Parameter Name="Loại lớn, Loại nhỏ, Phân loại" Description="(Dấu phẩy dùng cách ra tương ứng setting\player\ladderid.txt dòng HUGE_ID, MID_ID, SMALL_ID. Loại lớn được xếp theo thứ tự tăng dần từ trái sang phải)" Regex="^\d+,\d+,\d+$" ErrorMessage="Phải đúng định dạng Loại lớn, Loại nhỏ, Phân loại (Đều là số)" DefaultValue="0,0,0"/>
+		<Parameter Name="Hạng so sánh" Description="" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Loại so sánh" Description="(1: Nhỏ hơn hoặc bằng, 2: Bằng, 3: Lớn hơn hoặc bằng)" Regex="^(1|2|3)$" ErrorMessage="Chỉ có thể nhập 1 hoặc 2 hoặc 3"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Hiển thị thông tin này khi người chơi không phù hợp điều kiện" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Tự định nghĩa điều kiện" Key="CheckLuaScript" Type="Condition" Description="Tham số 1: Tự định nghĩa Script">
+		<Parameter Name="Tự định nghĩa Script" Description="Trả về trị nFlag(0 thông qua or 1 không thông qua), szErrorMsg(Nhắc nhở không thông qua)" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Kiểm tra điểm phúc duyên" Key="CheckMonthlyEventScore" Type="Condition" Description="Tham số 1: Điểm phúc duyên cần
+  Tham số 2: Tin nhắc nhở chưa đạt yêu cầu
+  Ví dụ: CheckMonthlyEventScore:20,&quot;Rất tiếc, phúc duyên không đủ 20.&quot;">
+		<Parameter Name="Điểm phúc duyên cần" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi chưa thỏa điều kiện sẽ hiện thông tin này" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="检查当前可扣除经验值" Key="CheckReduceExp" Type="Condition" Description="参数1:所需经验值
+  参数2:没有达到要求的提示信息
+  例子:CheckReduceExp:20,&quot;对不起，你的经验值不足20。&quot;
+  ">
+		<Parameter Name="所需经验值" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Khi chưa thỏa điều kiện sẽ hiện thông tin này" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<!-- Conditions End -->
+	<!-- Rewards Begin -->
+	<GameFunction Name="Tăng đồng khóa" Key="AddBindCoin" Type="Reward" Description="Tham số1: Số lượng đồng khóa">
+		<Parameter Name="Số lượng đồng khóa" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Tăng bạc khóa" Key="AddBindMoney" Type="Reward" Description="Tham số1: Số lượng bạc khóa">
+		<Parameter Name="Số lượng bạc khóa" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Tăng bạc" Key="AddMoney" Type="Reward" Description="Tham số1: Số lượng bạc">
+		<Parameter Name="Số lượng bạc" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Thêm cấp" Key="AddLevel" Type="Reward" Description="Tham số 1: Cấp thêm">
+		<Parameter Name="Cấp thêm" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Khấu trừ cấp" Key="DecLevel" Type="Reward" Description="Tham số 1: Khấu trừ cấp">
+		<Parameter Name="Khấu trừ cấp" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Vật phẩm nhận được" Key="AddItem" Type="Reward" Description="Tham số1: G,D,P,L của vật phẩm
+Tham số2: Số lượng yêu cầu
+Tham số3: Khóa (0-Không khóa,1-Khóa)
+Tham số4: Thời gian vật phẩm có hiệu lực, 2 Loại định dạng (Định dạng 1: Thời gian tương đối (phút), Định dạng 2: Thời gian tuyệt đối, xóa lựa chọn thay đổi)
+Tham số 5: Ngũ hành
+Tham số 6: Đẳng cấp cường hóa
+Ví dụ:AddItem:&quot;18,1,1,9&quot;,2,1,1440 (Nhận được vật phẩm,&quot;18,1,1,9&quot; là 9 Huyền tinh Id, 2 là 2 cái,1 là khóa,1440 là thời gian hữu hiệu 1440 phút)">
+		<Parameter Name="ID vật phẩm" Description="Định dạng g,d,p,l (gdpl đều là số)" Regex="^\d+,\d+,\d+,\d+$" ErrorMessage="Phải đúng định dạng g,d,p,l(gdpl đều là số)" DefaultValue="0,0,0,0"/>
+		<Parameter Name="Số lượng vật phẩm" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải điền số nguyên &gt;=1" DefaultValue="1"/>
+		<Parameter Name="Có phải khóa" Description="0 là không khóa, 1 là khóa" Regex="^(0|1)$" ErrorMessage="Phải điền 0 (không khóa) hoặc 1 (khóa)" DefaultValue="1"/>
+		<Parameter Name="Thời gian vật phẩm hữu hiệu" Description="Đơn vị là phút. Điền 0 biểu thị không có giới hạn thời gian hữu hiệu" Regex="^\d+$" ErrorMessage="Phải điền số nguyên &gt;=0" DefaultValue="43200"/>
+		<Parameter Name="Ngũ Hành" Regex="^(-1|0|1|2|3|4|5)$" ErrorMessage="Phải điền từ -1 đến 5" DefaultValue="0" Description="Ngũ hành trang bị (-1: Ngũ hành nghẫu nhiên, 0 không Ngũ hành, 1 Kim; 2 Mộc; 3 Thủy; 4 Hỏa; 5 Thổ)"/>
+		<Parameter Name="Đẳng cấp cường hóa" Regex="^(0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16)$" ErrorMessage="Phải điền giữa 0-16" DefaultValue="0" Description="Đẳng cấp cường hóa, mặc định là không cường hóa"/>
+	</GameFunction>
+	<GameFunction Name="Trang bị nhận được trong bảng trang bị thưởng" Key="AddEquit" Type="Reward" Description="Tham số 1: Môn phái (0-Mặc định theo loại hình người chơi 1-Thiếu Lâm 2-Thiên Vương 3-Đường Môn 4-Ngũ Độc 5-Nga My 6-Thúy Yên 7-Cái Bang 8-Thiên Nhẫn 9-Võ Đang 10-Côn Luân 11-Minh Giáo 12-Đoàn Thị)
+Tham số 2: Hướng luyện (0-Mặc định theo loại hình người chơi 1-Thiếu Lâm Đao, Thiên Vương Thương, Đường Môn Bẫy, Ngũ Độc Đao, Nga My, Thúy Yên Kiếm, Cái Bang Chưởng, Chiến Nhẫn, Võ Đang Khí, Côn Lôn Đao, Minh Giáo Chùy, Chỉ Đoàn 2- Thiên Vương Chùy, Tụ Tiễn, Ngũ Độc Chưởng, Nga My Buff, Thúy Yên Đao, Cái Bang Côn, Ma Nhẫn, Võ Đang Kiếm, Côn Luân Kiếm, Khí Đoàn)
+Tham số 3: Giới tính (0-Mặc định theo loại hình người chơi 1-Nam 2-Nữ)
+Tham số 4: Loại hình trang bị(0-Nguyên bộ;1-Hộ thân phù;2-Y phục;3-Yêu đái;4-Giày;5-Hộ uyển;6-Nón;7-Hạng liên;8-Ngọc bội;9-Giới chỉ;10-Vũ khí)
+Tham số 5: Khóa(0-không khóa,1-khóa)
+Tham số 6: Thời gian vật phẩm có hiệu lực, 2 Định dạng (Định dạng 1: Thời gian tương đối (phút), Định dạng 2: Thời gian tuyệt đối, xóa lựa chọn thay đổi)
+Ví dụ:AddEquit:1,1,1,1,1440 (Nhận được trang bị thưởng,1 là Thiếu Lâm, 1 là Thiếu,1 là nam,1 là khóa,1440 là thời gian có hiệu lực là 1440 phút)">
+		<Parameter Name="Môn phái" Description="0-Mặc định theo loại hình người chơi 1-Thiếu Lâm 2-Thiên Vương 3-Đường Môn 4-Ngũ Độc 5-Nga My 6-Thúy Yên 7-Cái Bang 8-Thiên Nhẫn 9-Võ Đang 10-Côn Luân 11-Minh Giáo 12-Đoàn Thị" Regex="^(0|1|2|3|4|5|6|7|8|9|10|11|12)$" ErrorMessage="Chỉ có thể nhập 1 trong các giá trị từ [0-12]"/>
+		<Parameter Name="Kênh" Description="0-Mặc định theo loại hình người chơi 1-Thiếu Lâm Đao, Thiên Vương Thương, Đường Môn Bẫy, Ngũ Độc Đao, Nga My, Thúy Yên Kiếm, Cái Bang Chưởng, Chiến Nhẫn, Võ Đang Khí, Côn Lôn Đao, Minh Giáo Chùy, Chỉ Đoàn 2- Thiên Vương Chùy, Tụ Tiễn, Ngũ Độc Chưởng, Nga My Buff, Thúy Yên Đao, Cái Bang Côn, Ma Nhẫn, Võ Đang Kiếm, Côn Luân Kiếm, Khí Đoàn" Regex="^(0|1|2)$" ErrorMessage="Chỉ có thể nhập 1 trong các giá trị từ [0-2]"/>
+		<Parameter Name="Giới tính" Description="0-Mặc định theo loại hình người chơi 1-Nam 2-Nữ" Regex="^(0|1|2)$" ErrorMessage="Chỉ có thể nhập 1 trong các giá trị từ [0-2]"/>
+		<Parameter Name="Loại trang bị" Description="0-Nguyên bộ;1-Hộ thân phù;2-Y phục;3-Yêu đái;4-Giày;5-Hộ uyển;6-Nón;7-Hạng liên;8-Ngọc bội;9-Giới chỉ;10-Vũ khí" Regex="^(0|1|2|3|4|5|6|7|8|9|10)$" ErrorMessage="Chỉ có thể nhập 1 giá trị từ  [0-10]"/>
+		<Parameter Name="Có phải khóa" Description="0 là không khóa, 1 là khóa" Regex="^(0|1)$" ErrorMessage="Phải điền 0 (không khóa) hoặc 1 (khóa)" DefaultValue="1"/>
+		<Parameter Name="Thời gian vật phẩm hữu hiệu" Description="Đơn vị là phút. Điền 0 biểu thị không có giới hạn thời gian hữu hiệu" Regex="^\d+$" ErrorMessage="Phải điền số nguyên &gt;=0" DefaultValue="43200"/>
+		<Parameter Name="Đẳng cấp cường hóa" Regex="^(0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16)$" ErrorMessage="Phải điền giữa 0-16" DefaultValue="0" Description="Đẳng cấp cường hóa, mặc định là không cường hóa"/>
+	</GameFunction>
+	<GameFunction Name="Nhận được trang bị đặc biệt" Key="AddSpecialEquit" Type="Reward" Description="Tham số 1: Loại (1-Tiêu Dao Hộ Thân Phù; 2-Trang Phục Liên Đấu; 3-Lãnh Thổ Đầu; 4-Hộ Thân Phù; 5-Giày; 20000-Yêu Đái; 20001-Nhẫn; 20002-Hộ Uyển; 20003-Ngọc Bội; 20004-Hạng Liên)
+Tham số 2: Cấp trang bị (1-Bạch ngân;2-Hoàng kim)
+Tham số 3: Ngũ hành (0-Mặc định theo nhân vật; 1-Kim; 2-Mộc; 3-Thủy; 4-Hỏa; 5-Thổ)
+Tham số 4: Giới tính (0-Mặc định theo nhân vật; 1-Nam; 2-Nữ)
+Tham số 5: Khóa (0-Không khóa, 1-Khóa)
+Tham số 6: Vật phẩm có thời hạn, 2 dạng (Dạng 1: Thời gian tương đối (phút), Dạng 2: Thời gian tuyệt đối, xóa nhấp chọn sửa)
+Tham số 7: Cấp cường hóa
+Ví dụ: AddEquit:1,1,1,1,1440 (nhận trang bị thưởng, 1 Tiêu Dao Hộ Thân Phù, 1 Trang bị bạch ngân, 1 Trang bị hệ kim, 1 Nam, 1 Khóa, 1440 Thời hạn là 1440 phút)">
+		<Parameter Name="Loại hình" Description="1-Tiêu Dao Hộ Thân Phù; 2-Trang Phục Liên Đấu; 3-Lãnh Thổ Đầu; 4-Hộ Thân Phù; 5-Giày; 20000-Yêu Đái; 20001-Nhẫn; 20002-Hộ Uyển; 20003-Ngọc Bội; 20004-Hạng Liên" Regex="^(1|2|3|4|5|20000|20001|20002|20003|20004)$" ErrorMessage="Chỉ có thể nhập loại trang bị có sẵn"/>
+		<Parameter Name="Cấp trang bị" Description="1-Bạch ngân; 2-Hoàng Kim" Regex="^(1|2)$" ErrorMessage="Chỉ có thể nhập trị số từ [1-2] "/>
+		<Parameter Name="Loại trang bị" Description="0-Mặc định theo loại hình người chơi; 1-Kim; 2-Mộc; 3-Thủy; 4-Hỏa; 5-Thổ" Regex="^(0|1|2|3|4|5)$" ErrorMessage="Chỉ có thể nhập giá trị từ [0-5]"/>
+		<Parameter Name="Giới tính" Description="0-Mặc định theo loại hình người chơi 1-Nam 2-Nữ" Regex="^(0|1|2)$" ErrorMessage="Chỉ có thể nhập 1 trong các giá trị từ [0-2]"/>
+		<Parameter Name="Có phải khóa" Description="0 là không khóa, 1 là khóa" Regex="^(0|1)$" ErrorMessage="Phải điền 0 (không khóa) hoặc 1 (khóa)" DefaultValue="1"/>
+		<Parameter Name="Thời gian vật phẩm hữu hiệu" Description="Đơn vị là phút. Điền 0 biểu thị không có giới hạn thời gian hữu hiệu" Regex="^\d+$" ErrorMessage="Phải điền số nguyên &gt;=0" DefaultValue="43200"/>
+		<Parameter Name="Đẳng cấp cường hóa" Regex="^(0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16)$" ErrorMessage="Phải điền giữa 0-16" DefaultValue="0" Description="Đẳng cấp cường hóa, mặc định là không cường hóa"/>
+	</GameFunction>
+	<GameFunction Name="Nhận được trang bị chỉ định" Key="AddEquipEx" Type="Reward" Description="Tham số 1: Loại trang bị (1-Lam, 2-Tím, 3-Cam, 4-Trang bị BOSS (Vũ khí), 5-Vũ khí Thanh Đồng, 6-Vũ khí Bạch Ngân, 7-Vũ khí Hoàng Kim)
+Tham số 2: Môn phái (0-Mặc định theo loại hình người chơi 1-Thiếu Lâm 2-Thiên Vương 3-Đường Môn 4-Ngũ Độc 5-Nga My 6-Thúy Yên 7-Cái Bang 8-Thiên Nhẫn 9-Võ Đang 10-Côn Luân 11-Minh Giáo 12-Đoàn Thị)
+Tham só 3: Hướng luyện (0-Mặc định theo loại hình người chơi 1-Thiếu Lâm Đao, Thiên Vương Thương, Đường Môn Bẫy, Ngũ Độc Đao, Nga My, Thúy Yên Kiếm, Cái Bang Chưởng, Chiến Nhẫn, Võ Đang Khí, Côn Lôn Đao, Minh Giáo Chùy, Chỉ Đoàn 2- Thiên Vương Chùy, Tụ Tiễn, Ngũ Độc Chưởng, Nga My Buff, Thúy Yên Đao, Cái Bang Côn, Ma Nhẫn, Võ Đang Kiếm, Côn Luân Kiếm, Khí Đoàn)
+Tham số 4: Giới tính (0-Mặc định theo loại hình người chơi 1-Nam 2-Nữ)
+Tham số 5: Loại hình trang bị (0-Nguyên bộ; 1-Hộ thân phù; 2-Y phục; 3-Yêu đái; 4-Giày; 5-Hộ uyển; 6-Nón; 7-Hạng liên; 8-Ngọc bội; 9-Giới chỉ; 10-Vũ khí)
+Tham số 6: Khóa (0-không khóa, 1-khóa)
+Tham số 7: Thời hạn vật phẩm, 2 loại định dạng (định dạng 1: Thời gian tương đối (phút), định dạng 2: Thời gian tuyệt đối, xóa rồi vào sửa để chọn)
+Tham số 8: Cấp cường hóa
+Ví dụ:AddEquit:1,1,1,1,1440 (Nhận được trang bị thưởng, 1 là Thiếu Lâm, 1 là Thiếu, 1 là nam, 1 là khóa, 1440 là thời hạn 1440 phút) ">
+		<Parameter Name="Loại trang bị" Description=" 1-Lam, 2-Tím, 3-Cam, 4-Trang bị BOSS (Vũ khí), 5-Vũ khí Thanh Đồng, 6-Vũ khí Bạch Ngân, 7-Vũ khí Hoàng Kim" Regex="^(1|2|3|4|5|6|7)$" ErrorMessage="Chỉ có thể nhập 1 trong những giá trị từ [1-7] "/>
+		<Parameter Name="Môn phái" Description="0-Mặc định theo loại hình người chơi 1-Thiếu Lâm 2-Thiên Vương 3-Đường Môn 4-Ngũ Độc 5-Nga My 6-Thúy Yên 7-Cái Bang 8-Thiên Nhẫn 9-Võ Đang 10-Côn Luân 11-Minh Giáo 12-Đoàn Thị" Regex="^(0|1|2|3|4|5|6|7|8|9|10|11|12)$" ErrorMessage="Chỉ có thể nhập 1 trong các giá trị từ [0-12]"/>
+		<Parameter Name="Kênh" Description="0-Mặc định theo loại hình người chơi 1-Thiếu Lâm Đao, Thiên Vương Thương, Đường Môn Bẫy, Ngũ Độc Đao, Nga My, Thúy Yên Kiếm, Cái Bang Chưởng, Chiến Nhẫn, Võ Đang Khí, Côn Lôn Đao, Minh Giáo Chùy, Chỉ Đoàn 2- Thiên Vương Chùy, Tụ Tiễn, Ngũ Độc Chưởng, Nga My Buff, Thúy Yên Đao, Cái Bang Côn, Ma Nhẫn, Võ Đang Kiếm, Côn Luân Kiếm, Khí Đoàn" Regex="^(0|1|2)$" ErrorMessage="Chỉ có thể nhập 1 trong các giá trị từ [0-2]"/>
+		<Parameter Name="Giới tính" Description="0-Mặc định theo loại hình người chơi 1-Nam 2-Nữ" Regex="^(0|1|2)$" ErrorMessage="Chỉ có thể nhập 1 trong các giá trị từ [0-2]"/>
+		<Parameter Name="Loại trang bị" Description="0-Nguyên bộ;1-Hộ thân phù;2-Y phục;3-Yêu đái;4-Giày;5-Hộ uyển;6-Nón;7-Hạng liên;8-Ngọc bội;9-Giới chỉ;10-Vũ khí" Regex="^(0|1|2|3|4|5|6|7|8|9|10)$" ErrorMessage="Chỉ có thể nhập 1 giá trị từ  [0-10]"/>
+		<Parameter Name="Có phải khóa" Description="0 là không khóa, 1 là khóa" Regex="^(0|1)$" ErrorMessage="Phải điền 0 (không khóa) hoặc 1 (khóa)" DefaultValue="1"/>
+		<Parameter Name="Thời gian vật phẩm hữu hiệu" Description="Đơn vị là phút. Điền 0 biểu thị không có giới hạn thời gian hữu hiệu" Regex="^\d+$" ErrorMessage="Phải điền số nguyên &gt;=0" DefaultValue="43200"/>
+		<Parameter Name="Đẳng cấp cường hóa" Regex="^(0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16)$" ErrorMessage="Phải điền giữa 0-16" DefaultValue="0" Description="Đẳng cấp cường hóa, mặc định là không cường hóa"/>
+	</GameFunction>
+	<GameFunction Name="Nhận được phi phong" Key="AddMantle" Type="Reward" Description="Tham số 1: Cấp phi phong (0-Mặc định theo cấp phi phong của người chơi, 7-Sồ Phượng, 8-Tiềm Long, 9-Chí Tôn, 10-Vô Song)
+Tham số 2: Ngũ hành (0-Mặc định theo người chơi; 1-Kim; 2-Mộc; 3-Thủy; 4-Hỏa; 5-Thổ)
+Tham số 3: Giới tính (0-Mặc định theo người chơi; 1-Nam; 2-Nữ)
+Tham số 4: Khóa (0-Không khóa, 1-Khóa)
+Tham số 5: Thời hạn vật phẩm, 2 loại định dạng (định dạng 1: Thời gian tương đối (phút), định dạng 2: Thời gian tuyệt đối, xóa rồi vào sửa để chọn)
+Tham số 6: Đổi Hồn Thạch (0-Có thể, 1-Không thể)
+Ví dụ: AddMantle:7,1,1,1,1440,1 (Nhận được 1 phi phong Sồ Phượng hệ Kim, 1 là hệ Kim, 1 là Nam, 1 là khóa, 1440 là thời hạn 1440 phút, 1 là không thể đổi Hồn Thạch) ">
+		<Parameter Name="Cấp Phi phong" Description="0-Mặc định theo cấp phi phong của người chơi, 7-Sồ Phượng, 8-Tiềm Long, 9-Chí Tôn, 10-Vô Song" Regex="^(0|7|8|9|10)$" ErrorMessage="Chỉ có thể nhập 1 trong những giá trị sau 0, 7, 8, 9, 10"/>
+		<Parameter Name="Ngũ Hành" Description="0-Mặc định theo loại hình người chơi; 1-Kim; 2-Mộc; 3-Thủy; 4-Hỏa; 5-Thổ" Regex="^(0|1|2|3|4|5)$" ErrorMessage="Chỉ có thể nhập giá trị từ [0-5]"/>
+		<Parameter Name="Giới tính" Description="0-Mặc định theo loại hình người chơi 1-Nam 2-Nữ" Regex="^(0|1|2)$" ErrorMessage="Chỉ có thể nhập 1 trong các giá trị từ [0-2]"/>
+		<Parameter Name="Có phải khóa" Description="0 là không khóa, 1 là khóa" Regex="^(0|1)$" ErrorMessage="Phải điền 0 (không khóa) hoặc 1 (khóa)" DefaultValue="1"/>
+		<Parameter Name="Thời gian vật phẩm hữu hiệu" Description="Đơn vị là phút. Điền 0 biểu thị không có giới hạn thời gian hữu hiệu" Regex="^\d+$" ErrorMessage="Phải điền số nguyên &gt;=0" DefaultValue="43200"/>
+		<Parameter Name="Đổi Hồn Thạch" Regex="^(0|1)$" ErrorMessage="Phải điền giữa 0-1" DefaultValue="0" Description="0-Có thể, 1-Không thể"/>
+	</GameFunction>
+	<GameFunction Name="Tăng ngân quỹ xây dựng bang hội" Key="AddTongMoney" Type="Reward" Description="Tham số1: Tên bang hội
+Tham số2: Số lượng ngân quỹ xây dựng bang hội
+Chú ý: Bang hội của người chơi phải giống với Bang hội cho">
+		<Parameter Name="Tên Bang hội" Description="Chú ý: Bang hội người chơi phải giống bang hội cho"/>
+		<Parameter Name="Số lượng ngân quỹ" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Tăng danh vọng giang hồ" Key="AddKinRepute" Type="Reward">
+		<Parameter Name="Điểm danh vọng giang hồ" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Tăng danh vọng" Key="AddTaskRepute" Type="Reward">
+		<Parameter Name="Danh vọng phe" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Loại danh vọng" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Tăng giá trị" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Giảm danh vọng" Key="DelTaskRepute" Type="Reward">
+		<Parameter Name="Danh vọng phe" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Loại danh vọng" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Giá trị giảm" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Giảm thời gian Bạch Câu Hoàn" Key="DelBaiJuTime" Type="Reward">
+		<Parameter Name="Loại Bạch Câu Hoàn" Description="1-Bạch Câu Hoàn 2-Đại Bạch Câu Hoàn 3-Bạch Câu Hoàn Cao Cấp 4-Bạch Câu Hoàn Đặc Biệt" Regex="^(1|2|3|4)$" ErrorMessage="Chỉ có thể nhập 1 trong các giá trị từ  [1-4] "/>
+		<Parameter Name="Thời gian giảm" Description="Đơn vị là giây" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Nhận được danh hiệu" Key="AddTitle" Type="Reward" Description="Tham số1: Loại danh hiệu (danh hiệu loại lớn, danh hiệu loại nhỏ, chi tiết danh hiệu, tham số danh hiệu (không điền 0))
+Ví dụ:AddTitle:&quot;3,2,1,0&quot;(Nhận được danh hiệu, 4 Tham số là trị số id danh hiệu)">
+		<Parameter Name="Loại danh hiệu" Description="Định dạng : Danh hiệu loại lớn, danh hiệu loại nhỏ, loại chi tiết, tham số (không điền 0) Ví dụ: 3,2,1,0" Regex="^\d+,\d+,\d+,\d+$" ErrorMessage="Phải đúng định dạng: Danh hiệu loại lớn, danh hiệu loại nhỏ, danh hiệu loại chi tiết, tham số danh hiệu (không điền 0) Ví dụ: 3,2,1,0"/>
+	</GameFunction>
+	<GameFunction Name="Nhận được danh hiệu tự tạo có thời hạn" Key="AddTitleByTime" Type="Reward" Description="Tham số 1: Loại danh hiệu (Loại lớn, loại nhỏ, loại chi tiết, tham số (Không điền tức là 0))
+Tham số 2: Có thời hạn (Đơn vị là phút)
+Ví dụ: AddTitleByTime:&quot;3,2,1,0,60&quot;(Nhận được danh hiệu, 4 tham số là trị Id của danh hiệu, thời hạn 60 phút)">
+		<Parameter Name="Loại danh hiệu" Description="Định dạng : Danh hiệu loại lớn, danh hiệu loại nhỏ, loại chi tiết, tham số (không điền 0) Ví dụ: 3,2,1,0" Regex="^\d+,\d+,\d+,\d+$" ErrorMessage="Phải đúng định dạng: Danh hiệu loại lớn, danh hiệu loại nhỏ, danh hiệu loại chi tiết, tham số danh hiệu (không điền 0) Ví dụ: 3,2,1,0"/>
+		<Parameter Name="Thời gian hữu hiệu" Description="Đơn vị là phút" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Xóa danh hiệu" Key="DelTitle" Type="Reward" Description="Tham số1: Loại danh hiệu (danh hiệu loại lớn, danh hiệu loại nhỏ, chi tiết danh hiệu, tham số danh hiệu (không điền 0))
+Ví dụ:AddTitle:&quot;3,2,1,0&quot;(Nhận được danh hiệu, 4 Tham số là trị số id danh hiệu)">
+		<Parameter Name="Loại danh hiệu" Description="Định dạng : Danh hiệu loại lớn, danh hiệu loại nhỏ, loại chi tiết, tham số (không điền 0) Ví dụ: 3,2,1,0" Regex="^\d+,\d+,\d+,\d+$" ErrorMessage="Phải đúng định dạng: Danh hiệu loại lớn, danh hiệu loại nhỏ, danh hiệu loại chi tiết, tham số danh hiệu (không điền 0) Ví dụ: 3,2,1,0"/>
+	</GameFunction>
+	<GameFunction Name="Tăng danh hiệu tự định nghĩa" Key="AddSpeTitle" Type="Reward">
+		<Parameter Name="Xưng hiệu" Description="1-16 ký tự" Regex="^.{1,16}$" ErrorMessage="Chỉ có thể nhập từ 1-16 ký tự"/>
+		<Parameter Name="Thời gian hữu hiệu" Description="Đơn vị là phút" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Màu danh hiệu" Description="Màu của định dạng 0xFFFFFF (kích cỡ chữ tự do)" Regex="^0x([0-9]|[a-f]|[A-F]){6,6}$" ErrorMessage="Không đúng định dạng 0xFFFFFF (kích cỡ chữ tự do)"/>
+	</GameFunction>
+	<GameFunction Name="Xóa danh hiệu tự định nghĩa" Key="DelSpeTitle" Type="Reward">
+		<Parameter Name="Xưng hiệu" Description="1-8 ký tự" Regex="^.{1,8}$" ErrorMessage="Chỉ cần nhập 1-8 ký tự"/>
+	</GameFunction>
+	<GameFunction Name="Tăng kinh nghiệm cơ bản" Key="AddBaseExp" Type="Reward" Description="Tham số 1: Kinh nghiệm tiêu chuẩn
+Tham số2: Đơn vị (0 là đơn vị phút, 1 đơn vị giây)
+Ví dụ:AddBaseExp:30,0 (Tăng 30 phút kinh nghiệm, 0 là phút, 1 là giây)">
+		<Parameter Name="Thời gian" Description="Thêm điểm kinh nghiệm cơ sở trong bao lâu thời gian" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Đơn vị thời gian" Description="0 đơn vị là phút, 1 đơn vị là giây" Regex="^(0|1)$" ErrorMessage="Chỉ có thể nhập 0 hoặc 1"/>
+	</GameFunction>
+	<GameFunction Name="Tăng điểm kinh nghiệm" Key="AddExp" Type="Reward" Description="Tham số 1: Điểm kinh nghiệm
+Ví dụ: AddExp: 10000 (Tăng 10000 điểm kinh nghiệm)">
+		<Parameter Name="Điểm kinh nghiệm" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Trừ điểm kinh nghiệm" Key="ReduceExp" Type="Reward" Description="Tham số 1: Điểm kinh nghiệm
+Ví dụ: ReduceExp:10000 (Trừ 10000 điểm kinh nghiệm)">
+		<Parameter Name="Điểm kinh nghiệm" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Tăng cơ hội phụ tu môn phái" Key="AddFactionExSum" Type="Reward" Description="Tham số 1: Số lần, có thể tích lũy">
+		<Parameter Name="Tăng số lần" Description="Số lần có thể tích lũy" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Nhận được kỹ năng buff" Key="AddSkillBuff" Type="Reward" Description="Tham số 1: Danh sách Id kỹ năng skill.txt
+Tham số 2: Cấp kỹ năng
+Tham số 3: Thời gian duy trì (phút)
+Tham số 4: Loại kỹ năng
+Ví dụ: AddSkillBuff:892,1,1440,1 (Nhận được trạng thái, 892 là Id trạng thái kỹ năng, 1 là cấp, 1440 là thời gian hiệu lực, đơn vị phút, 1 là không tính thời gian rời mạng)
+ID 892: Phí cường hóa giảm 20%
+ID 1336: Tiêu phí Kỳ Trân Các hoàn trả 20% Đồng khóa">
+		<Parameter Name="ID kỹ năng" Description="Xem list kỹ năng skill.txt (892: Phí cường hóa giảm 20%; 1336: Tiêu phí Kỳ Trân Các được hoàn trả 20% đồng khóa)" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Cấp kỹ năng" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thời gian duy trì" Description="Đơn vị là phút" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Loại kỹ năng" Description="1 là thời gian online, 2 là thời gian hiện tại" Regex="^(1|2)$" ErrorMessage="Chỉ có thể nhập 0 hoặc 1"/>
+	</GameFunction>
+	<GameFunction Name="Tăng đồng mua Hòa Thị Bích" Key="AddBuyHeShiBiSum" Type="Reward" Description="Tham số 1: Số lần, có thể tích lũy">
+		<Parameter Name="Tăng số lần" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Tăng cơ hội mở túi phúc" Key="AddExOpenFuDai" Type="Reward" Description="Tham số 1: Số lần, có thể tích lũy">
+		<Parameter Name="Tăng số lần" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Tăng cơ hội chúc phúc" Key="AddExOpenQiFu" Type="Reward" Description="Tham số 1: Số lần, có thể tích lũy">
+		<Parameter Name="Tăng số lần" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Thêm cơ hội dùng Tinh Khí Tán" Key="AddExMKPUse" Type="Reward" Description="Tham số 1: Số lần, có thể tích lũy">
+		<Parameter Name="Tăng số lần" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Thêm cơ hội dùng Hoạt Khí Tán" Key="AddExGTPUse" Type="Reward" Description="Tham số 1: Số lần, có thể tích lũy">
+		<Parameter Name="Tăng số lần" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Thêm thời gian rời mạng" Key="AddOfflineTime" Type="Reward" Description="Tham số 1: Thời gian, có thể tích lũy, hiển thị khi người chơi lên mạng.">
+		<Parameter Name="Thêm thời gian (phút)" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Giảm Uy danh giang hồ" Key="MinusKinRepute" Type="Reward" Description="Tham số 1: Điểm">
+		<Parameter Name="Điểm giảm" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên" Description="Thấp nhất là 1"/>
+	</GameFunction>
+	<GameFunction Name="Tăng 4 lần thời gian tu luyện (Tối đa 14 giờ)" Key="AddXiulianTime" Type="Reward" Description="Tham số 1: Giờ">
+		<Parameter Name="Số giờ tăng" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên" Description="Thấp nhất là 1"/>
+	</GameFunction>
+	<GameFunction Name="Tăng 4 lần thời gian tu luyện (không giới hạn tích lũy)" Key="AddXiulianExTime" Type="Reward" Description="Tham số 1: phút">
+		<Parameter Name="Số phút tăng thêm" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên" Description="Thấp nhất là 1"/>
+	</GameFunction>
+	<GameFunction Name="Nhận được tư cách lập tượng Bá Chủ Ấn" Key="GiveBazhuStatuary" Type="Reward" Description="Không tham số">
+		<Parameter Name="Ghi chú" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'" Description="Không tham số, dùng nhắc nhở"/>
+	</GameFunction>
+	<GameFunction Name="Nhận được tư cách lập tượng Chuyển Server Liên Đấu" Key="GiveKuaFuLianSaiStatuary" Type="Reward" Description="Tham số 1: Điểm tọa độ">
+		<Parameter Name="Tăng thêm điểm tọa độ (Hiện tại 1 biểu thị Lâm An)" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên" Description="Thấp nhất là 1"/>
+	</GameFunction>
+	<GameFunction Name="Tăng điểm vinh dự" Key="AddHonor" Type="Reward" Description="Tham số 1: Điểm vinh dự loại lớn
+Tham số 2: Điểm vinh dự loại nhỏ
+Tham số 3: Tăng điểm vinh dự
+Ví dụ: AddHonor:3,0,100   Tăng 100 điểm vinh dự liên đấu">
+		<Parameter Name="Điểm vinh dự loại lớn" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên" Description="Thấp nhất là 1 (3 là điểm vinh dự Võ Lâm Liên Đấu loại lớn)"/>
+		<Parameter Name="Điểm vinh dự loại nhỏ" Regex="^[0-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên" Description="Thấp nhất là 0 (0 là điểm vinh dự Võ Lâm Liên Đấu loại nhỏ)"/>
+		<Parameter Name="Tăng điểm vinh dự" Regex="^[0-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên" Description="Thấp nhất là 0"/>
+	</GameFunction>
+	<GameFunction Name="Hủy đăng ký hôn lễ" Key="ClearMarry" Type="Reward" Description="Tham số1: Cấp đăng ký hôn lễ">
+		<Parameter Name="Cấp đăng ký hôn lễ" Regex="^(0|1|2|3|4)$" ErrorMessage="Chỉ cần nhập 1 giá trị trong khoảng  [0-4]" Description="Người chơi chưa đăng ký hôn lễ, có thể nhập 1-4 để khấu trừ vật phẩm cấp tương ứng, người chơi đã đăng ký có thể nhập 0 do hệ thống tự xử lý"/>
+	</GameFunction>
+	<GameFunction Name="Xóa vật phẩm" Key="DelItem" Type="Reward" Description="Tham số1: G,D,P,L của vật phẩm
+Tham số2: Yêu cầu số lượng
+Ví dụ: DelItem: &quot;18,1,1,9&quot;,2 (khấu trừ vật phẩm,&quot;18,1,1,9&quot; là Id huyền tinh 9, 2 là 2 viên)">
+		<Parameter Name="ID vật phẩm" Description="Định dạng g,d,p,l (gdpl đều là số)" Regex="^\d+,\d+,\d+,\d+$" ErrorMessage="Phải đúng định dạng g,d,p,l(gdpl đều là số)" DefaultValue="0,0,0,0"/>
+		<Parameter Name="Số lượng vật phẩm" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải điền số nguyên &gt;=1" DefaultValue="1"/>
+	</GameFunction>
+	<GameFunction Name="Khấu trừ bạc" Key="CostMoney" Type="Reward" Description="Tham số1: Số lượng bạc">
+		<Parameter Name="Số lượng bạc" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Khấu trừ bạc khóa" Key="CostBindMoney" Type="Reward" Description="Tham số1: Số lượng bạc khóa">
+		<Parameter Name="Số lượng bạc khóa" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Khấu trừ đồng khóa" Key="CostBindCoin" Type="Reward" Description="Tham số1: Số lượng đồng khóa">
+		<Parameter Name="Số lượng đồng khóa" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+
+	<GameFunction Name="Khấu trừ bạc khóa liên server" Key="CostGlbBindMoney" Type="Reward" Description="Tham số1: Số lượng bạc khóa liên server">
+		<Parameter Name="Số lượng bạc khóa liên server" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+
+	<GameFunction Name="Tăng bạc khóa liên server" Key="AddGlbBindMoney" Type="Reward" Description="Tham số1: Số lượng bạc khóa liên server">
+		<Parameter Name="Số lượng bạc khóa liên server" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+
+	<GameFunction Name="Nhận phần thưởng ngẫu nhiên" Key="AddRandomAwards" Type="Reward" Description="Phần thưởng ngẫu nhiên">
+		<Parameter Name="Tổng tỷ lệ" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên" DefaultValue="1000000" Description="Tổng tỷ lệ, mặc định là 100 vạn. Phần thưởng bên dưới sẽ dựa vào tỷ lệ để chọn ra 1 hoặc không phần thưởng"/>
+		<Parameter Name="Phần thưởng tham số1" Regex="^(\d+),[0-9],&quot;((\d+,\d+,\d+,\d+,\d+,\d+,\d+,(-1|0|1|2|3|4|5),\d+)|(\d+,\d+,\d+)|(\d+))&quot;,&quot;([^|^&quot;]*)&quot;,[0-1],[0-1],[0-1]$" ErrorMessage="Cách thức tham số không chính xác." DefaultValue="0,0,&quot;0,0,0,0,0,0,0,0,0&quot;,&quot;&quot;,0,0,0" Description="Thuyết minh tham số: Tỷ lệ, loại, &quot;Tham số loại&quot;, &quot;Miêu tả thông báo&quot;, Thông báo hảo hữu, Thông báo gia tộc bang hội, Thông báo thế giới"/>
+		<Parameter Name="Tham số thưởng 2" Regex="^(\d+),[0-9],&quot;((\d+,\d+,\d+,\d+,\d+,\d+,\d+,(-1|0|1|2|3|4|5),\d+)|(\d+,\d+,\d+)|(\d+))&quot;,&quot;([^|^&quot;]*)&quot;,[0-1],[0-1],[0-1]$" ErrorMessage="Cách thức tham số không chính xác." DefaultValue="0,0,&quot;0,0,0,0,0,0,0,0,0&quot;,&quot;&quot;,0,0,0" Description="Loại (1 vật phẩm, 2 bạc, 3 bạc khóa, 4 đồng khóa, 5 tinh lực, 6 hoạt lực, 7 kinh nghiệm cố định, 8 kinh nghiệm chuẩn, 9 buff kỹ năng)"/>
+		<Parameter Name="Tham số thưởng 3" Regex="^(\d+),[0-9],&quot;((\d+,\d+,\d+,\d+,\d+,\d+,\d+,(-1|0|1|2|3|4|5),\d+)|(\d+,\d+,\d+)|(\d+))&quot;,&quot;([^|^&quot;]*)&quot;,[0-1],[0-1],[0-1]$" ErrorMessage="Cách thức tham số không chính xác." DefaultValue="0,0,&quot;0,0,0,0,0,0,0,0,0&quot;,&quot;&quot;,0,0,0" Description="Tham số loại 1: Vật phẩm G, vật phẩm D, vật phẩm P, vật phẩm L, số lượng vật phẩm, khóa hay không, có thời hạn (phút), ngũ hành, cấp cường hóa"/>
+		<Parameter Name="Tham số thưởng 4" Regex="^(\d+),[0-9],&quot;((\d+,\d+,\d+,\d+,\d+,\d+,\d+,(-1|0|1|2|3|4|5),\d+)|(\d+,\d+,\d+)|(\d+))&quot;,&quot;([^|^&quot;]*)&quot;,[0-1],[0-1],[0-1]$" ErrorMessage="Cách thức tham số không chính xác." DefaultValue="0,0,&quot;0,0,0,0,0,0,0,0,0&quot;,&quot;&quot;,0,0,0" Description="Tham số loại 2-8: Trị số; Loại 9: Id kỹ năng, Cấp kỹ năng, thời hạn kỹ năng (phút)"/>
+		<Parameter Name="Tham số thưởng 5" Regex="^(\d+),[0-9],&quot;((\d+,\d+,\d+,\d+,\d+,\d+,\d+,(-1|0|1|2|3|4|5),\d+)|(\d+,\d+,\d+)|(\d+))&quot;,&quot;([^|^&quot;]*)&quot;,[0-1],[0-1],[0-1]$" ErrorMessage="Cách thức tham số không chính xác." DefaultValue="0,0,&quot;0,0,0,0,0,0,0,0,0&quot;,&quot;&quot;,0,0,0" Description="Miêu tả thông báo (mặc định nổi bật tên người chơi). Hảo hữu, bang hội gia tộc, thông báo thế giới (0 là không thông báo, 1 có thông báo)"/>
+		<Parameter Name="Tham số thưởng 6" Regex="^(\d+),[0-9],&quot;((\d+,\d+,\d+,\d+,\d+,\d+,\d+,(-1|0|1|2|3|4|5),\d+)|(\d+,\d+,\d+)|(\d+))&quot;,&quot;([^|^&quot;]*)&quot;,[0-1],[0-1],[0-1]$" ErrorMessage="Cách thức tham số không chính xác." DefaultValue="0,0,&quot;0,0,0,0,0,0,0,0,0&quot;,&quot;&quot;,0,0,0" Description="Ví dụ (5000 tỷ lệ được 5 huyền tinh 10 khóa có thời hạn 30 ngày): 5000,1&quot;18,1,1,10,5,1,43200,0,0&quot;,&quot;thật may mắn nhận được 5 huyền tinh 10&quot;,1,1,1"/>
+		<Parameter Name="Tham số thưởng 7" Regex="^(\d+),[0-9],&quot;((\d+,\d+,\d+,\d+,\d+,\d+,\d+,(-1|0|1|2|3|4|5),\d+)|(\d+,\d+,\d+)|(\d+))&quot;,&quot;([^|^&quot;]*)&quot;,[0-1],[0-1],[0-1]$" ErrorMessage="Cách thức tham số không chính xác." DefaultValue="0,0,&quot;0,0,0,0,0,0,0,0,0&quot;,&quot;&quot;,0,0,0" Description="Ví dụ (5000 tỷ lệ nhận được 500 bạc): 5000,2,&quot;500&quot;,&quot;không may lắm, chỉ nhận được 500 bạc&quot;,1,0,0"/>
+		<Parameter Name="Tham số thưởng 8" Regex="^(\d+),[0-9],&quot;((\d+,\d+,\d+,\d+,\d+,\d+,\d+,(-1|0|1|2|3|4|5),\d+)|(\d+,\d+,\d+)|(\d+))&quot;,&quot;([^|^&quot;]*)&quot;,[0-1],[0-1],[0-1]$" ErrorMessage="Cách thức tham số không chính xác." DefaultValue="0,0,&quot;0,0,0,0,0,0,0,0,0&quot;,&quot;&quot;,0,0,0" Description="Ví dụ (5000 tỷ lệ nhận ưu đãi cường hóa 1 ngày): 5000,9,&quot;892,1,1440&quot;,&quot;&quot;,0,0,0"/>
+		<Parameter Name="Tham số thưởng 9" Regex="^(\d+),[0-9],&quot;((\d+,\d+,\d+,\d+,\d+,\d+,\d+,(-1|0|1|2|3|4|5),\d+)|(\d+,\d+,\d+)|(\d+))&quot;,&quot;([^|^&quot;]*)&quot;,[0-1],[0-1],[0-1]$" ErrorMessage="Cách thức tham số không chính xác." DefaultValue="0,0,&quot;0,0,0,0,0,0,0,0,0&quot;,&quot;&quot;,0,0,0" Description="Tỷ lệ thêm vào của các hạng mục phải nhỏ hơn tổng tỷ lệ, tỷ lệ thêm vào nhỏ hơn tổng tỷ lệ sẽ có xác suất không nhận được bất cứ vật phẩm nào, bằng chắc chắn sẽ nhận được."/>
+		<Parameter Name="奖励参数10" Regex="^(\d+),[0-9],&quot;((\d+,\d+,\d+,\d+,\d+,\d+,\d+,(-1|0|1|2|3|4|5),\d+)|(\d+,\d+,\d+)|(\d+))&quot;,&quot;([^|^&quot;]*)&quot;,[0-1],[0-1],[0-1]$" ErrorMessage="Cách thức tham số không chính xác." DefaultValue="0,0,&quot;0,0,0,0,0,0,0,0,0&quot;,&quot;&quot;,0,0,0" Description="Tỷ lệ thêm vào của các hạng mục phải nhỏ hơn tổng tỷ lệ, tỷ lệ thêm vào nhỏ hơn tổng tỷ lệ sẽ có xác suất không nhận được bất cứ vật phẩm nào, bằng chắc chắn sẽ nhận được."/>
+		<Parameter Name="奖励参数11" Regex="^(\d+),[0-9],&quot;((\d+,\d+,\d+,\d+,\d+,\d+,\d+,(-1|0|1|2|3|4|5),\d+)|(\d+,\d+,\d+)|(\d+))&quot;,&quot;([^|^&quot;]*)&quot;,[0-1],[0-1],[0-1]$" ErrorMessage="Cách thức tham số không chính xác." DefaultValue="0,0,&quot;0,0,0,0,0,0,0,0,0&quot;,&quot;&quot;,0,0,0" Description="Tỷ lệ thêm vào của các hạng mục phải nhỏ hơn tổng tỷ lệ, tỷ lệ thêm vào nhỏ hơn tổng tỷ lệ sẽ có xác suất không nhận được bất cứ vật phẩm nào, bằng chắc chắn sẽ nhận được."/>
+		<Parameter Name="奖励参数12" Regex="^(\d+),[0-9],&quot;((\d+,\d+,\d+,\d+,\d+,\d+,\d+,(-1|0|1|2|3|4|5),\d+)|(\d+,\d+,\d+)|(\d+))&quot;,&quot;([^|^&quot;]*)&quot;,[0-1],[0-1],[0-1]$" ErrorMessage="Cách thức tham số không chính xác." DefaultValue="0,0,&quot;0,0,0,0,0,0,0,0,0&quot;,&quot;&quot;,0,0,0" Description="Tỷ lệ thêm vào của các hạng mục phải nhỏ hơn tổng tỷ lệ, tỷ lệ thêm vào nhỏ hơn tổng tỷ lệ sẽ có xác suất không nhận được bất cứ vật phẩm nào, bằng chắc chắn sẽ nhận được."/>
+		<Parameter Name="奖励参数13" Regex="^(\d+),[0-9],&quot;((\d+,\d+,\d+,\d+,\d+,\d+,\d+,(-1|0|1|2|3|4|5),\d+)|(\d+,\d+,\d+)|(\d+))&quot;,&quot;([^|^&quot;]*)&quot;,[0-1],[0-1],[0-1]$" ErrorMessage="Cách thức tham số không chính xác." DefaultValue="0,0,&quot;0,0,0,0,0,0,0,0,0&quot;,&quot;&quot;,0,0,0" Description="Tỷ lệ thêm vào của các hạng mục phải nhỏ hơn tổng tỷ lệ, tỷ lệ thêm vào nhỏ hơn tổng tỷ lệ sẽ có xác suất không nhận được bất cứ vật phẩm nào, bằng chắc chắn sẽ nhận được."/>
+		<Parameter Name="奖励参数14" Regex="^(\d+),[0-9],&quot;((\d+,\d+,\d+,\d+,\d+,\d+,\d+,(-1|0|1|2|3|4|5),\d+)|(\d+,\d+,\d+)|(\d+))&quot;,&quot;([^|^&quot;]*)&quot;,[0-1],[0-1],[0-1]$" ErrorMessage="Cách thức tham số không chính xác." DefaultValue="0,0,&quot;0,0,0,0,0,0,0,0,0&quot;,&quot;&quot;,0,0,0" Description="Tỷ lệ thêm vào của các hạng mục phải nhỏ hơn tổng tỷ lệ, tỷ lệ thêm vào nhỏ hơn tổng tỷ lệ sẽ có xác suất không nhận được bất cứ vật phẩm nào, bằng chắc chắn sẽ nhận được."/>
+		<Parameter Name="奖励参数15" Regex="^(\d+),[0-9],&quot;((\d+,\d+,\d+,\d+,\d+,\d+,\d+,(-1|0|1|2|3|4|5),\d+)|(\d+,\d+,\d+)|(\d+))&quot;,&quot;([^|^&quot;]*)&quot;,[0-1],[0-1],[0-1]$" ErrorMessage="Cách thức tham số không chính xác." DefaultValue="0,0,&quot;0,0,0,0,0,0,0,0,0&quot;,&quot;&quot;,0,0,0" Description="Tỷ lệ thêm vào của các hạng mục phải nhỏ hơn tổng tỷ lệ, tỷ lệ thêm vào nhỏ hơn tổng tỷ lệ sẽ có xác suất không nhận được bất cứ vật phẩm nào, bằng chắc chắn sẽ nhận được."/>
+		<Parameter Name="奖励参数16" Regex="^(\d+),[0-9],&quot;((\d+,\d+,\d+,\d+,\d+,\d+,\d+,(-1|0|1|2|3|4|5),\d+)|(\d+,\d+,\d+)|(\d+))&quot;,&quot;([^|^&quot;]*)&quot;,[0-1],[0-1],[0-1]$" ErrorMessage="Cách thức tham số không chính xác." DefaultValue="0,0,&quot;0,0,0,0,0,0,0,0,0&quot;,&quot;&quot;,0,0,0" Description="Tỷ lệ thêm vào của các hạng mục phải nhỏ hơn tổng tỷ lệ, tỷ lệ thêm vào nhỏ hơn tổng tỷ lệ sẽ có xác suất không nhận được bất cứ vật phẩm nào, bằng chắc chắn sẽ nhận được."/>
+		<Parameter Name="奖励参数17" Regex="^(\d+),[0-9],&quot;((\d+,\d+,\d+,\d+,\d+,\d+,\d+,(-1|0|1|2|3|4|5),\d+)|(\d+,\d+,\d+)|(\d+))&quot;,&quot;([^|^&quot;]*)&quot;,[0-1],[0-1],[0-1]$" ErrorMessage="Cách thức tham số không chính xác." DefaultValue="0,0,&quot;0,0,0,0,0,0,0,0,0&quot;,&quot;&quot;,0,0,0" Description="Tỷ lệ thêm vào của các hạng mục phải nhỏ hơn tổng tỷ lệ, tỷ lệ thêm vào nhỏ hơn tổng tỷ lệ sẽ có xác suất không nhận được bất cứ vật phẩm nào, bằng chắc chắn sẽ nhận được."/>
+		<Parameter Name="奖励参数18" Regex="^(\d+),[0-9],&quot;((\d+,\d+,\d+,\d+,\d+,\d+,\d+,(-1|0|1|2|3|4|5),\d+)|(\d+,\d+,\d+)|(\d+))&quot;,&quot;([^|^&quot;]*)&quot;,[0-1],[0-1],[0-1]$" ErrorMessage="Cách thức tham số không chính xác." DefaultValue="0,0,&quot;0,0,0,0,0,0,0,0,0&quot;,&quot;&quot;,0,0,0" Description="Tỷ lệ thêm vào của các hạng mục phải nhỏ hơn tổng tỷ lệ, tỷ lệ thêm vào nhỏ hơn tổng tỷ lệ sẽ có xác suất không nhận được bất cứ vật phẩm nào, bằng chắc chắn sẽ nhận được."/>
+		<Parameter Name="奖励参数19" Regex="^(\d+),[0-9],&quot;((\d+,\d+,\d+,\d+,\d+,\d+,\d+,(-1|0|1|2|3|4|5),\d+)|(\d+,\d+,\d+)|(\d+))&quot;,&quot;([^|^&quot;]*)&quot;,[0-1],[0-1],[0-1]$" ErrorMessage="Cách thức tham số không chính xác." DefaultValue="0,0,&quot;0,0,0,0,0,0,0,0,0&quot;,&quot;&quot;,0,0,0" Description="Tỷ lệ thêm vào của các hạng mục phải nhỏ hơn tổng tỷ lệ, tỷ lệ thêm vào nhỏ hơn tổng tỷ lệ sẽ có xác suất không nhận được bất cứ vật phẩm nào, bằng chắc chắn sẽ nhận được."/>
+		<Parameter Name="奖励参数20" Regex="^(\d+),[0-9],&quot;((\d+,\d+,\d+,\d+,\d+,\d+,\d+,(-1|0|1|2|3|4|5),\d+)|(\d+,\d+,\d+)|(\d+))&quot;,&quot;([^|^&quot;]*)&quot;,[0-1],[0-1],[0-1]$" ErrorMessage="Cách thức tham số không chính xác." DefaultValue="0,0,&quot;0,0,0,0,0,0,0,0,0&quot;,&quot;&quot;,0,0,0" Description="Tỷ lệ thêm vào của các hạng mục phải nhỏ hơn tổng tỷ lệ, tỷ lệ thêm vào nhỏ hơn tổng tỷ lệ sẽ có xác suất không nhận được bất cứ vật phẩm nào, bằng chắc chắn sẽ nhận được."/>
+	</GameFunction>
+	<GameFunction Name="Kích hoạt tư cách nạp thẻ" Key="SetPayAction" Type="Reward" Description="Kích hoạt lần này sử dụng điểm mở rộng số 2, xin xác nhận trong game chưa sử dụng điểm mở rộng số 2 tiến hành kích hoạt.">
+		<Parameter Name="Bit kích hoạt" Description="1.Sử dụng hoạt động nạp thẻ; 2.Sử dụng nạp thẻ Online; 3.Mỗi ngày nhận kích hoạt Uy danh giang hồ" DefaultValue="2" Regex="^(1|2)$" ErrorMessage="Chỉ có thể nhập 1 trong 2 giá trị"/>
+	</GameFunction>
+	<GameFunction Name="Nhận tư cách ly hôn" Key="GiveUnMarry" Type="Reward" Description="Nhận tư cách ly hôn, người chơi có thể cùng hiệp lữ đến chỗ Nguyệt Lão để ly hôn.">
+		<Parameter Name="Miêu tả" Description="Nguyên nhân ly hôn" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Mở trang web nhận phần thưởng" Key="GiveOpenWebAward" Type="Reward" Description="Tham số1: Mở địa chỉ web.">
+		<Parameter Name="Địa chỉ web" DefaultValue="http://" Regex="^[^|]*$" ErrorMessage="Chỉ có thể nhập địa chỉ web"/>
+	</GameFunction>
+	<GameFunction Name="Nhận được cơ hội mua đạo cụ ở Kỳ Trân Các" Key="AddBuyItemSum" Type="Reward" Description="Nhận được cơ hội mua đạo cụ ở Kỳ Trân Các.">
+		<Parameter Name="Số lần mua" Description="Tăng số lần" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Loại đạo cụ" Description="1. Anh Hùng Lệnh (dùng ở Đại Lục); 2. Kỷ niệm chương Thịnh Hạ 2010 (dùng ở Đại Lục); 3. Hoàng Kim Tinh Hoa (dùng ở Đại Lục); 4. Tần Lăng-Hòa Thị Bích (dùng ở Đại Lục); 5. Bạch Ngọc (dùng ở Đại Lục); 6. Huyền Tinh cấp 7 (Giảm 30%);
+               7. Huyền Tinh cấp 7 (Giảm 50%); 8. Rương Hồn Thạch (100) (Giảm 30%); 9. Rương Hồn Thạch (100) (Giảm 50%); 10. Rương Hồn Thạch (1000) (Giảm 30%); 11. Rương Hồn Thạch (1000) (Giảm 50%); 12. Kỷ niệm giải Nữ anh hùng [24 ô] (dùng ở Đại Lục);
+               13. Mua 5 Tinh Khí Tán: 14. Mua 5 Hoạt Khí Tán; 15. Mua Bổ Tu Lệnh; 16. Mua Xích Thố; 17. Huyết Hồn Lệnh (dùng ở Đại Lục); 18. Tần Lăng-Hòa Thị Bích;
+             19. Tần Lăng-Mạc Kim Phù x50; 20. Bách Bộ Xuyên Dương Cun x50; 21. Lệnh bài mở rộng rương (dùng ở Đại Lục) 22. Tinh Khí Tán-Giảm 60% (tiểu) x5 (dùng ở Đại Lục); 23. Hoạt Khí Tán-Giảm 60% (tiểu) x5 (dùng ở Đại Lục)" Regex="^(1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23)$" ErrorMessage="Bắt buộc điền số nguyên 1-23"/>
+	</GameFunction>
+	<GameFunction Name="Kích hoạt thưởng rút thăm tháng 10" Key="LaXin2010" Type="Reward">
+		<Parameter Name="Loại phần thưởng" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Khấu trừ điểm nạp thẻ hiện có của người chơi" Key="ConsumeMonthPayPoint" Type="Reward">
+		<Parameter Name="Loại phần thưởng" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Trừ Tinh lực" Key="CostJingLi" Type="Reward" Description="Tham số 1: Điểm Tinh lực bị trừ">
+		<Parameter Name="Điểm Tinh lực bị trừ" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Trừ Hoạt lực" Key="CostHuoLi" Type="Reward" Description="Tham số 1: Điểm Hoạt lực bị trừ">
+		<Parameter Name="Điểm Hoạt lực bị trừ" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Tăng cơ hội tham gia Du Long Các" Key="AddExYolongChance" Type="Reward" Description="Tham số 1: Số lần, không thể tích lũy">
+		<Parameter Name="Tăng số lần" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Khấu trừ điểm phúc duyên" Key="ReduceMonthlyEventScore" Type="Reward" Description="Tham số 1: Số lượng phúc duyên">
+		<Parameter Name="Số lượng phúc duyên" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Tích lũy tiêu hao tại Kỳ Trân Các" Key="AddConsume" Type="Reward" Description="Tham số 1: Điểm tích lũy
+Tham số 2: Loại hình">
+		<Parameter Name="Điểm tích lũy" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên" Description="Thấp nhất là 1"/>
+		<Parameter Name="Loại hình (0 là Tăng, 1 là Trừ)" Regex="^(0|1)$" ErrorMessage="Phải là 0 hay 1" DefaultValue="0" Description="0 là Tăng, 1 là Trừ (Tối đa trừ hết điểm tích lũy hiện có của người chơi, không thể trừ ra giá trị âm)"/>
+	</GameFunction>
+	<GameFunction Name="Tự định nghĩa phần thưởng" Key="SetLuaScript" Type="Reward" Description="Tham số 1: Tự định nghĩa Script">
+		<Parameter Name="Tự định nghĩa Script" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Nhận chân nguyên" Key="AddZhenYuan" Type="Reward" Description="Tham số 1: ID Chân nguyên
+Tham số 2: Cấp Chân nguyên
+Tham số 3: Hộ thể (0-Không hộ thể, 1-Hộ thể)
+Tham số 4: Thuộc tính dòng 1
+Tham số 5: Thuộc tính dòng 2
+Tham số 6: Thuộc tính dòng 3
+Tham số 7: Thuộc tính dòng 4
+Ví dụ: AddZhenYuan:193,120,1,1,1,1,1(Bảo Ngọc, Cấp 120, Hộ thể, Thuộc tính dòng 1 nửa sao, Thuộc tính dòng 2 nửa sao, Thuộc tính dòng 3 nửa sao, Thuộc tính dòng 4 nửa sao)">
+		<Parameter Name="ID chân nguyên" Description="Loại chân nguyên: Bảo Ngọc=193,Hạ Tiểu Sảnh=182,Oanh Oanh=194,Mộc Siêu=181,Tử Uyển=177,Tần Trọng=178,Diệp Tịnh=246" Regex="^(193|182|194|181|177|178|246)$" ErrorMessage="id điền vào không phải id của chân nguyên" DefaultValue="193"/>
+		<Parameter Name="Cấp chân nguyên" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải điền số nguyên &gt;=1" DefaultValue="1"/>
+		<Parameter Name="Hộ thể" Description="0 là không hộ thể, 1 là hộ thể" Regex="^(0|1)$" ErrorMessage="Cần điền 0 (Không hộ thể) hay 1 (Hộ thể)" DefaultValue="1"/>
+		<Parameter Name="Thuộc tính dòng 1" Regex="^(1|2|3|4|5|6|7|8|9|10|11|12|13|14)$" ErrorMessage="Phải là số nguyên từ 1 đến 14" DefaultValue="1" Description="1-14 lần lượt từ 0.5-7 sao, ví dụ: 1 là nửa sao"/>
+		<Parameter Name="Thuộc tính dòng 2" Regex="^(1|2|3|4|5|6|7|8|9|10|11|12|13|14)$" ErrorMessage="Phải là số nguyên từ 1 đến 14" DefaultValue="1" Description="1-14 lần lượt từ 0.5-7 sao, ví dụ: 1 là nửa sao"/>
+		<Parameter Name="Thuộc tính dòng 3" Regex="^(1|2|3|4|5|6|7|8|9|10|11|12|13|14)$" ErrorMessage="Phải là số nguyên từ 1 đến 14" DefaultValue="1" Description="1-14 lần lượt từ 0.5-7 sao, ví dụ: 1 là nửa sao"/>
+		<Parameter Name="Thuộc tính dòng 4" Regex="^(1|2|3|4|5|6|7|8|9|10|11|12|13|14)$" ErrorMessage="Phải là số nguyên từ 1 đến 14" DefaultValue="1" Description="1-14 lần lượt từ 0.5-7 sao, ví dụ: 1 là nửa sao"/>
+	</GameFunction>
+
+
+	<GameFunction Name="接取任务" Key="AcceptTask" Type="Reward" Description="参数1:任务主ID
+  参数2:任务子ID">
+		<Parameter Name="任务主ID" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="任务子ID" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+
+	<GameFunction Name="补偿成就" Key="AddAchievement" Type="Reward" Description="参数1:成就Id">
+		<Parameter Name="成就Id" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+
+	<!-- Rewards End -->
+
+
+
+
+	<!-- Others Begin -->
+	<GameFunction Name="Thiết lập thông báo" Key="SetMsg" Type="Other" Description="Tham số1: Loại thông báo
+  Tham số2: Nội dung thông tin
+  Ví dụ: SetMsg:0,&quot;Nội dung thông báo&quot;
+  List loại:
+  0 - Thông báo hệ thống chữ đỏ bên trái
+  1 - Thông báo Dialog khung đối thoại
+  2 - Thông báo chữ ở giữa màu đen
+  3 - Thông báo hảo hữu (không tiền tố, nội dung phải tự nhập, nhận được tên dùng &lt;%me.szName%&gt;)
+  4 - Thông báo bang hội gia tộc (có mặc định thành phần tiền tố của tên thành viên)
+  5 - Thông báo thế giới">
+		<Parameter Name="Loại thông báo" Description="0-Thông báo hệ thống chữ đỏ trong khung chat 1-Thông báo Dialog trong khung đối thoại 2-Thông báo chữ ở giữa màu đen 3 -Thông báo hảo hữu (không tiền tố, nội dung phải tự nhập, nhận tên dùng &lt;%me.szName%&gt;) 4-Thông báo bang hội gia tộc (có mặc định tiền tố tên thành viên) 5-Thông báo thế giới" Regex="^(0|1|2|3|4|5)$" ErrorMessage="Chỉ có thể nhập giá trị từ [0-5]"/>
+		<Parameter Name="Nội dung thông báo" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	<GameFunction Name="Ghi Log bản địa" Key="WriteLog" Type="Other" Description="Tham số1: Nội dung Log">
+		<Parameter Name="Nội dung Log"/>
+	</GameFunction>
+	<GameFunction Name="Tăng trị biến lượng nhiệm vụ" Key="AddGTask" Type="Other" Description="Tham số 1: Biến lượng nhiệm vụ">
+		<Parameter Name="Nhóm biến lượng nhiệm vụ" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Biến lượng nhiệm vụ" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Tăng giá trị" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+	<GameFunction Name="Thiết lập trị biến lượng nhiệm vụ" Key="SetGTask" Type="Other" Description="Tham số 1: Biến lượng nhiệm vụ">
+		<Parameter Name="Nhóm biến lượng nhiệm vụ" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Biến lượng nhiệm vụ" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thiết lập trị" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+
+	<GameFunction Name="Giảm trị biến lượng nhiệm vụ" Key="MinusGTask" Type="Other" Description="Tham số 1: Biến lượng nhiệm vụ">
+		<Parameter Name="Nhóm biến lượng nhiệm vụ" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Biến lượng nhiệm vụ" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Giá trị giảm" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+
+	<GameFunction Name="Giảm thời gian chống nghiện game" Key="DecOnlineTime" Type="Other" Description="Tham số 1: Thời gian cần giảm">
+		<Parameter Name="Giá trị giảm" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+
+	<GameFunction Name="Xóa npc đối thoại" Key="DelNpc" Type="Other" Description="Tham số 1: Tin nhắc nhở
+Tham số 2: Thời gian trùng sinh (giây)">
+		<Parameter Name="Thông tin nhắc nhở khi npc biến mất (không điền nghĩa là không nhắc nhở)" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+		<Parameter Name="Npc sau khi xóa, bao lâu mới có thể tạo mới lại (không điền tức là không tạo mới)" Regex="^[0-9]+[0-9]*$" DefaultValue="0" ErrorMessage="Phải nhập số nguyên"/>
+	</GameFunction>
+
+	<GameFunction Name="Add 1 npc ở vị trí hiện tại" Key="AddNpcInNear" Type="Other" Description="Tham số 1: NpcId
+ Tham số 2: Thời gian tồn tại (giây)
+ Tham số 3: Có thuộc về bản thân không
+ Tham số 4: Hiển thị tên">
+		<Parameter Name="NpcId" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thời gian tồn tại (giây)" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Có thuộc về bản thân không" Description="0 không thuộc 1 thuộc" Regex="^0|1*$" ErrorMessage="Chỉ có thể nhập 0 or 1"/>
+		<Parameter Name="Hiển thị tên npc" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	
+	<!-- Others End -->
+</GameFunctions>

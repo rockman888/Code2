@@ -1,0 +1,8 @@
+E:\Github_2\Demo\CSharp\RuntimeAddRemoveControl\RuntimeAddRemoveControl\bin\Debug\RuntimeAddRemoveControl.exe
+E:\Github_2\Demo\CSharp\RuntimeAddRemoveControl\RuntimeAddRemoveControl\bin\Debug\RuntimeAddRemoveControl.pdb
+E:\Github_2\Demo\CSharp\RuntimeAddRemoveControl\RuntimeAddRemoveControl\obj\Debug\RuntimeAddRemoveControl.csprojResolveAssemblyReference.cache
+E:\Github_2\Demo\CSharp\RuntimeAddRemoveControl\RuntimeAddRemoveControl\obj\Debug\RuntimeAddRemoveControl.Form1.resources
+E:\Github_2\Demo\CSharp\RuntimeAddRemoveControl\RuntimeAddRemoveControl\obj\Debug\RuntimeAddRemoveControl.Properties.Resources.resources
+E:\Github_2\Demo\CSharp\RuntimeAddRemoveControl\RuntimeAddRemoveControl\obj\Debug\RuntimeAddRemoveControl.csproj.GenerateResource.Cache
+E:\Github_2\Demo\CSharp\RuntimeAddRemoveControl\RuntimeAddRemoveControl\obj\Debug\RuntimeAddRemoveControl.exe
+E:\Github_2\Demo\CSharp\RuntimeAddRemoveControl\RuntimeAddRemoveControl\obj\Debug\RuntimeAddRemoveControl.pdb

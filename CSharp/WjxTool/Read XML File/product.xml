@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<GameFunctions>
+	<!-- Conditions Begin -->
+	
+	<GameFunction Name="Xem đẳng cấp" Key="CheckLevel" Type="Condition" Description="Tham số 1:Yêu cầu đạt đến đẳng cấp
+  Tham số 2: Thông tin nhắc nhở
+  Ví dụ: CheckLevel:60,&quot;Yêu cầu đạt cấp 60 mới được&quot; (chưa đạt cấp 60 sẽ quay lại thông tin nhắc nhở)">
+		<Parameter Name="Cấp yêu cầu" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Chưa đạt cấp yêu cầu sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+
+	<GameFunction Name="Kiểm tra cấp thấp hơn" Key="CheckAboveLevel" Type="Condition" Description="Tham số 1: Yêu cầu cấp thấp hơn
+  Tham số 2: Thông tin nhắc nhở
+  Ví dụ: CheckAboveLevel:60,&quot;Cần thấp hơn cấp 60&quot; (Trên cấp 60 sẽ quay về thông tin nhắc nhở)">
+		<Parameter Name="Cấp yêu cầu" Regex="^[1-9]+[0-9]*$" ErrorMessage="Phải nhập số nguyên"/>
+		<Parameter Name="Thông tin nhắc nhở" Description="Chưa đạt cấp yêu cầu sẽ hiển thị nhắc nhở" Regex="^[^|]*$" ErrorMessage="Cấm nhập ký tự '|'"/>
+	</GameFunction>
+	
+</GameFunctions>

@@ -1,0 +1,8 @@
+E:\Github_2\Demo\CSharp\demoDotNetBar\demoDotNetBar\obj\Debug\demoDotNetBar.csprojResolveAssemblyReference.cache
+E:\Github_2\Demo\CSharp\demoDotNetBar\demoDotNetBar\obj\Debug\demoDotNetBar.Form1.resources
+E:\Github_2\Demo\CSharp\demoDotNetBar\demoDotNetBar\obj\Debug\demoDotNetBar.Properties.Resources.resources
+E:\Github_2\Demo\CSharp\demoDotNetBar\demoDotNetBar\obj\Debug\demoDotNetBar.csproj.GenerateResource.Cache
+E:\Github_2\Demo\CSharp\demoDotNetBar\demoDotNetBar\bin\Debug\demoDotNetBar.exe
+E:\Github_2\Demo\CSharp\demoDotNetBar\demoDotNetBar\bin\Debug\demoDotNetBar.pdb
+E:\Github_2\Demo\CSharp\demoDotNetBar\demoDotNetBar\obj\Debug\demoDotNetBar.exe
+E:\Github_2\Demo\CSharp\demoDotNetBar\demoDotNetBar\obj\Debug\demoDotNetBar.pdb
