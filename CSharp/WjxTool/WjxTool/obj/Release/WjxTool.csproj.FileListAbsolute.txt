@@ -1,0 +1,9 @@
+D:\Github_2\Demo\CSharp\WjxTool\WjxTool\bin\Release\WjxTool.exe
+D:\Github_2\Demo\CSharp\WjxTool\WjxTool\bin\Release\WjxTool.pdb
+D:\Github_2\Demo\CSharp\WjxTool\WjxTool\obj\Release\WjxTool.frmMain.resources
+D:\Github_2\Demo\CSharp\WjxTool\WjxTool\obj\Release\WjxTool.frmPara.resources
+D:\Github_2\Demo\CSharp\WjxTool\WjxTool\obj\Release\WjxTool.Properties.Resources.resources
+D:\Github_2\Demo\CSharp\WjxTool\WjxTool\obj\Release\WjxTool.csproj.GenerateResource.Cache
+D:\Github_2\Demo\CSharp\WjxTool\WjxTool\obj\Release\WjxTool.exe
+D:\Github_2\Demo\CSharp\WjxTool\WjxTool\obj\Release\WjxTool.pdb
+D:\Github_2\Demo\CSharp\WjxTool\WjxTool\obj\Release\WjxTool.csprojResolveAssemblyReference.cache

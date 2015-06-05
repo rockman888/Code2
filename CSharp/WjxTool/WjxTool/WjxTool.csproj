@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsParam.cs" />
+    <Compile Include="clsGameFunction.cs" />
     <Compile Include="clsCommons.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>

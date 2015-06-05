@@ -29,14 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.expandablePanel1 = new DevComponents.DotNetBar.ExpandablePanel();
-            this.expandablePanel3 = new DevComponents.DotNetBar.ExpandablePanel();
-            this.itemPanel2 = new DevComponents.DotNetBar.ItemPanel();
-            this.expandablePanel2 = new DevComponents.DotNetBar.ExpandablePanel();
-            this.itemPanel1 = new DevComponents.DotNetBar.ItemPanel();
-            this.btnCheckLevel = new DevComponents.DotNetBar.ButtonItem();
-            this.btnCheckAboveLevel = new DevComponents.DotNetBar.ButtonItem();
-            this.CheckAboveLevel2 = new DevComponents.DotNetBar.ButtonItem();
             this.dotNetBarManager1 = new DevComponents.DotNetBar.DotNetBarManager(this.components);
             this.dockSite4 = new DevComponents.DotNetBar.DockSite();
             this.dockSite1 = new DevComponents.DotNetBar.DockSite();
@@ -50,153 +42,16 @@
             this.rtbContent = new System.Windows.Forms.RichTextBox();
             this.lbFunction = new System.Windows.Forms.ListBox();
             this.reflectionLabel1 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
-            this.btnCheckWeiWang = new DevComponents.DotNetBar.ButtonItem();
-            this.expandablePanel1.SuspendLayout();
-            this.expandablePanel3.SuspendLayout();
-            this.expandablePanel2.SuspendLayout();
+            this.ePConditions = new DevComponents.DotNetBar.ExpandablePanel();
+            this.itemPConditons = new DevComponents.DotNetBar.ItemPanel();
+            this.ePReward = new DevComponents.DotNetBar.ExpandablePanel();
+            this.itemPReward = new DevComponents.DotNetBar.ItemPanel();
+            this.ePMain = new DevComponents.DotNetBar.ExpandablePanel();
             this.groupPanel1.SuspendLayout();
+            this.ePConditions.SuspendLayout();
+            this.ePReward.SuspendLayout();
+            this.ePMain.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // expandablePanel1
-            // 
-            this.expandablePanel1.CanvasColor = System.Drawing.SystemColors.Control;
-            this.expandablePanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.expandablePanel1.Controls.Add(this.expandablePanel3);
-            this.expandablePanel1.Controls.Add(this.expandablePanel2);
-            this.expandablePanel1.Location = new System.Drawing.Point(0, 82);
-            this.expandablePanel1.Margin = new System.Windows.Forms.Padding(4);
-            this.expandablePanel1.Name = "expandablePanel1";
-            this.expandablePanel1.Size = new System.Drawing.Size(226, 736);
-            this.expandablePanel1.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.expandablePanel1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.expandablePanel1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.expandablePanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.expandablePanel1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.expandablePanel1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.expandablePanel1.Style.GradientAngle = 90;
-            this.expandablePanel1.TabIndex = 0;
-            this.expandablePanel1.TitleHeight = 32;
-            this.expandablePanel1.TitleStyle.Alignment = System.Drawing.StringAlignment.Center;
-            this.expandablePanel1.TitleStyle.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.expandablePanel1.TitleStyle.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.expandablePanel1.TitleStyle.Border = DevComponents.DotNetBar.eBorderType.RaisedInner;
-            this.expandablePanel1.TitleStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.expandablePanel1.TitleStyle.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.expandablePanel1.TitleStyle.GradientAngle = 90;
-            this.expandablePanel1.TitleText = "WJX Gen Code";
-            // 
-            // expandablePanel3
-            // 
-            this.expandablePanel3.CanvasColor = System.Drawing.SystemColors.Control;
-            this.expandablePanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.expandablePanel3.Controls.Add(this.itemPanel2);
-            this.expandablePanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.expandablePanel3.Location = new System.Drawing.Point(0, 342);
-            this.expandablePanel3.Margin = new System.Windows.Forms.Padding(4);
-            this.expandablePanel3.Name = "expandablePanel3";
-            this.expandablePanel3.Size = new System.Drawing.Size(226, 381);
-            this.expandablePanel3.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.expandablePanel3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.expandablePanel3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.expandablePanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.expandablePanel3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.expandablePanel3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.expandablePanel3.Style.GradientAngle = 90;
-            this.expandablePanel3.TabIndex = 2;
-            this.expandablePanel3.TitleHeight = 32;
-            this.expandablePanel3.TitleStyle.Alignment = System.Drawing.StringAlignment.Center;
-            this.expandablePanel3.TitleStyle.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.expandablePanel3.TitleStyle.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.expandablePanel3.TitleStyle.Border = DevComponents.DotNetBar.eBorderType.RaisedInner;
-            this.expandablePanel3.TitleStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.expandablePanel3.TitleStyle.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.expandablePanel3.TitleStyle.GradientAngle = 90;
-            this.expandablePanel3.TitleText = "Reward";
-            this.expandablePanel3.Click += new System.EventHandler(this.expandablePanel3_Click);
-            // 
-            // itemPanel2
-            // 
-            // 
-            // 
-            // 
-            this.itemPanel2.BackgroundStyle.Class = "ItemPanel";
-            this.itemPanel2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.itemPanel2.ContainerControlProcessDialogKey = true;
-            this.itemPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.itemPanel2.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
-            this.itemPanel2.Location = new System.Drawing.Point(0, 32);
-            this.itemPanel2.Name = "itemPanel2";
-            this.itemPanel2.Size = new System.Drawing.Size(226, 349);
-            this.itemPanel2.TabIndex = 1;
-            this.itemPanel2.Text = "itemPanel2";
-            this.itemPanel2.ItemClick += new System.EventHandler(this.itemPanel2_ItemClick);
-            // 
-            // expandablePanel2
-            // 
-            this.expandablePanel2.CanvasColor = System.Drawing.SystemColors.Control;
-            this.expandablePanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.expandablePanel2.Controls.Add(this.itemPanel1);
-            this.expandablePanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.expandablePanel2.Location = new System.Drawing.Point(0, 32);
-            this.expandablePanel2.Margin = new System.Windows.Forms.Padding(4);
-            this.expandablePanel2.Name = "expandablePanel2";
-            this.expandablePanel2.Size = new System.Drawing.Size(226, 310);
-            this.expandablePanel2.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.expandablePanel2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.expandablePanel2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.expandablePanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.expandablePanel2.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.expandablePanel2.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.expandablePanel2.Style.GradientAngle = 90;
-            this.expandablePanel2.TabIndex = 1;
-            this.expandablePanel2.TitleHeight = 32;
-            this.expandablePanel2.TitleStyle.Alignment = System.Drawing.StringAlignment.Center;
-            this.expandablePanel2.TitleStyle.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.expandablePanel2.TitleStyle.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.expandablePanel2.TitleStyle.Border = DevComponents.DotNetBar.eBorderType.RaisedInner;
-            this.expandablePanel2.TitleStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.expandablePanel2.TitleStyle.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.expandablePanel2.TitleStyle.GradientAngle = 90;
-            this.expandablePanel2.TitleText = "Conditions";
-            // 
-            // itemPanel1
-            // 
-            // 
-            // 
-            // 
-            this.itemPanel1.BackgroundStyle.Class = "ItemPanel";
-            this.itemPanel1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.itemPanel1.ContainerControlProcessDialogKey = true;
-            this.itemPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.itemPanel1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnCheckLevel,
-            this.btnCheckAboveLevel,
-            this.btnCheckWeiWang});
-            this.itemPanel1.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
-            this.itemPanel1.Location = new System.Drawing.Point(0, 32);
-            this.itemPanel1.Name = "itemPanel1";
-            this.itemPanel1.Size = new System.Drawing.Size(226, 278);
-            this.itemPanel1.TabIndex = 1;
-            this.itemPanel1.Text = "itemPanel1";
-            // 
-            // btnCheckLevel
-            // 
-            this.btnCheckLevel.Name = "btnCheckLevel";
-            this.btnCheckLevel.Text = "CheckLevel";
-            this.btnCheckLevel.Click += new System.EventHandler(this.btnCheckLevel_Click);
-            // 
-            // btnCheckAboveLevel
-            // 
-            this.btnCheckAboveLevel.Name = "btnCheckAboveLevel";
-            this.btnCheckAboveLevel.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.CheckAboveLevel2});
-            this.btnCheckAboveLevel.Text = "CheckAboveLevel";
-            this.btnCheckAboveLevel.Click += new System.EventHandler(this.btnCheckAboveLevel_Click);
-            // 
-            // CheckAboveLevel2
-            // 
-            this.CheckAboveLevel2.Name = "CheckAboveLevel2";
-            this.CheckAboveLevel2.Text = "CheckAboveLevel +";
             // 
             // dotNetBarManager1
             // 
@@ -227,10 +82,10 @@
             this.dockSite4.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
             this.dockSite4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dockSite4.DocumentDockContainer = new DevComponents.DotNetBar.DocumentDockContainer();
-            this.dockSite4.Location = new System.Drawing.Point(0, 818);
+            this.dockSite4.Location = new System.Drawing.Point(0, 836);
             this.dockSite4.Margin = new System.Windows.Forms.Padding(4);
             this.dockSite4.Name = "dockSite4";
-            this.dockSite4.Size = new System.Drawing.Size(1160, 0);
+            this.dockSite4.Size = new System.Drawing.Size(1250, 0);
             this.dockSite4.TabIndex = 4;
             this.dockSite4.TabStop = false;
             // 
@@ -242,7 +97,7 @@
             this.dockSite1.Location = new System.Drawing.Point(0, 0);
             this.dockSite1.Margin = new System.Windows.Forms.Padding(4);
             this.dockSite1.Name = "dockSite1";
-            this.dockSite1.Size = new System.Drawing.Size(0, 818);
+            this.dockSite1.Size = new System.Drawing.Size(0, 836);
             this.dockSite1.TabIndex = 1;
             this.dockSite1.TabStop = false;
             // 
@@ -251,10 +106,10 @@
             this.dockSite2.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
             this.dockSite2.Dock = System.Windows.Forms.DockStyle.Right;
             this.dockSite2.DocumentDockContainer = new DevComponents.DotNetBar.DocumentDockContainer();
-            this.dockSite2.Location = new System.Drawing.Point(1160, 0);
+            this.dockSite2.Location = new System.Drawing.Point(1250, 0);
             this.dockSite2.Margin = new System.Windows.Forms.Padding(4);
             this.dockSite2.Name = "dockSite2";
-            this.dockSite2.Size = new System.Drawing.Size(0, 818);
+            this.dockSite2.Size = new System.Drawing.Size(0, 836);
             this.dockSite2.TabIndex = 2;
             this.dockSite2.TabStop = false;
             // 
@@ -262,10 +117,10 @@
             // 
             this.dockSite8.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
             this.dockSite8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dockSite8.Location = new System.Drawing.Point(0, 818);
+            this.dockSite8.Location = new System.Drawing.Point(0, 836);
             this.dockSite8.Margin = new System.Windows.Forms.Padding(4);
             this.dockSite8.Name = "dockSite8";
-            this.dockSite8.Size = new System.Drawing.Size(1160, 0);
+            this.dockSite8.Size = new System.Drawing.Size(1250, 0);
             this.dockSite8.TabIndex = 8;
             this.dockSite8.TabStop = false;
             // 
@@ -276,7 +131,7 @@
             this.dockSite5.Location = new System.Drawing.Point(0, 0);
             this.dockSite5.Margin = new System.Windows.Forms.Padding(4);
             this.dockSite5.Name = "dockSite5";
-            this.dockSite5.Size = new System.Drawing.Size(0, 818);
+            this.dockSite5.Size = new System.Drawing.Size(0, 836);
             this.dockSite5.TabIndex = 5;
             this.dockSite5.TabStop = false;
             // 
@@ -284,10 +139,10 @@
             // 
             this.dockSite6.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
             this.dockSite6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dockSite6.Location = new System.Drawing.Point(1160, 0);
+            this.dockSite6.Location = new System.Drawing.Point(1250, 0);
             this.dockSite6.Margin = new System.Windows.Forms.Padding(4);
             this.dockSite6.Name = "dockSite6";
-            this.dockSite6.Size = new System.Drawing.Size(0, 818);
+            this.dockSite6.Size = new System.Drawing.Size(0, 836);
             this.dockSite6.TabIndex = 6;
             this.dockSite6.TabStop = false;
             // 
@@ -298,7 +153,7 @@
             this.dockSite7.Location = new System.Drawing.Point(0, 0);
             this.dockSite7.Margin = new System.Windows.Forms.Padding(4);
             this.dockSite7.Name = "dockSite7";
-            this.dockSite7.Size = new System.Drawing.Size(1160, 0);
+            this.dockSite7.Size = new System.Drawing.Size(1250, 0);
             this.dockSite7.TabIndex = 7;
             this.dockSite7.TabStop = false;
             // 
@@ -310,7 +165,7 @@
             this.dockSite3.Location = new System.Drawing.Point(0, 0);
             this.dockSite3.Margin = new System.Windows.Forms.Padding(4);
             this.dockSite3.Name = "dockSite3";
-            this.dockSite3.Size = new System.Drawing.Size(1160, 0);
+            this.dockSite3.Size = new System.Drawing.Size(1250, 0);
             this.dockSite3.TabIndex = 3;
             this.dockSite3.TabStop = false;
             // 
@@ -322,10 +177,10 @@
             this.groupPanel1.Controls.Add(this.lbFunction);
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupPanel1.DrawTitleBox = false;
-            this.groupPanel1.Location = new System.Drawing.Point(234, 0);
+            this.groupPanel1.Location = new System.Drawing.Point(259, 0);
             this.groupPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(926, 818);
+            this.groupPanel1.Size = new System.Drawing.Size(991, 836);
             // 
             // 
             // 
@@ -358,14 +213,14 @@
             this.groupPanel1.StyleMouseOver.Class = "";
             this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel1.TabIndex = 9;
-            this.groupPanel1.Text = "groupPanel1";
+            this.groupPanel1.Text = "WJX Code";
             // 
             // rtbContent
             // 
             this.rtbContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbContent.Location = new System.Drawing.Point(255, 0);
+            this.rtbContent.Location = new System.Drawing.Point(285, 0);
             this.rtbContent.Name = "rtbContent";
-            this.rtbContent.Size = new System.Drawing.Size(665, 794);
+            this.rtbContent.Size = new System.Drawing.Size(700, 812);
             this.rtbContent.TabIndex = 1;
             this.rtbContent.Text = "";
             // 
@@ -376,8 +231,10 @@
             this.lbFunction.ItemHeight = 16;
             this.lbFunction.Location = new System.Drawing.Point(0, 0);
             this.lbFunction.Name = "lbFunction";
-            this.lbFunction.Size = new System.Drawing.Size(255, 794);
+            this.lbFunction.Size = new System.Drawing.Size(285, 812);
             this.lbFunction.TabIndex = 0;
+            this.lbFunction.SelectedIndexChanged += new System.EventHandler(this.lbFunction_SelectedIndexChanged);
+            this.lbFunction.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lbFunction_KeyDown);
             // 
             // reflectionLabel1
             // 
@@ -392,28 +249,141 @@
             this.reflectionLabel1.TabIndex = 10;
             this.reflectionLabel1.Text = "<b><font size=\"+6\"><i>WJX</i><font color=\"#B02B2C\"> Tools</font></font></b>";
             // 
-            // btnCheckWeiWang
+            // ePConditions
             // 
-            this.btnCheckWeiWang.Name = "btnCheckWeiWang";
-            this.btnCheckWeiWang.Text = "CheckWeiWang";
+            this.ePConditions.CanvasColor = System.Drawing.SystemColors.Control;
+            this.ePConditions.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ePConditions.Controls.Add(this.itemPConditons);
+            this.ePConditions.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ePConditions.Location = new System.Drawing.Point(0, 32);
+            this.ePConditions.Margin = new System.Windows.Forms.Padding(4);
+            this.ePConditions.Name = "ePConditions";
+            this.ePConditions.Size = new System.Drawing.Size(252, 343);
+            this.ePConditions.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.ePConditions.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.ePConditions.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.ePConditions.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.ePConditions.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.ePConditions.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
+            this.ePConditions.Style.GradientAngle = 90;
+            this.ePConditions.TabIndex = 1;
+            this.ePConditions.TitleHeight = 32;
+            this.ePConditions.TitleStyle.Alignment = System.Drawing.StringAlignment.Center;
+            this.ePConditions.TitleStyle.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.ePConditions.TitleStyle.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.ePConditions.TitleStyle.Border = DevComponents.DotNetBar.eBorderType.RaisedInner;
+            this.ePConditions.TitleStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.ePConditions.TitleStyle.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.ePConditions.TitleStyle.GradientAngle = 90;
+            this.ePConditions.TitleText = "Conditions";
+            // 
+            // itemPConditons
+            // 
+            this.itemPConditons.AutoScroll = true;
+            // 
+            // 
+            // 
+            this.itemPConditons.BackgroundStyle.Class = "ItemPanel";
+            this.itemPConditons.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.itemPConditons.ContainerControlProcessDialogKey = true;
+            this.itemPConditons.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.itemPConditons.FitButtonsToContainerWidth = true;
+            this.itemPConditons.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
+            this.itemPConditons.Location = new System.Drawing.Point(0, 32);
+            this.itemPConditons.Name = "itemPConditons";
+            this.itemPConditons.Size = new System.Drawing.Size(252, 311);
+            this.itemPConditons.TabIndex = 1;
+            this.itemPConditons.Text = "itemPanel1";
+            // 
+            // ePReward
+            // 
+            this.ePReward.CanvasColor = System.Drawing.SystemColors.Control;
+            this.ePReward.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ePReward.Controls.Add(this.itemPReward);
+            this.ePReward.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ePReward.Location = new System.Drawing.Point(0, 375);
+            this.ePReward.Margin = new System.Windows.Forms.Padding(4);
+            this.ePReward.Name = "ePReward";
+            this.ePReward.Size = new System.Drawing.Size(252, 376);
+            this.ePReward.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.ePReward.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.ePReward.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.ePReward.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.ePReward.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.ePReward.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
+            this.ePReward.Style.GradientAngle = 90;
+            this.ePReward.TabIndex = 2;
+            this.ePReward.TitleHeight = 32;
+            this.ePReward.TitleStyle.Alignment = System.Drawing.StringAlignment.Center;
+            this.ePReward.TitleStyle.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.ePReward.TitleStyle.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.ePReward.TitleStyle.Border = DevComponents.DotNetBar.eBorderType.RaisedInner;
+            this.ePReward.TitleStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.ePReward.TitleStyle.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.ePReward.TitleStyle.GradientAngle = 90;
+            this.ePReward.TitleText = "Reward";
+            // 
+            // itemPReward
+            // 
+            this.itemPReward.AutoScroll = true;
+            // 
+            // 
+            // 
+            this.itemPReward.BackgroundStyle.Class = "ItemPanel";
+            this.itemPReward.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.itemPReward.ContainerControlProcessDialogKey = true;
+            this.itemPReward.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.itemPReward.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
+            this.itemPReward.Location = new System.Drawing.Point(0, 32);
+            this.itemPReward.Name = "itemPReward";
+            this.itemPReward.Size = new System.Drawing.Size(252, 344);
+            this.itemPReward.TabIndex = 1;
+            this.itemPReward.Text = "itemPanel2";
+            // 
+            // ePMain
+            // 
+            this.ePMain.CanvasColor = System.Drawing.SystemColors.Control;
+            this.ePMain.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ePMain.Controls.Add(this.ePReward);
+            this.ePMain.Controls.Add(this.ePConditions);
+            this.ePMain.Location = new System.Drawing.Point(0, 82);
+            this.ePMain.Margin = new System.Windows.Forms.Padding(4);
+            this.ePMain.Name = "ePMain";
+            this.ePMain.Size = new System.Drawing.Size(252, 751);
+            this.ePMain.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.ePMain.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.ePMain.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.ePMain.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.ePMain.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.ePMain.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
+            this.ePMain.Style.GradientAngle = 90;
+            this.ePMain.TabIndex = 0;
+            this.ePMain.TitleHeight = 32;
+            this.ePMain.TitleStyle.Alignment = System.Drawing.StringAlignment.Center;
+            this.ePMain.TitleStyle.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.ePMain.TitleStyle.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.ePMain.TitleStyle.Border = DevComponents.DotNetBar.eBorderType.RaisedInner;
+            this.ePMain.TitleStyle.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.ePMain.TitleStyle.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.ePMain.TitleStyle.GradientAngle = 90;
+            this.ePMain.TitleText = "WJX Gen Code";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1160, 818);
+            this.ClientSize = new System.Drawing.Size(1250, 836);
             this.Controls.Add(this.reflectionLabel1);
             this.Controls.Add(this.groupPanel1);
             this.Controls.Add(this.dockSite2);
             this.Controls.Add(this.dockSite1);
-            this.Controls.Add(this.expandablePanel1);
+            this.Controls.Add(this.ePMain);
             this.Controls.Add(this.dockSite3);
             this.Controls.Add(this.dockSite4);
             this.Controls.Add(this.dockSite5);
             this.Controls.Add(this.dockSite6);
             this.Controls.Add(this.dockSite7);
             this.Controls.Add(this.dockSite8);
-            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
@@ -421,18 +391,18 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmWJX - vilh@vng.com.vn";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
-            this.expandablePanel1.ResumeLayout(false);
-            this.expandablePanel3.ResumeLayout(false);
-            this.expandablePanel2.ResumeLayout(false);
+            this.Activated += new System.EventHandler(this.frmMain_Activated);
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.groupPanel1.ResumeLayout(false);
+            this.ePConditions.ResumeLayout(false);
+            this.ePReward.ResumeLayout(false);
+            this.ePMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevComponents.DotNetBar.ExpandablePanel expandablePanel1;
         private DevComponents.DotNetBar.DotNetBarManager dotNetBarManager1;
         private DevComponents.DotNetBar.DockSite dockSite4;
         private DevComponents.DotNetBar.DockSite dockSite1;
@@ -442,19 +412,15 @@
         private DevComponents.DotNetBar.DockSite dockSite6;
         private DevComponents.DotNetBar.DockSite dockSite7;
         private DevComponents.DotNetBar.DockSite dockSite8;
-        private DevComponents.DotNetBar.ExpandablePanel expandablePanel3;
-        private DevComponents.DotNetBar.ExpandablePanel expandablePanel2;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
         private System.Windows.Forms.RichTextBox rtbContent;
-        private System.Windows.Forms.ListBox lbFunction;
-        private DevComponents.DotNetBar.ItemPanel itemPanel2;
-        private DevComponents.DotNetBar.ItemPanel itemPanel1;
-        private DevComponents.DotNetBar.ButtonItem btnCheckLevel;
-        private DevComponents.DotNetBar.ButtonItem btnCheckAboveLevel;
-        private DevComponents.DotNetBar.ButtonItem CheckAboveLevel2;
+        public System.Windows.Forms.ListBox lbFunction;
         private DevComponents.DotNetBar.Controls.ReflectionLabel reflectionLabel1;
-        private DevComponents.DotNetBar.ButtonItem btnCheckWeiWang;
-
+        private DevComponents.DotNetBar.ExpandablePanel ePMain;
+        private DevComponents.DotNetBar.ExpandablePanel ePReward;
+        private DevComponents.DotNetBar.ItemPanel itemPReward;
+        private DevComponents.DotNetBar.ExpandablePanel ePConditions;
+        private DevComponents.DotNetBar.ItemPanel itemPConditons;
     }
 }
 
