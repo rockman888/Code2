@@ -28,17 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPara));
             this.SuspendLayout();
             // 
             // frmPara
             // 
-            this.ClientSize = new System.Drawing.Size(754, 131);
+            this.ClientSize = new System.Drawing.Size(754, 142);
             this.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmPara";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmPara_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPara_KeyDown);
             this.ResumeLayout(false);
 
         }

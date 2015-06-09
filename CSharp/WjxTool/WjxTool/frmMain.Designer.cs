@@ -47,6 +47,7 @@
             this.ePReward = new DevComponents.DotNetBar.ExpandablePanel();
             this.itemPReward = new DevComponents.DotNetBar.ItemPanel();
             this.ePMain = new DevComponents.DotNetBar.ExpandablePanel();
+            this.superTooltip1 = new DevComponents.DotNetBar.SuperTooltip();
             this.groupPanel1.SuspendLayout();
             this.ePConditions.SuspendLayout();
             this.ePReward.SuspendLayout();
@@ -85,7 +86,7 @@
             this.dockSite4.Location = new System.Drawing.Point(0, 836);
             this.dockSite4.Margin = new System.Windows.Forms.Padding(4);
             this.dockSite4.Name = "dockSite4";
-            this.dockSite4.Size = new System.Drawing.Size(1250, 0);
+            this.dockSite4.Size = new System.Drawing.Size(956, 0);
             this.dockSite4.TabIndex = 4;
             this.dockSite4.TabStop = false;
             // 
@@ -106,7 +107,7 @@
             this.dockSite2.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
             this.dockSite2.Dock = System.Windows.Forms.DockStyle.Right;
             this.dockSite2.DocumentDockContainer = new DevComponents.DotNetBar.DocumentDockContainer();
-            this.dockSite2.Location = new System.Drawing.Point(1250, 0);
+            this.dockSite2.Location = new System.Drawing.Point(956, 0);
             this.dockSite2.Margin = new System.Windows.Forms.Padding(4);
             this.dockSite2.Name = "dockSite2";
             this.dockSite2.Size = new System.Drawing.Size(0, 836);
@@ -120,7 +121,7 @@
             this.dockSite8.Location = new System.Drawing.Point(0, 836);
             this.dockSite8.Margin = new System.Windows.Forms.Padding(4);
             this.dockSite8.Name = "dockSite8";
-            this.dockSite8.Size = new System.Drawing.Size(1250, 0);
+            this.dockSite8.Size = new System.Drawing.Size(956, 0);
             this.dockSite8.TabIndex = 8;
             this.dockSite8.TabStop = false;
             // 
@@ -139,7 +140,7 @@
             // 
             this.dockSite6.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
             this.dockSite6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dockSite6.Location = new System.Drawing.Point(1250, 0);
+            this.dockSite6.Location = new System.Drawing.Point(956, 0);
             this.dockSite6.Margin = new System.Windows.Forms.Padding(4);
             this.dockSite6.Name = "dockSite6";
             this.dockSite6.Size = new System.Drawing.Size(0, 836);
@@ -153,7 +154,7 @@
             this.dockSite7.Location = new System.Drawing.Point(0, 0);
             this.dockSite7.Margin = new System.Windows.Forms.Padding(4);
             this.dockSite7.Name = "dockSite7";
-            this.dockSite7.Size = new System.Drawing.Size(1250, 0);
+            this.dockSite7.Size = new System.Drawing.Size(956, 0);
             this.dockSite7.TabIndex = 7;
             this.dockSite7.TabStop = false;
             // 
@@ -165,7 +166,7 @@
             this.dockSite3.Location = new System.Drawing.Point(0, 0);
             this.dockSite3.Margin = new System.Windows.Forms.Padding(4);
             this.dockSite3.Name = "dockSite3";
-            this.dockSite3.Size = new System.Drawing.Size(1250, 0);
+            this.dockSite3.Size = new System.Drawing.Size(956, 0);
             this.dockSite3.TabIndex = 3;
             this.dockSite3.TabStop = false;
             // 
@@ -177,10 +178,10 @@
             this.groupPanel1.Controls.Add(this.lbFunction);
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupPanel1.DrawTitleBox = false;
-            this.groupPanel1.Location = new System.Drawing.Point(259, 0);
+            this.groupPanel1.Location = new System.Drawing.Point(249, 0);
             this.groupPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(991, 836);
+            this.groupPanel1.Size = new System.Drawing.Size(707, 836);
             // 
             // 
             // 
@@ -217,10 +218,10 @@
             // 
             // rtbContent
             // 
-            this.rtbContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbContent.Location = new System.Drawing.Point(285, 0);
+            this.rtbContent.Dock = System.Windows.Forms.DockStyle.Left;
+            this.rtbContent.Location = new System.Drawing.Point(301, 0);
             this.rtbContent.Name = "rtbContent";
-            this.rtbContent.Size = new System.Drawing.Size(700, 812);
+            this.rtbContent.Size = new System.Drawing.Size(413, 812);
             this.rtbContent.TabIndex = 1;
             this.rtbContent.Text = "";
             // 
@@ -231,7 +232,7 @@
             this.lbFunction.ItemHeight = 16;
             this.lbFunction.Location = new System.Drawing.Point(0, 0);
             this.lbFunction.Name = "lbFunction";
-            this.lbFunction.Size = new System.Drawing.Size(285, 812);
+            this.lbFunction.Size = new System.Drawing.Size(301, 812);
             this.lbFunction.TabIndex = 0;
             this.lbFunction.SelectedIndexChanged += new System.EventHandler(this.lbFunction_SelectedIndexChanged);
             this.lbFunction.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lbFunction_KeyDown);
@@ -261,9 +262,7 @@
             this.ePConditions.Size = new System.Drawing.Size(252, 343);
             this.ePConditions.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.ePConditions.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.ePConditions.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
             this.ePConditions.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.ePConditions.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
             this.ePConditions.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
             this.ePConditions.Style.GradientAngle = 90;
             this.ePConditions.TabIndex = 1;
@@ -307,9 +306,7 @@
             this.ePReward.Size = new System.Drawing.Size(252, 376);
             this.ePReward.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.ePReward.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.ePReward.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
             this.ePReward.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.ePReward.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
             this.ePReward.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
             this.ePReward.Style.GradientAngle = 90;
             this.ePReward.TabIndex = 2;
@@ -352,9 +349,7 @@
             this.ePMain.Size = new System.Drawing.Size(252, 751);
             this.ePMain.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.ePMain.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.ePMain.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
             this.ePMain.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.ePMain.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
             this.ePMain.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
             this.ePMain.Style.GradientAngle = 90;
             this.ePMain.TabIndex = 0;
@@ -372,7 +367,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1250, 836);
+            this.ClientSize = new System.Drawing.Size(956, 836);
             this.Controls.Add(this.reflectionLabel1);
             this.Controls.Add(this.groupPanel1);
             this.Controls.Add(this.dockSite2);
@@ -387,10 +382,9 @@
             this.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmWJX - vilh@vng.com.vn";
+            this.Text = "WJX Tool - vilh@vng.com.vn - ver 1.0.0.0";
             this.Activated += new System.EventHandler(this.frmMain_Activated);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.groupPanel1.ResumeLayout(false);
@@ -421,6 +415,7 @@
         private DevComponents.DotNetBar.ItemPanel itemPReward;
         private DevComponents.DotNetBar.ExpandablePanel ePConditions;
         private DevComponents.DotNetBar.ItemPanel itemPConditons;
+        private DevComponents.DotNetBar.SuperTooltip superTooltip1;
     }
 }
 

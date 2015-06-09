@@ -11,18 +11,10 @@ using System.Windows.Forms;
 namespace WjxTool
 {
     public partial class frmPara : DevComponents.DotNetBar.Office2007Form
-    {
-        public string _keyFunction= "";
+    {        
+        private clsGameFunction _clsGameFunction;
 
-        private void checkTime()
-        {
-            DateTime dt = DateTime.Now;
-            if (dt.Year == 2016 && dt.Month == 3)
-            {
-                MessageBox.Show("Tool bị lỗi dt! Liên hệ với vilh@vng.com.vn để biết thêm chi tiết");
-                this.Close();
-            }
-        }
+    
 
 
         public frmPara()
@@ -32,21 +24,22 @@ namespace WjxTool
 
         public frmPara(clsGameFunction cls)
         {
-            createForm(cls);
+            
             
             InitializeComponent();
+            createForm(cls);
         }
 
         private void createForm(clsGameFunction cls)
         {
-            checkTime();
+          
 
             displayTitleFrm(cls);
 
             int index = 0; // tabindex
             int count = cls.CParma.Count;
-            _keyFunction = cls.Key;
-         
+            _clsGameFunction = cls;
+
             for (int i = 0; i < count; i++)
             {
                 LabelX label = new DevComponents.DotNetBar.LabelX();
@@ -69,6 +62,7 @@ namespace WjxTool
                 textBox.Name = "textBoxX" + (i + 1).ToString();
                 textBox.Size = new System.Drawing.Size(450, 25);
                 textBox.TabIndex = index;
+                
                 Controls.Add(textBox);
 
                 index++;
@@ -106,16 +100,24 @@ namespace WjxTool
             Controls.Add(btnYes);
             Controls.Add(btnNo);
 
-            // resize frm
-            this.Height = 30 * (count + 2) + 10;
+            // resize frm           
+
+            if (count > 3)
+            {
+                this.Height = 30 * (count + 2) + 20;
+                this.Size = new Size(this.Width, this.Height);
+            }
         }
 
         private void displayTitleFrm(clsGameFunction cls)
         {
             if (cls.Type.Equals("Condition"))
                 this.Text = clsCommons.TITLE + " => " + cls.Key + "/" + cls.Name + " - Condition";
+
+            
             else if (cls.Type.Equals("Reward"))
                 this.Text = clsCommons.TITLE + " => " + cls.Key + "/" + cls.Name + " - Reward";
+
             else
                 this.Text = clsCommons.TITLE + " => " + cls.Key + "/" + cls.Name + " - vilh@vng.com.vn";
         }
@@ -126,19 +128,16 @@ namespace WjxTool
             foreach (Control c in this.Controls)
                 if (c.GetType().Name.Equals("TextBoxX"))
                     frmMain._lstparams.Add(c.Text);
-            
-            //string temp = _keyFunction + "(";
-            //for (int i=0; i<lst.Count; i++)
-            //{   
-            //    if (i>=1)
-            //        temp += ", ";
-            //    temp += lst[i];
-                
-            //}
 
-            //temp += ")";
+            
+            if (_clsGameFunction.Type.Equals("Condition"))
+                frmMain._itype = clsCommons.CONDITION;
+
+            else if (_clsGameFunction.Type.Equals("Reward"))
+                frmMain._itype = clsCommons.REWARD;
                         
-            frmMain._szKey = _keyFunction;
+                        
+            frmMain._szKey = _clsGameFunction.Key;
             this.Close();
         }
 
@@ -152,6 +151,7 @@ namespace WjxTool
       
         private void frmPara_KeyDown(object sender, KeyEventArgs e)
         {
+            
             if (e.KeyData == Keys.Escape)
                 this.Close();
         }
