@@ -19,9 +19,9 @@ namespace WjxTool
         /* Construct Object */
         public clsFTPCommons(string hostIP, string userName, string password) 
         {
-            hostIP = "ftp://pg1.net78.net/public_html";
-            userName = "a4347279";
-            password = "fedoravi888";
+            hostIP = "";//"ftp://abc.net/public_html";
+            userName = "";
+            password = "";
             
             host = hostIP; 
             user = userName; 

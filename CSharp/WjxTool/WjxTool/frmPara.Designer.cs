@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPara));
+            this.superTooltip1 = new DevComponents.DotNetBar.SuperTooltip();
             this.SuspendLayout();
             // 
             // frmPara
@@ -47,6 +48,8 @@
         }
 
         #endregion
+
+        private DevComponents.DotNetBar.SuperTooltip superTooltip1;
 
 
     }

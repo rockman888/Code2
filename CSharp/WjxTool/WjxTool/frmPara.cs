@@ -39,6 +39,7 @@ namespace WjxTool
             int index = 0; // tabindex
             int count = cls.CParma.Count;
             _clsGameFunction = cls;
+            string temp;
 
             for (int i = 0; i < count; i++)
             {
@@ -63,8 +64,19 @@ namespace WjxTool
                 textBox.Size = new System.Drawing.Size(450, 25);
                 textBox.TabIndex = index;
                 
-                Controls.Add(textBox);
 
+                if (cls.CParma[i].PErrorMessage.Contains("số"))
+                    textBox.Text = "0";
+
+                if (cls.Name.Equals("AddRandomAward"))
+                    if (i == 3 || i == 4 || i == 5)
+                        textBox.Text = "0,0,\"0,0,0,0,0,0,0,0,0\",\"\",0,0,0";
+
+                
+                temp = "Tham số thứ: " + i.ToString() + " - " + cls.CParma[i].PName ;
+                this.superTooltip1.SetSuperTooltip(textBox, new DevComponents.DotNetBar.SuperTooltipInfo(temp, cls.CParma[i].PDescription, null, null, null, DevComponents.DotNetBar.eTooltipColor.System));
+                                
+                Controls.Add(textBox);
                 index++;
             }           
 

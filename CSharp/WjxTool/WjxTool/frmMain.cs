@@ -3,13 +3,15 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
 // làm tiếp tại đây ---------------------------
-// Mã Lỗi dt-50002 - hết lis
+// Mã Lỗi dt-10068 - hết liscense
+// Mã Lỗi dt-10048 - cố gắng chỉnh time cheat liscense
 
 namespace WjxTool
 {
@@ -81,8 +83,8 @@ namespace WjxTool
         private void frmMain_Load(object sender, EventArgs e)
         {
             checkLiscence();
-
-         
+                                  
+            // load tab 1
 
             string path = Application.StartupPath + "\\product.xml";
             _lstGameFunctions = clsCommons.readXMLFiles(path);
@@ -102,6 +104,9 @@ namespace WjxTool
                 else if (_lstGameFunctions[i].Type.Equals("Reward"))
                     itemPReward.Items.Add(btn);
             }           
+
+
+            
         }
 
         private void btn_Click(object sender, EventArgs e)
@@ -116,10 +121,7 @@ namespace WjxTool
                 }
         }
 
-        private void buttonItem1_Click(object sender, EventArgs e)
-        {
-            
-        }
+    
         
         // làm tiếp tại đây ---------------------------
         private void frmMain_Activated(object sender, EventArgs e)
@@ -167,15 +169,10 @@ namespace WjxTool
 
             string szTemp = "";
             if (type == clsCommons.REWARD)
-            {
-                szTemp = "<!-- REWARD -->\n";
                 szTemp += "<Reward FunctionKey = \"" + szKey + "\">\n";
-            }
+
             else if (type == clsCommons.CONDITION)
-            {
-                szTemp = "<!-- CONDITION -->\n";
                 szTemp += "<Condition FunctionKey = \"" + szKey + "\">\n";
-            }
 
             szTemp += "\t<Params>\n";
 
@@ -185,12 +182,15 @@ namespace WjxTool
             szTemp += "\t</Params>\n";
 
             if (type == clsCommons.REWARD)
+            {
                 szTemp += "</Reward>\n";
+                rtbReward.Text += szTemp;
+            }
             else if (type == clsCommons.CONDITION)
+            {
                 szTemp += "</Condition>\n";
-            
-            rtbContent.Text += szTemp;
-            
+                rtbCondition.Text += szTemp;
+            }
         }
 
         private void lbFunction_KeyDown(object sender, KeyEventArgs e)
@@ -210,7 +210,7 @@ namespace WjxTool
 
         private void reloadSourceCode()
         {
-            rtbContent.Text = "";
+            rtbReward.Text = "";
             // reload lai source code
             // CheckKey (1,2,3)-1
 
@@ -228,34 +228,13 @@ namespace WjxTool
 
                 // list parameters 
                 string[] arrParas = szNum.Split(',');
-
-
-                string szTemp = "";
-                if (type == clsCommons.REWARD)
-                {
-                    szTemp = "<!-- REWARD -->\n";
-                    szTemp += "<Reward FunctionKey = \"" + szKey + "\">\n";
-                }
-                else if (type == clsCommons.CONDITION)
-                {
-                    szTemp = "<!-- CONDITION -->\n";
-                    szTemp += "<Condition FunctionKey = \"" + szKey + "\">\n";
-                }
-
-                szTemp += "\t<Params>\n";
-
+                List<string> lstParam = new List<string>();
                 for (int i = 0; i < arrParas.Length; i++)
-                    szTemp += "\t\t<Param>" + arrParas[i] + "</Param>\n";
+                    lstParam.Add(arrParas[i]);
 
-                szTemp += "\t</Params>\n";
 
-                if (type == clsCommons.REWARD)
-                    szTemp += "</Reward>\n";
-                else if (type == clsCommons.CONDITION)
-                    szTemp += "</Condition>\n";
-                
+                showOnRichBox(type, szKey, lstParam);              
 
-                rtbContent.Text += szTemp;
             }
             HighLight();
 
@@ -270,30 +249,142 @@ namespace WjxTool
             HighlightText("Reward", Color.Blue);
             HighlightText("Condition", Color.Blue);
         }
-
-
-        public void HighlightText(string word, Color color)
+        
+        private void FindTextRichTextBox(RichTextBox rtb, string word, Color color)
         {
-            int s_start = rtbContent.SelectionStart, startIndex = 0, index;
+            int s_start = rtb.SelectionStart, startIndex = 0, index;
+            
 
-            while ((index = rtbContent.Text.IndexOf(word, startIndex)) != -1)
+            while ((index = rtb.Text.IndexOf(word, startIndex)) != -1)
             {
-                rtbContent.Select(index, word.Length);
-                rtbContent.SelectionColor = color;
+                rtb.Select(index, word.Length);
+                rtb.SelectionColor = color;
 
                 startIndex = index + word.Length;
             }
 
-            rtbContent.SelectionStart = s_start;
-            rtbContent.SelectionLength = 0;
-            rtbContent.SelectionColor = Color.Black;
+            rtb.SelectionStart = s_start;
+            rtb.SelectionLength = 0;
+            rtb.SelectionColor = Color.Black;
         }
 
-
-        private void lbFunction_SelectedIndexChanged(object sender, EventArgs e)
+        public void HighlightText(string word, Color color)
         {
-               
-            
+            FindTextRichTextBox(rtbReward, word, color);
+            FindTextRichTextBox(rtbCondition, word, color);
+            FindTextRichTextBox(rtbCode, word, color);
         }
+
+    
+
+        // gen code from tab 1
+        private void btnGen_Click(object sender, EventArgs e)
+        {
+            //<Option Name="Rương Thiên Nhai" Description="" WaitTime="0">
+            //      <Conditions />
+            //      <Rewards />
+            //      <Others />
+            //</Option>
+
+            string sztemp = "<Option Name=\"Rương Thiên Nhai\" Description=\"\" WaitTime=\"0\">\n";
+
+            if (rtbCondition.Text.Equals(""))
+                sztemp += "\t<Conditions />\n";
+            else
+                sztemp += "\t" + rtbCondition.Text.Replace("\n","\n\t") + "\n";
+
+            if (rtbReward.Text.Equals(""))
+                sztemp += "\t<Rewards />\n";
+            else
+                sztemp += "\t" + rtbReward.Text.Replace("\n", "\n\t") + "\n";
+
+            sztemp += "\t<Others />\n";
+
+            sztemp += "</Option>";
+            string szPath = Application.StartupPath + "\\codeWJX.xml";
+            clsCommons.WriteFile(szPath, sztemp, 1, Encoding.Unicode);
+
+            DialogResult result =  MessageBox.Show("File code đã gen xong. Có muốn mở file CodeWJX.xml không?", clsCommons.TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (result == DialogResult.Yes)
+            {
+                Process notePad = new Process();
+                notePad.StartInfo.FileName = "notepad++.exe";
+                notePad.StartInfo.Arguments = szPath;
+                notePad.Start();
+            }
+        }
+
+
+        private void autogen(int type, string szKey, List<string>lstParam)
+        {
+            checkLiscence();
+
+            string szTemp = "";
+            if (type == clsCommons.REWARD)
+                szTemp += "<Reward FunctionKey = \"" + szKey + "\">\n";
+
+            else if (type == clsCommons.CONDITION)
+                szTemp += "<Condition FunctionKey = \"" + szKey + "\">\n";
+
+            szTemp += "\t<Params>\n";
+
+            for (int i = 0; i < lstParam.Count; i++)
+                szTemp += "\t\t<Param>" + lstParam[i] + "</Param>\n";
+
+            szTemp += "\t</Params>\n";
+
+            if (type == clsCommons.REWARD)
+            {
+                szTemp += "</Reward>\n";
+                rtbCode.Text += szTemp;
+            }
+            else if (type == clsCommons.CONDITION)
+            {
+                szTemp += "</Condition>\n";
+                rtbCode.Text += szTemp;
+            }
+        }
+
+        private void rtbRawData_TextChanged(object sender, EventArgs e)
+        {
+            rtbCode.Text = "";
+            string szTemp = rtbRawData.Text;
+
+            string[] arrTemp = szTemp.Split('\n');
+            string[] arrKeyFunction;
+            int type = -1;
+
+            for (int k = 0; k < _lstGameFunctions.Count; k++)
+                for (int i = 0; i < arrTemp.Length; i++)
+                {
+                    // arrKeyFunction: addLevel     100     Giới hạn nhận thưởng
+                    arrKeyFunction = arrTemp[i].Split('\t');
+
+                    List<string> lstparam = new List<string>();
+                    for (int iCur = 1; iCur < arrKeyFunction.Length; iCur++)
+                        lstparam.Add(arrKeyFunction[iCur]);
+
+
+
+
+                    if (arrKeyFunction[0].Equals(_lstGameFunctions[k].Key))
+                    {
+                        if (_lstGameFunctions[k].Type.Equals("Condition"))
+                            type = clsCommons.CONDITION;
+
+                        else if (_lstGameFunctions[k].Type.Equals("Reward"))
+                            type = clsCommons.REWARD;
+
+
+                        autogen(type, _lstGameFunctions[k].Key, lstparam);
+
+                    } 
+
+                }
+
+            HighLight();
+        }
+
+  
     }
 }

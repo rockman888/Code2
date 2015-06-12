@@ -321,6 +321,12 @@ namespace WjxTool
                             if (errorMsg != null)
                                 cParam.PErrorMessage = errorMsg.Value;
 
+
+                            var desc = xmlAttributeCollection["Description"];
+                            // str = fileName.Value; // Thông tin nhắc nhở
+                            if (desc != null)
+                                cParam.PDescription = desc.Value;
+
                             lstParam.Add(cParam);
                         }
                     }
